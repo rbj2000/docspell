@@ -17,6 +17,8 @@ val sharedSettings = Seq(
   organization := "com.github.eikek",
   scalaVersion := "2.13.16",
   organizationName := "Eike K. & Contributors",
+  Docker / dockerBaseImage := "openjdk:11-jre",
+  Docker / dockerRepository := None, // Overridden in CI
   licenses += (
     "AGPL-3.0-or-later",
     url(
@@ -826,7 +828,8 @@ val joex = project
       "-Xmx1596M",
       "-XX:+UseG1GC"
     ),
-    Revolver.enableDebugging(port = 5051, suspend = false)
+    Revolver.enableDebugging(port = 5051, suspend = false),
+    Docker / dockerPlatform := Some("linux/amd64")
   )
   .dependsOn(
     config,
@@ -903,7 +906,9 @@ val restserver = project
         // scalajs artifacts are not needed at runtime
         case (file, name) => !name.contains("_sjs1_")
       }
-    }
+      }
+    },
+    Docker / dockerPlatform := Some("linux/amd64")
   )
   .dependsOn(
     config,
