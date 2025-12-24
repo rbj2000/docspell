@@ -906,7 +906,6 @@ val restserver = project
         // scalajs artifacts are not needed at runtime
         case (file, name) => !name.contains("_sjs1_")
       }
-      }
     },
     Docker / dockerPlatform := Some("linux/amd64")
   )
