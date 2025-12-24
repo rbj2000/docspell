@@ -829,7 +829,7 @@ val joex = project
       "-XX:+UseG1GC"
     ),
     Revolver.enableDebugging(port = 5051, suspend = false),
-    Docker / dockerPlatform := Some("linux/amd64")
+// Docker / dockerPlatform := Some("linux/amd64")
   )
   .dependsOn(
     config,
@@ -907,7 +907,7 @@ val restserver = project
         case (file, name) => !name.contains("_sjs1_")
       }
     },
-    Docker / dockerPlatform := Some("linux/amd64")
+// Docker / dockerPlatform := Some("linux/amd64")
   )
   .dependsOn(
     config,
