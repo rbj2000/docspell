@@ -830,7 +830,8 @@ val joex = project
     ),
     Revolver.enableDebugging(port = 5051, suspend = false),
     dockerBaseImage := "eclipse-temurin:17-jre",
-    dockerExposedPorts := Seq(5051)
+    dockerExposedPorts := Seq(5051),
+    Docker / dockerRepository := sys.env.get("DOCKER_REPOSITORY").orElse((Docker / dockerRepository).value)
   )
   .dependsOn(
     config,
@@ -909,7 +910,8 @@ val restserver = project
       }
     },
     dockerBaseImage := "eclipse-temurin:17-jre",
-    dockerExposedPorts := Seq(7880)
+    dockerExposedPorts := Seq(7880),
+    Docker / dockerRepository := sys.env.get("DOCKER_REPOSITORY").orElse((Docker / dockerRepository).value)
   )
   .dependsOn(
     config,

@@ -29,5 +29,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Set current version and publish Docker images
+        env:
+          DOCKER_REPOSITORY: ${{ secrets.DOCKER_USERNAME }}
         run: |
-           nix develop .#ci --command sbt 'set Docker/dockerRepository := Some("${{ secrets.DOCKER_USERNAME }}")' docker:publish
+           nix develop .#ci --command sbt docker:publish
