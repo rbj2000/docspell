@@ -10,6 +10,7 @@ module Messages.Comp.ShareManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -68,6 +69,32 @@ gb tz =
     , sendViaMail = "Send via E-Mail"
     , notOwnerInfo = "Only the user who created this share can edit its properties."
     , showOwningSharesOnly = "Show my shares only"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , shareTable = Messages.Comp.ShareTable.gb tz
+    , shareForm = Messages.Comp.ShareForm.gb
+    , shareView = Messages.Comp.ShareView.gb tz
+    , shareMail = Messages.Comp.ShareMail.gb
+    , newShare = "Nové zdieľanie"
+    , copyToClipboard = "Kopírovať do schránky"
+    , openInNewTab = "Otvoriť na novej karte/okne"
+    , publicUrl = "Verejná adresa URL"
+    , reallyDeleteShare = "Naozaj chcete odstrániť toto zdieľanie?"
+    , createNewShare = "Vytvorte nové zdieľanie"
+    , deleteThisShare = "Odstrániť toto zdieľanie"
+    , errorGeneratingQR = "Chyba pri generovaní QR kódu"
+    , correctFormErrors = "Opravte chyby vo formulári."
+    , noName = "Bez mena"
+    , shareInformation = "Zdieľať informácie"
+    , sendViaMail = "Odoslať prostredníctvom e-mailu"
+    , notOwnerInfo = "Iba používateľ, ktorý vytvoril toto zdieľanie, môže upravovať jeho vlastnosti."
+    , showOwningSharesOnly = "Zobraziť iba moje zdieľania"
     }
 
 

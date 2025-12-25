@@ -10,6 +10,7 @@ module Messages.Comp.CustomFieldForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.CustomFieldType exposing (CustomFieldType)
@@ -63,6 +64,31 @@ gb =
     , fieldNameRequired = "A name is required."
     , fieldTypeRequired = "A type is required."
     , updateSuccessful = "Field has been saved."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , reallyDeleteField = "Naozaj chcete odstrániť toto vlastné pole?"
+    , fieldTypeLabel = Messages.Data.CustomFieldType.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , createCustomField = "Vytvorte nové vlastné pole."
+    , modifyTypeWarning = "Upozorňujeme, že môže dôjsť k zmene formátu"
+            ++ "result in invisible values in the ui, if they don't comply to the new format!"
+    , nameInfo = "Názov jednoznačne identifikuje toto pole. Musí to byť platné"
+            ++ "identifier, not contain spaces or weird characters."
+    , fieldFormat = "Formát poľa"
+    , fieldFormatInfo = "Pole musí mať formát. Hodnoty sú overené"
+            ++ "according to this format."
+    , label = "Označenie"
+    , labelInfo = "Používateľom definovaný štítok pre toto pole. Toto sa používa na reprezentáciu"
+            ++ "this field in the ui. If not present, the name is used."
+    , deleteThisField = "Odstráňte toto pole"
+    , fieldNameRequired = "Vyžaduje sa meno."
+    , fieldTypeRequired = "Vyžaduje sa typ."
+    , updateSuccessful = "Pole bolo uložené."
     }
 
 

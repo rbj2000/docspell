@@ -10,6 +10,7 @@ module Messages.Comp.SourceForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Language exposing (Language)
@@ -54,6 +55,37 @@ gb =
     , folderInfo = "Choose a folder to automatically put items into."
     , tagsInfo = "Choose tags that should be applied to items."
     , fileFilter = "File Filter"
+    , fileFilterInfo = """
+
+Specify a file glob to filter files when uploading archives
+(e.g. for email and zip). For example, to only extract pdf files:
+`*.pdf`. Globs can be combined via OR, like this: `*.pdf|mail.html`.
+
+"""
+    , language = "Language"
+    , languageInfo =
+        "Used for text extraction and analysis. The collective's "
+            ++ "default language is used if not specified here."
+    , languageLabel = Messages.Data.Language.gb
+    , attachmentsOnly = "Only import attachments for e-mails"
+    }
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , tagDropdown = Messages.Comp.TagDropdown.gb
+    , description = "Popis"
+    , enabled = "Povolené"
+    , priority = "Priorita"
+    , priorityInfo = "Priorita, ktorú používa plánovač pri spracovaní nahratých súborov."
+    , metadata = "Metadáta"
+    , metadataInfoText = "Tu špecifikované metadáta sú automaticky pripojené ku každej nahranej položke"
+            ++ "through this source, unless it is overriden in the upload request meta data. "
+            ++ "Tags from the request are added to those defined here."
+    , folderInfo = "Vyberte priečinok, do ktorého sa majú položky automaticky vkladať."
+    , tagsInfo = "Vyberte značky, ktoré sa majú použiť na položky."
+    , fileFilter = "Filter súborov"
     , fileFilterInfo = """
 
 Specify a file glob to filter files when uploading archives

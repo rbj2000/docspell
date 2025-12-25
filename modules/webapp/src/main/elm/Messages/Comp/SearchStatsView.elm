@@ -10,6 +10,7 @@ module Messages.Comp.SearchStatsView exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 
@@ -29,6 +30,18 @@ gb =
     , count = "Count"
     , sum = "Sum"
     , avg = "Avg"
+    , min = "Min"
+    , max = "Max"
+    }
+
+
+
+sk : Texts
+sk =
+    { items = "Položky"
+    , count = "počítať"
+    , sum = "Sum"
+    , avg = "Priem"
     , min = "Min"
     , max = "Max"
     }

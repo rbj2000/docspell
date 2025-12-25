@@ -10,6 +10,7 @@ module Messages.Comp.CustomFieldInput exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 
@@ -27,6 +28,17 @@ gb =
     , errorNoNumber = "No number given"
     , errorNoAmount = "No amount given"
     , errorNotANumber = \str -> "Not a number: " ++ str
+    }
+
+
+
+sk : Texts
+sk =
+    { errorNoValue = "Prosím, vyplňte nejakú hodnotu"
+    , errorNoNumber = "Nie je uvedené žiadne číslo"
+    , errorNoAmount = "Nie je uvedená žiadna suma"
+    , errorNotANumber = \str ->
+            "Nie číslo:" ++ str
     }
 
 

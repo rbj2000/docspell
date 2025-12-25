@@ -10,6 +10,7 @@ module Messages.Comp.NotificationHookForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.EventType exposing (EventType)
@@ -59,6 +60,29 @@ gb =
     , jsonPayload = "JSON"
     , messagePayload = "Message"
     , payloadInfo = "Message payloads are sent to gotify, email and matrix. The JSON is sent to http channel."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , channelRef = Messages.Comp.ChannelRefInput.gb
+    , eventType = Messages.Data.EventType.gb
+    , eventSample = Messages.Comp.EventSample.gb
+    , channelHeader = "Vyberte kanály"
+    , enableDisable = "Povolené / Zakázané"
+    , eventsInfo = "Vyberte udalosti, ktoré spúšťajú tento webhook"
+    , selectEvents = "Vybrať…"
+    , events = "Udalosti"
+    , samplePayload = "Ukážka užitočného zaťaženia"
+    , toggleAllEvents = "Upozorniť na všetky udalosti"
+    , eventFilter = "Výraz filtra udalostí"
+    , eventFilterInfo = "Voliteľné zadajte výraz na filtrovanie udalostí na základe ich štruktúry JSON."
+    , eventFilterClickForHelp = "Kliknutím sem získate pomoc"
+    , jsonPayload = "JSON"
+    , messagePayload = "Správa"
+    , payloadInfo = "Užitočné zaťaženia správ sa odosielajú do gotify, e-mailu a matrice. JSON sa odošle na kanál http."
     }
 
 

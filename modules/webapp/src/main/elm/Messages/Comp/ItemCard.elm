@@ -10,6 +10,7 @@ module Messages.Comp.ItemCard exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Direction exposing (Direction)
@@ -46,6 +47,22 @@ gb tz =
     , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
     , directionLabel = Messages.Data.Direction.gb
     , showRelatedItems = "Show linked items"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , dueOn = "Termín splatnosti"
+    , new = "Nové"
+    , openAttachmentFile = "Otvorte prílohu"
+    , gotoDetail = "Prejsť na podrobné zobrazenie"
+    , cycleAttachments = "Cyklistické prílohy"
+    , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz
+    , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
+    , directionLabel = Messages.Data.Direction.gb
+    , showRelatedItems = "Zobraziť prepojené položky"
     }
 
 

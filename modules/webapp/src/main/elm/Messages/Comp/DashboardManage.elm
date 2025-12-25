@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.DashboardManage exposing (Texts, de, fr, gb)
+module Messages.Comp.DashboardManage exposing (Texts, de, fr, gb
+    , sk)
 
 import Http
 import Messages.Basics
@@ -35,6 +36,20 @@ gb =
     , nameExists = "The name is already in use."
     , createDashboard = "New"
     , copyDashboard = "Copy"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , dashboardEdit = Messages.Comp.DashboardEdit.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , reallyDeleteDashboard = "Naozaj chcete odstrániť tento informačný panel?"
+    , nameEmpty = "Názov nesmie byť prázdny."
+    , nameExists = "Názov sa už používa."
+    , createDashboard = "Nové"
+    , copyDashboard = "Kopírovať"
     }
 
 

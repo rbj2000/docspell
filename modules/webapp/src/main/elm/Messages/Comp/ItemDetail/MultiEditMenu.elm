@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail.MultiEditMenu exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Direction exposing (Direction)
@@ -50,6 +51,25 @@ gb =
     , unconfirm = "Unconfirm"
     , changeTagMode = "Change tag edit mode"
     , dueDateTab = "Due Date"
+    , direction = Messages.Data.Direction.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , customFieldMultiInput = Messages.Comp.CustomFieldMultiInput.gb
+    , tagDropdown = Messages.Comp.TagDropdown.gb
+    , tagModeAddInfo = "Tu zvolené štítky sa *pridajú* ku všetkým vybraným položkám."
+    , tagModeRemoveInfo = "Tu zvolené štítky sú *odstránené* zo všetkých vybratých položiek."
+    , tagModeReplaceInfo = "Tu zvolené štítky *nahradia* štítky na vybraných položkách."
+    , chooseDirection = "Vyberte si smer…"
+    , confirmUnconfirm = "Potvrdiť/zrušiť metadáta"
+    , confirm = "Potvrďte"
+    , unconfirm = "Zrušte potvrdenie"
+    , changeTagMode = "Zmeňte režim úpravy značky"
+    , dueDateTab = "Dátum splatnosti"
     , direction = Messages.Data.Direction.gb
     }
 

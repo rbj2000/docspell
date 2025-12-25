@@ -10,6 +10,7 @@ module Messages.Page.Queue exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -70,6 +71,34 @@ gb tz =
     , prio = "Prio"
     , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
     , sidebarTitle = "Processing"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , currentlyRunning = "Momentálne spustený"
+    , queue = "Práca"
+    , waiting = "Čakanie"
+    , errored = "Chyba"
+    , success = "Úspech"
+    , cancelled = "Zrušené"
+    , noJobsRunning = "Momentálne nie sú spustené žiadne úlohy."
+    , noJobsDisplay = "Žiadne úlohy na zobrazenie."
+    , noJobsWaiting = "Žiadne čakacie práce."
+    , noJobsFailed = "Žiadne neúspešné úlohy na zobrazenie."
+    , noJobsSuccess = "Žiadne úspešné úlohy na zobrazenie."
+    , noJobsCancelled = "Žiadne zrušené úlohy na zobrazenie."
+    , deleteThisJob = "Zrušiť/Odstrániť túto úlohu?"
+    , showLog = "Zobraziť denník"
+    , remove = "Odstrániť"
+    , retries = "Opakované pokusy"
+    , changePriority = "Zmeňte prioritu tejto úlohy"
+    , prio = "Prio"
+    , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
+    , sidebarTitle = "Spracovanie"
     }
 
 

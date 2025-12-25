@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.UploadForm exposing (Texts, de, fr, gb)
+module Messages.Comp.UploadForm exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.Language exposing (Language)
 import Messages.Basics
@@ -67,6 +68,36 @@ gb =
     , selectedFiles = "Selected Files"
     , languageLabel = Messages.Data.Language.gb
     , flattenArchives = "Extract zip file contents into separate items, in contrast to a single document with multiple attachments."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , dropzone = Messages.Comp.Dropzone.gb
+    , reset = "Resetovať"
+    , allFilesOneItem = "Všetky súbory sú jednou položkou"
+    , skipExistingFiles = "Preskočiť súbory, ktoré sa už nachádzajú v docspell"
+    , language = "Jazyk"
+    , languageInfo = "Používa sa na extrakciu a analýzu textu. Kolektívne"
+            ++ "default language is used if not specified here."
+    , uploadErrorMessage = "Pri nahrávaní niektorých súborov sa vyskytli chyby."
+    , successBox =
+        { allFilesUploaded = "Všetky súbory boli odovzdané"
+        , line1 = "Vaše súbory boli úspešne nahrané."
+                ++ "They are now being processed. Check the "
+        , itemsPage = "Stránka s položkami"
+        , line2 = "neskôr, kam súbory nakoniec dorazia. Alebo prejdite na"
+        , processingPage = "Stránka spracovania"
+        , line3 = "pre zobrazenie aktuálneho stavu spracovania."
+        , resetLine1 = "Kliknite"
+        , reset = "Resetovať"
+        , resetLine2 = "nahrať viac súborov."
+        }
+    , selectedFiles = "Vybrané súbory"
+    , languageLabel = Messages.Data.Language.gb
+    , flattenArchives = "Extrahujte obsah súboru zip do samostatných položiek, na rozdiel od jedného dokumentu s viacerými prílohami."
     }
 
 

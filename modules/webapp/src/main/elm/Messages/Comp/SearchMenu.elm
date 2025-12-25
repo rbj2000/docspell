@@ -10,6 +10,7 @@ module Messages.Comp.SearchMenu exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Direction exposing (Direction)
@@ -91,6 +92,44 @@ gb =
     , selection = "Selection"
     , showSelection = "Show selection"
     , clearSelection = "Clear selection"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , customFieldMultiInput = Messages.Comp.CustomFieldMultiInput.gb
+    , tagSelect = Messages.Comp.TagSelect.gb
+    , folderSelect = Messages.Comp.FolderSelect.gb
+    , bookmarkChooser = Messages.Comp.BookmarkChooser.gb
+    , chooseDirection = "Vyberte si smer…"
+    , choosePerson = "Vyberte si osobu"
+    , chooseEquipment = "Vyberte si výbavu"
+    , inbox = "Doručená pošta"
+    , fulltextSearch = "Fulltextové vyhľadávanie"
+    , searchInNames = "Hľadajte v menách"
+    , switchSearchModes = "Prepínajte medzi režimami textového vyhľadávania"
+    , contentSearch = "Vyhľadávanie obsahu…"
+    , searchInNamesPlaceholder = "Hľadajte podľa rôznych mien..."
+    , fulltextSearchInfo = "Fulltextové vyhľadávanie v obsahu dokumentu a poznámkach."
+    , nameSearchInfo = "Hľadá korešpondentov, dotknuté entity, názov položky a poznámky."
+    , tagCategoryTab = "Kategórie značiek"
+    , chooseOrganization = "Vyberte si organizáciu"
+    , createCustomFieldTitle = "Vytvorte nové vlastné pole"
+    , from = "Od"
+    , to = "Komu"
+    , dueDateTab = "Dátum splatnosti"
+    , dueFrom = "Splatnosť od"
+    , dueTo = "Kvôli"
+    , sourceTab = "Zdroj"
+    , searchInItemSource = "Hľadať v zdroji položky…"
+    , direction = Messages.Data.Direction.gb
+    , trashcan = "Kôš"
+    , bookmarks = "Záložky"
+    , selection = "Výber"
+    , showSelection = "Zobraziť výber"
+    , clearSelection = "Vymazať výber"
     }
 
 

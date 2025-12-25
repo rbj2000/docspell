@@ -10,6 +10,7 @@ module Messages.App exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 
@@ -42,6 +43,24 @@ gb =
     , newInvites = "New Invites"
     , help = "Help"
     , newItemsArrived = "New items arrived!"
+    , dashboard = "Dashboard"
+    }
+
+
+
+sk : Texts
+sk =
+    { collectiveProfile = "Kolektívny profil"
+    , userProfile = "ľubovoľný profil"
+    , lightDark = "Svetlý/Tmavý"
+    , logout = "Odhlásiť sa"
+    , items = "Položky"
+    , manageData = "Správa údajov"
+    , uploadFiles = "Nahrať súbory"
+    , processingQueue = "Predná strana na spracovanie"
+    , newInvites = "Nové pozvánky"
+    , help = "Pomoc"
+    , newItemsArrived = "Prišli nové položky!"
     , dashboard = "Dashboard"
     }
 

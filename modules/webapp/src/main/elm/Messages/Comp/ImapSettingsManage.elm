@@ -10,6 +10,7 @@ module Messages.Comp.ImapSettingsManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -43,6 +44,21 @@ gb =
     , reallyDeleteSettings = "Really delete this mail-box connection?"
     , deleteThisEntry = "Delete this settings entry"
     , fillRequiredFields = "Please fill required fields."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , imapForm = Messages.Comp.ImapSettingsForm.gb
+    , imapTable = Messages.Comp.ImapSettingsTable.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , addNewImapSettings = "Pridajte nové nastavenia IMAP"
+    , newSettings = "Nové pripojenie"
+    , reallyDeleteSettings = "Naozaj odstrániť toto spojenie s poštovou schránkou?"
+    , deleteThisEntry = "Odstrániť túto položku nastavení"
+    , fillRequiredFields = "Vyplňte prosím povinné polia."
     }
 
 

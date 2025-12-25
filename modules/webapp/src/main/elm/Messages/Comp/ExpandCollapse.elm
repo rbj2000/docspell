@@ -10,6 +10,7 @@ module Messages.Comp.ExpandCollapse exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 
@@ -23,6 +24,14 @@ gb : Texts
 gb =
     { showMoreLabel = "Show More …"
     , showLessLabel = "Show Less …"
+    }
+
+
+
+sk : Texts
+sk =
+    { showMoreLabel = "Zobraziť viac…"
+    , showLessLabel = "Zobraziť menej…"
     }
 
 

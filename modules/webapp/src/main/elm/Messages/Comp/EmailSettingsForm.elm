@@ -10,6 +10,7 @@ module Messages.Comp.EmailSettingsForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.SSLType exposing (SSLType)
@@ -57,6 +58,29 @@ gb =
     , replyToPlaceholder = "Optional Reply-To E-Mail address"
     , ssl = "SSL"
     , ignoreCertCheck = "Ignore certificate check"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , sslTypeLabel = Messages.Data.SSLType.gb
+    , connectionPlaceholder = "Názov spojenia, napr. 'gmail.com'"
+    , connectionNameInfo = "Názov pripojenia nesmie obsahovať medzery ani špeciálne znaky."
+    , smtpHost = "Hostiteľ SMTP"
+    , smtpHostPlaceholder = "Názov hostiteľa SMTP, napr. 'mail.gmail.com'"
+    , smtpPort = "Port SMTP"
+    , smtpUser = "Používateľ SMTP"
+    , smtpUserPlaceholder = "Používateľské meno SMTP, napr. 'vase.meno@gmail.com'"
+    , smtpPassword = "Heslo SMTP"
+    , smtpPasswordPlaceholder = "heslo"
+    , fromAddress = "Od adresy"
+    , fromAddressPlaceholder = "E-mailová adresa odosielateľa"
+    , replyTo = "Odpovedať"
+    , replyToPlaceholder = "Voliteľná e-mailová adresa na odpoveď"
+    , ssl = "SSL"
+    , ignoreCertCheck = "Ignorovať kontrolu certifikátu"
     }
 
 

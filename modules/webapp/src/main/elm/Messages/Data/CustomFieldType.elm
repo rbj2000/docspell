@@ -9,6 +9,7 @@ module Messages.Data.CustomFieldType exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.CustomFieldType exposing (CustomFieldType(..))
@@ -16,6 +17,26 @@ import Data.CustomFieldType exposing (CustomFieldType(..))
 
 gb : CustomFieldType -> String
 gb ft =
+    case ft of
+        Text ->
+            "Text"
+
+        Numeric ->
+            "Numeric"
+
+        Date ->
+            "Date"
+
+        Boolean ->
+            "Boolean"
+
+        Money ->
+            "Money"
+
+
+
+sk : CustomFieldType -> String
+sk ft =
     case ft of
         Text ->
             "Text"

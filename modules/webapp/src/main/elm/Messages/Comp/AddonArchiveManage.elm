@@ -10,6 +10,7 @@ module Messages.Comp.AddonArchiveManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -49,6 +50,24 @@ gb =
     , installNow = "Install Addon"
     , updateNow = "Update Addon"
     , description = "Description"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , addonArchiveTable = Messages.Comp.AddonArchiveTable.gb
+    , addonArchiveForm = Messages.Comp.AddonArchiveForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , newAddonArchive = "Nový doplnok"
+    , reallyDeleteAddonArchive = "Naozaj chcete odstrániť tento doplnok?"
+    , createNewAddonArchive = "Nainštalujte nový doplnok"
+    , deleteThisAddonArchive = "Odstrániť tento doplnok"
+    , correctFormErrors = "Opravte chyby vo formulári."
+    , installNow = "Nainštalujte doplnok"
+    , updateNow = "Aktualizujte doplnok"
+    , description = "Popis"
     }
 
 

@@ -9,6 +9,7 @@ module Messages.Data.SSLType exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.SSLType exposing (SSLType(..))
@@ -19,6 +20,20 @@ gb st =
     case st of
         None ->
             "None"
+
+        SSL ->
+            "SSL/TLS"
+
+        StartTLS ->
+            "StartTLS"
+
+
+
+sk : SSLType -> String
+sk st =
+    case st of
+        None ->
+            "žiadny"
 
         SSL ->
             "SSL/TLS"

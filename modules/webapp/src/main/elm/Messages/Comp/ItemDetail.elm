@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -111,6 +112,50 @@ gb tz =
     , relatedItems = "Linked items"
     , runAddonLabel = "Run addon"
     , runAddonTitle = "Run an addon on this item"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { addFilesForm = Messages.Comp.ItemDetail.AddFilesForm.gb
+    , itemInfoHeader = Messages.Comp.ItemDetail.ItemInfoHeader.gb tz
+    , singleAttachment = Messages.Comp.ItemDetail.SingleAttachment.gb tz
+    , sentMails = Messages.Comp.SentMails.gb tz
+    , notes = Messages.Comp.ItemDetail.Notes.gb
+    , itemMail = Messages.Comp.ItemMail.gb
+    , detailEdit = Messages.Comp.DetailEdit.gb
+    , confirmModal = Messages.Comp.ItemDetail.ConfirmModal.gb
+    , itemLinkForm = Messages.Comp.ItemLinkForm.gb tz
+    , runAddonForm = Messages.Comp.ItemDetail.RunAddonForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , key = "kľúč"
+    , backToSearchResults = "Späť na výsledky vyhľadávania"
+    , previousItem = "Predchádzajúca položka"
+    , nextItem = "Ďalšia položka"
+    , sendMail = "Odoslať poštu"
+    , addMoreFiles = "Pridajte k tejto položke ďalšie súbory"
+    , confirmItemMetadata = "Potvrďte metadáta"
+    , confirm = "Potvrďte"
+    , unconfirmItemMetadata = "Zrušte potvrdenie metadát položky"
+    , reprocessItem = "Znova spracujte túto položku"
+    , deleteThisItem = "Odstrániť túto položku"
+    , undeleteThisItem = "Obnovte túto položku"
+    , sentEmails = "Odoslané e-maily"
+    , sendThisItemViaEmail = "Pošlite túto položku e-mailom"
+    , itemId = "ID položky"
+    , createdOn = "Vytvorené dňa"
+    , lastUpdateOn = "Posledná aktualizácia dňa"
+    , sendingMailNow = "Odosiela sa e-mail…"
+    , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
+    , mailSendSuccessful = "Pošta odoslaná."
+    , showQrCode = "Zobraziť URL ako QR kód"
+    , close = "Zavrieť"
+    , selectItem = "Vyberte túto položku"
+    , deselectItem = "Zrušte výber tejto položky"
+    , relatedItems = "Prepojené položky"
+    , runAddonLabel = "Spustite doplnok"
+    , runAddonTitle = "Spustite doplnok pre túto položku"
     }
 
 

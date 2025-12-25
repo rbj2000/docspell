@@ -10,6 +10,7 @@ module Messages.Comp.ShareMail exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -34,6 +35,26 @@ gb =
     , httpError = Messages.Comp.HttpError.gb
     , itemMail = Messages.Comp.ItemMail.gb
     , subjectTemplate = \mt -> "Shared Documents" ++ (Maybe.map (\n -> ": " ++ n) mt |> Maybe.withDefault "")
+    , bodyTemplate = \url -> """Hi,
+
+you can find the documents here:
+
+    """ ++ url ++ """
+
+Kind regards
+"""
+    , mailSent = "Mail sent."
+    }
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , itemMail = Messages.Comp.ItemMail.sk
+    , subjectTemplate = \mt ->
+            "Zdieľané dokumenty" ++ (Maybe.map (\n ->
+            "None" ++ n) mt |> Maybe.withDefault "")
     , bodyTemplate = \url -> """Hi,
 
 you can find the documents here:

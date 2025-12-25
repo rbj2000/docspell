@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Data.ItemColumn exposing (Texts, de, fr, gb)
+module Messages.Data.ItemColumn exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.ItemColumn exposing (ItemColumn(..))
 
@@ -23,6 +24,60 @@ gb =
             case col of
                 Name ->
                     "Name"
+
+                DateLong ->
+                    "Date"
+
+                DateShort ->
+                    "Date"
+
+                DueDateLong ->
+                    "Due date"
+
+                DueDateShort ->
+                    "Due date"
+
+                Folder ->
+                    "Folder"
+
+                Correspondent ->
+                    "Correspondent"
+
+                Concerning ->
+                    "Concerning"
+
+                Tags ->
+                    "Tags"
+    in
+    { header = headerName
+    , label =
+        \col ->
+            case col of
+                DateShort ->
+                    headerName col ++ " (short)"
+
+                DateLong ->
+                    headerName col ++ " (long)"
+
+                DueDateShort ->
+                    headerName col ++ " (short)"
+
+                DueDateLong ->
+                    headerName col ++ " (long)"
+
+                _ ->
+                    headerName col
+    }
+
+
+
+sk : Texts
+sk =
+    let
+        headerName col =
+            case col of
+                Name ->
+                    "Meno"
 
                 DateLong ->
                     "Date"

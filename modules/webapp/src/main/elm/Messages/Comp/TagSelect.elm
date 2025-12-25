@@ -10,6 +10,7 @@ module Messages.Comp.TagSelect exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Comp.ExpandCollapse
@@ -29,6 +30,16 @@ gb =
     , hideEmpty = "Hide empty"
     , showEmpty = "Show empty"
     , filterPlaceholder = "Filter …"
+    }
+
+
+
+sk : Texts
+sk =
+    { expandCollapse = Messages.Comp.ExpandCollapse.gb
+    , hideEmpty = "Skryť prázdne"
+    , showEmpty = "Zobraziť prázdne"
+    , filterPlaceholder = "Filtrovať…"
     }
 
 

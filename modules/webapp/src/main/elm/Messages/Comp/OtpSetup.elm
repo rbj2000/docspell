@@ -10,6 +10,7 @@ module Messages.Comp.OtpSetup exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -69,6 +70,34 @@ gb tz =
     , reloadToTryAgain = "If you want to try again, reload the page."
     , twoFactorNowActive = "Two Factor Authentication is now active!"
     , revertInfo = "You can revert back to password-only auth any time (reload this page)."
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { httpError = Messages.Comp.HttpError.gb
+    , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
+    , errorTitle = "Chyba"
+    , stateErrorInfoText = "Vyskytol sa problém pri určovaní aktuálneho stavu vašej schémy dvojfaktorovej autentifikácie:"
+    , errorGeneratingQR = "Chyba pri generovaní QR kódu"
+    , initErrorInfo = "Pri inicializácii dvojfaktorovej autentifikácie sa vyskytla chyba."
+    , confirmErrorInfo = "Pri potvrdzovaní nastavenia sa vyskytla chyba!"
+    , disableErrorInfo = "Pri deaktivácii 2FA sa vyskytla chyba!"
+    , twoFaActiveSince = "Odvtedy je aktívne dvojfaktorové overenie"
+    , revert2FAText = "Ak sa naozaj chcete vrátiť späť k overovaniu iba heslom, môžete to urobiť tu. Nastavenie môžete kedykoľvek spustiť, aby ste znova povolili druhý faktor."
+    , disableButton = "Zakázať 2FA"
+    , disableConfirmBoxInfo = "Zadajte kód TOTP a kliknutím na tlačidlo deaktivujte 2FA."
+    , setupTwoFactorAuth = "Nastavte dvojfaktorové overenie"
+    , setupTwoFactorAuthInfo = "Môžete nastaviť druhý faktor overenia pomocou jednorazového hesla. Po kliknutí na tlačidlo sa vygeneruje tajomstvo, ktoré si môžete načítať do aplikácie na svojom mobilnom zariadení. Aplikácia potom poskytne 6-miestny kód, ktorý musíte zadať do poľa, aby ste potvrdili a dokončili nastavenie."
+    , activateButton = "Aktivujte dvojfaktorové overenie"
+    , setupConfirmLabel = "Potvrďte"
+    , scanQRCode = "Naskenujte tento QR kód pomocou zariadenia a zadajte 6-miestny kód:"
+    , codeInvalid = "Kód bol neplatný!"
+    , ifNotQRCode = "Ak nemôžete použiť kód qr, zadajte toto tajomstvo:"
+    , reloadToTryAgain = "Ak to chcete skúsiť znova, načítajte stránku znova."
+    , twoFactorNowActive = "Dvojfaktorová autentifikácia je teraz aktívna!"
+    , revertInfo = "Kedykoľvek sa môžete vrátiť späť k autorizácii iba pomocou hesla (znova načítajte túto stránku)."
     }
 
 

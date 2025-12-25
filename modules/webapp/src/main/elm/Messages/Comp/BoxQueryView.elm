@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxQueryView exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxQueryView exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.ItemTemplate as IT
 import Data.TimeZone exposing (TimeZone)
@@ -34,6 +35,22 @@ gb tz =
     , errorOccurred = "Error retrieving data."
     , basics = Messages.Basics.gb
     , noResults = "No items found."
+    , templateCtx =
+        { dateFormatLong = DF.formatDateLong Messages.UiLanguage.English tz
+        , dateFormatShort = DF.formatDateShort Messages.UiLanguage.English tz
+        , directionLabel = Messages.Data.Direction.gb
+        }
+    , itemColumn = Messages.Data.ItemColumn.gb
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { httpError = Messages.Comp.HttpError.gb
+    , errorOccurred = "Chyba pri načítavaní údajov."
+    , basics = Messages.Basics.sk
+    , noResults = "Nenašli sme žiadnu položku."
     , templateCtx =
         { dateFormatLong = DF.formatDateLong Messages.UiLanguage.English tz
         , dateFormatShort = DF.formatDateShort Messages.UiLanguage.English tz

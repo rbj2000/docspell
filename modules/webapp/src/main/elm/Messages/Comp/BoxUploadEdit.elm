@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxUploadEdit exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxUploadEdit exposing (Texts, de, fr, gb
+    , sk)
 
 
 type alias Texts =
@@ -20,6 +21,15 @@ gb =
     { sourceLabel = "Source"
     , sourcePlaceholder = "Choose source…"
     , infoText = "Optionally choose a source otherwise default settings apply to all uploads."
+    }
+
+
+
+sk : Texts
+sk =
+    { sourceLabel = "Zdroj"
+    , sourcePlaceholder = "Vyberte zdroj…"
+    , infoText = "Voliteľne vyberte zdroj, inak sa na všetky nahrávania použijú predvolené nastavenia."
     }
 
 

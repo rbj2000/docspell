@@ -10,6 +10,7 @@ module Messages.Page.Upload exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Comp.UploadForm
@@ -22,6 +23,13 @@ type alias Texts =
 
 gb : Texts
 gb =
+    { uploadForm = Messages.Comp.UploadForm.gb
+    }
+
+
+
+sk : Texts
+sk =
     { uploadForm = Messages.Comp.UploadForm.gb
     }
 

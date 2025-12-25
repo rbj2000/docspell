@@ -10,6 +10,7 @@ module Messages.Comp.BookmarkTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -25,6 +26,14 @@ gb : Texts
 gb =
     { basics = Messages.Basics.gb
     , user = "User"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , user = "raz"
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.EventSample exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.EventType exposing (EventType)
@@ -30,6 +31,15 @@ gb =
     { eventType = Messages.Data.EventType.gb
     , httpError = Messages.Comp.HttpError.gb
     , selectEvent = "Select event…"
+    }
+
+
+
+sk : Texts
+sk =
+    { eventType = Messages.Data.EventType.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , selectEvent = "Vybrať udalosť…"
     }
 
 

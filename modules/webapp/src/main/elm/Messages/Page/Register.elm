@@ -10,6 +10,7 @@ module Messages.Page.Register exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -53,6 +54,27 @@ gb =
     , registrationSuccessful = "Registration successful."
     , passwordsDontMatch = "The passwords do not match."
     , allFieldsRequired = "All fields are required!"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , signupToDocspell = "Zaregistrujte sa do Docspell"
+    , collectiveId = "Kolektívne ID"
+    , collective = "kolektívne"
+    , userLogin = "Prihlásenie používateľa"
+    , username = "Používateľské meno"
+    , password = "heslo"
+    , passwordRepeat = "Heslo (opakovať)"
+    , invitationKey = "Pozývací kľúč"
+    , alreadySignedUp = "Už ste sa zaregistrovali?"
+    , signIn = "Prihláste sa"
+    , registrationSuccessful = "Registrácia úspešná."
+    , passwordsDontMatch = "Heslá sa nezhodujú."
+    , allFieldsRequired = "Všetky polia sú povinné!"
     }
 
 

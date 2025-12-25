@@ -10,6 +10,7 @@ module Messages.Comp.ScanMailboxForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -168,6 +169,88 @@ gb tz =
     , save = "Save"
     , saveNewTitle = "Save a new task"
     , updateTitle = "Update the task"
+    }
+
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , calEventInput = Messages.Comp.CalEventInput.sk tz
+    , httpError = Messages.Comp.HttpError.sk
+    , tagDropdown = Messages.Comp.TagDropdown.sk
+    , reallyDeleteTask = "Naozaj odstrániť túto úlohu skenovania poštovej schránky?"
+    , startOnce = "Začnite raz"
+    , startNow = "Začnite túto úlohu teraz"
+    , deleteThisTask = "Odstrániť túto úlohu"
+    , generalTab = "generál"
+    , processingTab = "Spracovanie"
+    , additionalFilterTab = "Dodatočný filter"
+    , postProcessingTab = "Post Processing"
+    , metadataTab = "Metadáta"
+    , scheduleTab = "Rozvrh"
+    , processingTabInfo = "Tieto nastavenia definujú, ktoré e-maily sa načítavajú z poštového servera."
+    , additionalFilterTabInfo = "Tieto filtre sa aplikujú na e-maily, ktoré boli prevzaté z poštovej schránky, aby sa vybrali tie, ktoré sa majú importovať."
+    , postProcessingTabInfo = "Toto definuje, čo sa stane s e-mailami, ktoré boli stiahnuté."
+    , metadataTabInfo = "Definujte metadáta, ktoré by mali byť pripojené ku všetkým položkám vytvoreným touto úlohou."
+    , scheduleTabInfo = "Definujte, kedy sa majú importovať e-maily."
+    , selectConnection = "Vybrať pripojenie..."
+    , enableDisable = "Povoliť alebo zakázať túto úlohu."
+    , mailbox = "Poštová schránka"
+    , summary = "Zhrnutie"
+    , summaryInfo = "Nejaký ľudsky čitateľný názov, len na zobrazenie"
+    , connectionInfo = "Pripojenie IMAP, ktoré sa má použiť na načítanie pošty."
+    , folders = "Priečinky"
+    , foldersInfo = "Priečinky na vyhľadávanie e-mailov."
+    , receivedHoursInfo = "Vyberte správy novšie ako „teraz – prijaté hodiny“."
+    , receivedHoursLabel = "Prijaté od hodín"
+    , fileFilter = "Filter súborov"
+    , fileFilterInfo = "Zadajte skupinu súborov na filtrovanie príloh. Ak chcete napríklad extrahovať iba súbory PDF:"
+            ++ "`*.pdf`. If you want to include the mail body, allow html files or "
+            ++ "`mail.html`. Globs can be combined via OR, like this: "
+            ++ "`*.pdf|mail.html`. No file filter defaults to "
+            ++ "`*` that includes all"
+    , subjectFilter = "Filter predmetu"
+    , subjectFilterInfo = "Zadajte súbor glob na filtrovanie e-mailov podľa predmetu. Napríklad:"
+            ++ "`*Scanned Document*`. No file filter defaults to `*` that includes all."
+    , postProcessingLabel = "Použiť následné spracovanie na všetky načítané e-maily."
+    , postProcessingInfo = "Keď sú e-maily načítané, ale nie sú importované kvôli 'Doplnkovým filtrom', tento príznak môže"
+            ++ "control whether they should be moved to a target folder or deleted (whatever is "
+            ++ "defined here) nevertheless. If unchecked only imported mails "
+            ++ "are post-processed, others stay where they are."
+    , targetFolder = "Cieľový priečinok"
+    , targetFolderInfo = "Presuňte správy do tohto priečinka."
+    , deleteMailLabel = "Odstrániť importované e-maily"
+    , deleteMailInfo = "Či sa majú odstrániť všetky e-maily načítané pomocou docspell. To platí len vtedy, ak"
+            ++ "*target folder* is not set."
+    , itemDirection = "Smer položky"
+    , automatic = "Automaticky"
+    , itemDirectionInfo = "Nastavuje smer položky. Ak viete, že všetky maily prichádzajú, resp"
+            ++ "outgoing, you can set it here. Otherwise it will be guessed from looking "
+            ++ "at sender and receiver."
+    , itemFolder = "Priečinok položiek"
+    , itemFolderInfo = "Vložte všetky položky z tejto poštovej schránky do vybratého priečinka"
+    , tagsInfo = "Vyberte značky, ktoré sa majú použiť na položky."
+    , documentLanguage = "Jazyk"
+    , documentLanguageInfo = "Používa sa na extrakciu textu a analýzu textu. The"
+            ++ "collective's default language is used, if not specified here."
+    , scanRecursivelyInfo = "Skenujte aj e-maily v podpriečinkoch daných priečinkov."
+    , scanRecursivelyLabel = "Skenujte priečinky rekurzívne"
+    , schedule = "Rozvrh"
+    , scheduleClickForHelp = "Kliknutím sem získate pomoc"
+    , scheduleInfo = "Zadajte, ako často a kedy sa má táto úloha spúšťať."
+            ++ "Use English 3-letter weekdays. Either a single value, "
+            ++ "a list (ex. 1,2,3), a range (ex. 1..3) or a '*' (meaning all) "
+            ++ "is allowed for each part."
+    , connectionMissing = "Nie sú nakonfigurované žiadne e-mailové pripojenia. Prejdite do Nastavenia e-mailu a pridajte ho."
+    , noProcessingFolders = "Nie sú zadané žiadne priečinky na spracovanie."
+    , invalidCalEvent = "Udalosť v kalendári nie je platná."
+    , attachmentsOnlyLabel = "Importujte iba prílohy e-mailov"
+    , attachmentsOnlyInfo = "Zahodí telo e-mailu a importuje iba prílohy."
+    , save = "Uložiť"
+    , saveNewTitle = "Uložiť novú úlohu"
+    , updateTitle = "Aktualizujte úlohu"
     }
 
 

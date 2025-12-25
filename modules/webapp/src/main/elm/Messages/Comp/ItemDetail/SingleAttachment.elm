@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail.SingleAttachment exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -55,6 +56,28 @@ gb tz =
     , exitSelectMode = "Exit Select Mode"
     , deleteAttachments = "Delete attachments"
     , showQrCode = "Show URL as QR code"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { attachmentMeta = Messages.Comp.AttachmentMeta.gb tz
+    , confirmModal = Messages.Comp.ItemDetail.ConfirmModal.gb
+    , noName = "Bez mena"
+    , openFileInNewTab = "Otvorte súbor na novej karte"
+    , downloadFile = "Stiahnite si súbor"
+    , renameFile = "Premenovať súbor"
+    , downloadOriginalArchiveFile = "Stiahnite si originálny archív"
+    , originalFile = "Pôvodný súbor"
+    , renderPdfByBrowser = "Vykresliť pdf pomocou prehliadača"
+    , viewExtractedData = "Zobraziť extrahované údaje"
+    , reprocessFile = "Znova spracujte tento súbor"
+    , deleteThisFile = "Odstrániť tento súbor"
+    , selectModeTitle = "Vyberte položku Režim"
+    , exitSelectMode = "Ukončite režim výberu"
+    , deleteAttachments = "Odstrániť prílohy"
+    , showQrCode = "Zobraziť URL ako QR kód"
     }
 
 

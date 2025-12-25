@@ -30,7 +30,7 @@ sk : Direction -> String
 sk dir =
     case dir of
         Incoming ->
-            "Prichádzajúce"
+            "Incoming"
 
         Outgoing ->
             "Outgoing"

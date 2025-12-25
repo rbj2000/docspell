@@ -10,6 +10,7 @@ module Messages.Comp.EquipmentTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.EquipmentUse exposing (EquipmentUse)
@@ -28,6 +29,15 @@ gb : Texts
 gb =
     { basics = Messages.Basics.gb
     , use = "Use"
+    , equipmentUseLabel = Messages.Data.EquipmentUse.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , use = "Použite"
     , equipmentUseLabel = Messages.Data.EquipmentUse.gb
     }
 

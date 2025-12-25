@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxSearchQueryInput exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxSearchQueryInput exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Comp.BookmarkDropdown
 
@@ -24,6 +25,16 @@ gb =
     , switchToBookmark = "Bookmarks"
     , switchToQuery = "Search query"
     , searchPlaceholder = "Search…"
+    }
+
+
+
+sk : Texts
+sk =
+    { bookmarkDropdown = Messages.Comp.BookmarkDropdown.gb
+    , switchToBookmark = "Záložky"
+    , switchToQuery = "Vyhľadávací dopyt"
+    , searchPlaceholder = "Hľadať…"
     }
 
 

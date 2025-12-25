@@ -47,6 +47,22 @@ gb tz =
     }
 
 
+
+sk : TimeZone -> Texts
+sk tz =
+    { passwordForm = Messages.Comp.SharePasswordForm.sk
+    , basics = Messages.Basics.sk
+    , field = Messages.Data.Fields.sk
+    , formatDateLong = Messages.DateFormat.formatDateLong Slovak tz
+    , formatDateShort = Messages.DateFormat.formatDateShort Slovak tz
+    , authFailed = "Tento podiel neexistuje."
+    , httpError = Messages.Comp.HttpError.sk
+    , tagsAndFields = "Tagy a polia"
+    , noName = "Bez mena"
+    , unconfirmed = "Nepotvrdené"
+    }
+
+
 de : TimeZone -> Texts
 de tz =
     { passwordForm = Messages.Comp.SharePasswordForm.de

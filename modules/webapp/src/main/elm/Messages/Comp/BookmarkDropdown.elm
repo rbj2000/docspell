@@ -10,6 +10,7 @@ module Messages.Comp.BookmarkDropdown exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -31,6 +32,17 @@ gb =
     , personal = "Personal"
     , collective = "Collective"
     , share = "Share"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , placeholder = "Záložka…"
+    , personal = "Osobné"
+    , collective = "kolektívne"
+    , share = "podiel"
     }
 
 

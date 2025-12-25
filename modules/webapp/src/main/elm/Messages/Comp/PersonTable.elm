@@ -10,6 +10,7 @@ module Messages.Comp.PersonTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.PersonUse exposing (PersonUse)
@@ -32,6 +33,17 @@ gb =
     , address = "Address"
     , contact = "Contact"
     , use = "Use"
+    , personUseLabel = Messages.Data.PersonUse.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , address = "Adresa"
+    , contact = "Kontaktovať"
+    , use = "Použite"
     , personUseLabel = Messages.Data.PersonUse.gb
     }
 

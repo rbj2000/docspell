@@ -10,6 +10,7 @@ module Messages.Comp.BookmarkManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -47,6 +48,23 @@ gb =
     , correctFormErrors = "Please correct the errors in the form."
     , userBookmarks = "Personal bookmarks"
     , collectiveBookmarks = "Collective bookmarks"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , bookmarkTable = Messages.Comp.BookmarkTable.gb
+    , bookmarkForm = Messages.Comp.BookmarkQueryForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , newBookmark = "Nová záložka"
+    , reallyDeleteBookmark = "Naozaj odstrániť túto záložku?"
+    , createNewBookmark = "Vytvorte si novú záložku"
+    , deleteThisBookmark = "Odstrániť túto záložku"
+    , correctFormErrors = "Opravte chyby vo formulári."
+    , userBookmarks = "Osobné záložky"
+    , collectiveBookmarks = "Hromadné záložky"
     }
 
 

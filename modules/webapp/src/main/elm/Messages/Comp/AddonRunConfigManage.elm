@@ -10,6 +10,7 @@ module Messages.Comp.AddonRunConfigManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -44,6 +45,21 @@ gb tz =
     , createNewAddonRunConfig = "Create a new run configuration"
     , deleteThisAddonRunConfig = "Delete this run configuration"
     , correctFormErrors = "Please correct the errors in the form."
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , addonArchiveTable = Messages.Comp.AddonRunConfigTable.gb
+    , addonArchiveForm = Messages.Comp.AddonRunConfigForm.gb tz
+    , httpError = Messages.Comp.HttpError.gb
+    , newAddonRunConfig = "Nové"
+    , reallyDeleteAddonRunConfig = "Naozaj odstrániť túto konfiguráciu spustenia?"
+    , createNewAddonRunConfig = "Vytvorte novú konfiguráciu behu"
+    , deleteThisAddonRunConfig = "túto konfiguráciu spustenia"
+    , correctFormErrors = "Opravte chyby vo formulári."
     }
 
 

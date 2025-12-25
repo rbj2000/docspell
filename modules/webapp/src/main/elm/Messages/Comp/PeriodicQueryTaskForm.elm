@@ -10,6 +10,7 @@ module Messages.Comp.PeriodicQueryTaskForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -82,6 +83,41 @@ gb tz =
     , messageContentLabel = "Beginning of message"
     , messageContentInfo = "Insert text that is prependend to the generated message."
     , messageContentPlaceholder = "Hello, this is Docspell informing you about new items …"
+    }
+
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , calEventInput = Messages.Comp.CalEventInput.sk tz
+    , channelForm = Messages.Comp.ChannelForm.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , bookmarkDropdown = Messages.Comp.BookmarkDropdown.sk
+    , channelRef = Messages.Comp.ChannelRefInput.sk
+    , reallyDeleteTask = "Naozaj chcete odstrániť túto úlohu upozornení?"
+    , startOnce = "Začnite raz"
+    , startTaskNow = "Začnite túto úlohu teraz"
+    , deleteThisTask = "Odstrániť túto úlohu"
+    , enableDisable = "Povoliť alebo zakázať túto úlohu."
+    , summary = "Zhrnutie"
+    , summaryInfo = "Nejaký ľudsky čitateľný názov, len na zobrazenie"
+    , schedule = "Rozvrh"
+    , scheduleClickForHelp = "Kliknutím sem získate pomoc"
+    , scheduleInfo = "Zadajte, ako často a kedy sa má táto úloha spúšťať."
+            ++ "Use English 3-letter weekdays. Either a single value, "
+            ++ "a list (ex. 1,2,3), a range (ex. 1..3) or a '*' (meaning all) "
+            ++ "is allowed for each part."
+    , invalidCalEvent = "Udalosť v kalendári nie je platná."
+    , queryLabel = "Dopyt"
+    , channelRequired = "Musíte zadať platný kanál."
+    , queryStringRequired = "Je potrebné zadať reťazec dopytu a/alebo záložku"
+    , channelHeader = "Kanály"
+    , messageContentTitle = "Prispôsobiť správu"
+    , messageContentLabel = "Začiatok správy"
+    , messageContentInfo = "Vložte text, ktorý je pred vygenerovanou správou."
+    , messageContentPlaceholder = "Dobrý deň, toto je Docspell, ktorý vás informuje o nových položkách..."
     }
 
 

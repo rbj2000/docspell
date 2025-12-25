@@ -10,6 +10,7 @@ module Messages.Comp.AddonRunConfigForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -57,6 +58,29 @@ gb tz =
     , argumentsUpdated = "Arguments updated"
     , configureTitle = "Configure this addon"
     , configureLabel = "Configure"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , calEventInput = Messages.Comp.CalEventInput.gb tz
+    , enableDisable = "Povoliť alebo zakázať túto konfiguráciu spustenia."
+    , chooseName = "Vyberte meno…"
+    , impersonateUser = "Spustiť v mene používateľa"
+    , triggerRun = "Trigger Run"
+    , schedule = "Rozvrh"
+    , addons = "Addons"
+    , includedAddons = "Zahrnuté doplnky"
+    , add = "Pridať"
+    , readMore = "odoslaný si viac"
+    , readLess = "Čítajte menej"
+    , arguments = "Argumentácia"
+    , update = "Aktualizovať"
+    , argumentsUpdated = "Argumenty aktualizované"
+    , configureTitle = "Nakonfigurujte tento doplnok"
+    , configureLabel = "Konfigurovať"
     }
 
 

@@ -9,6 +9,7 @@ module Messages.Comp.HttpError exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -28,6 +29,28 @@ gb err =
             , notFound = "The requested resource doesn't exist."
             , invalidBody = \str -> "There was an error decoding the response: " ++ str
             , accessDenied = "Access denied"
+            }
+    in
+    errorToString texts err
+
+
+
+sk : Http.Error -> String
+sk err =
+    let
+        texts =
+            { badUrl = \url ->
+            "S touto webovou adresou nie je niečo v poriadku:" ++ url
+            , timeout = "Vypršal časový limit siete."
+            , networkError = "Vyskytla sa chyba siete."
+            , invalidResponseStatus =
+                \status ->
+            "Vyskytla sa neplatná odpoveď:" ++ String.fromInt status ++ "."
+            , invalidInput = "Neplatný vstup pri spracovaní požiadavky."
+            , notFound = "Požadovaný zdroj neexistuje."
+            , invalidBody = \str ->
+            "Pri dekódovaní odpovede sa vyskytla chyba:" ++ str
+            , accessDenied = "Prístup odmietnutý"
             }
     in
     errorToString texts err

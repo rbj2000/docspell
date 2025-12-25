@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail.ItemInfoHeader exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -35,6 +36,18 @@ gb tz =
     , dueDate = "Due Date"
     , source = "Source"
     , new = "New"
+    , formatDate = DF.formatDateLong Messages.UiLanguage.English tz
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , itemDate = "Dátum položky"
+    , dueDate = "Dátum splatnosti"
+    , source = "Zdroj"
+    , new = "Nové"
     , formatDate = DF.formatDateLong Messages.UiLanguage.English tz
     }
 

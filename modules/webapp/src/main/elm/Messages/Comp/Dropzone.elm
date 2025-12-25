@@ -10,6 +10,7 @@ module Messages.Comp.Dropzone exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -30,6 +31,17 @@ gb =
     , or = "Or"
     , selectInfo =
         "Choose document files (pdf, docx, txt, html, …). "
+            ++ "Archives (zip and eml) are extracted."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , dropFilesHere = "Sem presuňte súbory"
+    , or = "Alebo"
+    , selectInfo = "Vyberte súbory dokumentov (pdf, docx, txt, html, ...)."
             ++ "Archives (zip and eml) are extracted."
     }
 

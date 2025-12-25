@@ -10,6 +10,7 @@ module Messages.Comp.CalEventInput exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -45,6 +46,23 @@ gb tz =
     , error = "Error"
     , schedule = "Schedule"
     , next = "Next"
+    , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
+    , httpError = Messages.Comp.HttpError.gb
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { weekday = "Pracovný deň"
+    , year = "rok"
+    , month = "mesiac"
+    , day = "deň"
+    , hour = "hodina"
+    , minute = "Minúta"
+    , error = "Chyba"
+    , schedule = "Rozvrh"
+    , next = "Ďalej"
     , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
     , httpError = Messages.Comp.HttpError.gb
     }

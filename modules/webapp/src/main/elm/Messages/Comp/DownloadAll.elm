@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.DownloadAll exposing (Texts, de, fr, gb)
+module Messages.Comp.DownloadAll exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Data.DownloadFileType
 import Util.Size
@@ -56,6 +57,35 @@ gb =
     , downloadCreateText = "You can create the download at the server. Once it is ready, the button will download the zip file."
     , downloadCreate = "Create download"
     , downloadNow = "Download now!"
+    }
+
+
+
+sk : Texts
+sk =
+    { downloadFileType = Messages.Data.DownloadFileType.gb
+    , downloadFileTypeLabel = "Aké súbory"
+    , noResults = "Žiadne výsledky na stiahnutie."
+    , summary = \files -> \size ->
+            "Sťahovanie pozostáva z" ++ String.fromInt files ++ " files (" ++ size ++ ")."
+    , close = "Zavrieť"
+    , downloadPreparing = "Sťahovanie sa pripravuje…"
+    , downloadTooLarge = "Sťahovanie je príliš veľké."
+    , downloadConfigText =
+        \maxNum ->
+            \maxSize ->
+                \curSize ->
+            "Maximálny povolený počet súborov je"
+                        ++ String.fromInt maxNum
+                        ++ " and maximum size is "
+                        ++ byteStr maxSize
+                        ++ " (current size would be "
+                        ++ byteStr curSize
+                        ++ "). "
+    , downloadReady = "Sťahovanie je pripravené!"
+    , downloadCreateText = "Sťahovanie môžete vytvoriť na serveri. Keď bude pripravený, tlačidlo stiahne súbor zip."
+    , downloadCreate = "Vytvoriť sťahovanie"
+    , downloadNow = "Stiahnuť teraz!"
     }
 
 

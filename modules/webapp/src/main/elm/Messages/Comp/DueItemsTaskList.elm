@@ -10,6 +10,7 @@ module Messages.Comp.DueItemsTaskList exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -32,6 +33,17 @@ gb =
     , summary = "Summary"
     , schedule = "Schedule"
     , connection = "Channel"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , channelType = Messages.Data.ChannelType.gb
+    , summary = "Zhrnutie"
+    , schedule = "Rozvrh"
+    , connection = "kanál"
     }
 
 

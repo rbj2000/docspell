@@ -10,6 +10,7 @@ module Messages.Comp.UiSettingsForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Color exposing (Color)
@@ -103,6 +104,82 @@ gb =
     , tagColorDescription = "Tags can be represented differently based on their category."
     , fields = "Fields"
     , fieldsInfo = "Choose which fields to display in search and edit menus."
+    , fieldLabel = Messages.Data.Fields.gb
+    , templateHelpMessage =
+        """
+A pattern allows to customize the title and subtitle of each card.
+Variables expressions are enclosed in `{{` and `}}`, other text is
+used as-is. The following variables are available:
+
+- `{{name}}` the item name
+- `{{source}}` the source the item was created from
+- `{{folder}}` the items folder
+- `{{corrOrg}}` the correspondent organization
+- `{{corrPerson}}` the correspondent person
+- `{{correspondent}}` both organization and person separated by a comma
+- `{{concPerson}}` the concerning person
+- `{{concEquip}}` the concerning equipment
+- `{{concerning}}` both person and equipment separated by a comma
+- `{{fileCount}}` the number of attachments of this item
+- `{{dateLong}}` the item date as full formatted date
+- `{{dateShort}}` the item date as short formatted date (yyyy/mm/dd)
+- `{{dueDateLong}}` the item due date as full formatted date
+- `{{dueDateShort}}` the item due date as short formatted date (yyyy/mm/dd)
+- `{{direction}}` the items direction values as string
+
+If some variable is not present, an empty string is rendered. You can
+combine multiple variables with `|` to use the first non-empty one,
+for example `{{corrOrg|corrPerson|-}}` would render the organization
+and if that is not present the person. If both are absent a dash `-`
+is rendered.
+"""
+    , pdfMode = Messages.Data.PdfMode.gb
+    , resetLabel = "Reset"
+    }
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , general = "generál"
+    , showSideMenuByDefault = "Predvolene zobraziť bočnú ponuku"
+    , uiLanguage = "Jazyk používateľského rozhrania"
+    , itemSearch = "Vyhľadávanie položiek"
+    , maxResultsPerPageInfo =
+        \max ->
+            "Maximálny výsledok na jednej stránke pri vyhľadávacom počte výrobkov. Nanajvýš"
+                ++ String.fromInt max
+                ++ "."
+    , maxResultsPerPage = "Veľkosť stránky"
+    , showBasicSearchStatsByDefault = "Predvolene zobrazovať základné štatistiky vyhľadávania"
+    , enablePowerSearch = "Povoliť vyhľadávací panel pre pokročilých používateľov"
+    , itemCards = "Karty položiek"
+    , maxNoteSize = "Max. Poznámka Dĺžka"
+    , maxNoteSizeInfo =
+        \max ->
+            "Maximálna veľkosť poznámky k položke na zobrazení v zobrazení karty. Medzi 0 -"
+                ++ String.fromInt max
+                ++ "."
+    , sizeOfItemPreview = "Veľkosť náhľadu položky"
+    , cardTitlePattern = "Vzor názvu karty"
+    , togglePatternHelpText = "Prepnúť text pomocníka so vzorom"
+    , cardSubtitlePattern = "Vzor titulkov karty"
+    , searchMenu = "Ponuka vyhľadávania"
+    , searchMenuTagCount = "Počet značiek v ponuke vyhľadávania"
+    , searchMenuTagCountInfo = "Koľko značiek naraz zobraziť v ponuke vyhľadávania. Ostatné je možné rozšíriť. Ak chcete vždy zobraziť všetko, použite 0."
+    , searchMenuCatCount = "Počet kategórií v ponuke vyhľadávania"
+    , searchMenuCatCountInfo = "Koľko kategórií naraz zobraziť v ponuke vyhľadávania. Ostatné je možné rozšíriť. Ak chcete vždy zobraziť všetko, použite 0."
+    , searchMenuFolderCount = "Počet priečinkov v ponuke vyhľadávania"
+    , searchMenuFolderCountInfo = "Koľko priečinkov naraz zobraziť v ponuke vyhľadávania. Ďalšie priečinky je možné rozšíriť. Ak chcete vždy zobraziť všetko, použite 0."
+    , itemDetail = "Detail položky"
+    , browserNativePdfView = "Ukážka PDF natívneho prehliadača"
+    , keyboardShortcutLabel = "Na navigáciu použite klávesové skratky a potvrďte/zrušte potvrdenie s otvorenou ponukou úprav."
+    , tagCategoryColors = "Farby kategórie štítkov"
+    , colorLabel = Messages.Data.Color.gb
+    , chooseTagColorLabel = "Vyberte farbu pre kategórie značiek"
+    , tagColorDescription = "Značky môžu byť reprezentované rôzne na základe ich kategórie."
+    , fields = "Polia"
+    , fieldsInfo = "Vyberte, ktoré polia sa majú zobraziť v ponukách vyhľadávania a úprav."
     , fieldLabel = Messages.Data.Fields.gb
     , templateHelpMessage =
         """

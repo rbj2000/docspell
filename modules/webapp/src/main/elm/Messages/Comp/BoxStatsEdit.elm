@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxStatsEdit exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxStatsEdit exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Comp.BoxSearchQueryInput
 
@@ -26,6 +27,17 @@ gb =
     , basicNumbers = "Basic numbers"
     , showLabel = "Display"
     , showItemCount = "Show item count"
+    }
+
+
+
+sk : Texts
+sk =
+    { searchQuery = Messages.Comp.BoxSearchQueryInput.gb
+    , fieldStatistics = "Štatistika v teréne"
+    , basicNumbers = "Základné čísla"
+    , showLabel = "Displej"
+    , showItemCount = "Zobraziť počet položiek"
     }
 
 

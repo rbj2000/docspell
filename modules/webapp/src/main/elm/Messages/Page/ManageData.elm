@@ -10,6 +10,7 @@ module Messages.Page.ManageData exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -59,6 +60,26 @@ gb tz =
     , bookmarks = "Bookmarks"
     , addonArchives = "Addons"
     , addonRunConfigs = "Addon Run Configurations"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , tagManage = Messages.Comp.TagManage.gb
+    , equipmentManage = Messages.Comp.EquipmentManage.gb
+    , orgManage = Messages.Comp.OrgManage.gb
+    , personManage = Messages.Comp.PersonManage.gb
+    , folderManage = Messages.Comp.FolderManage.gb tz
+    , customFieldManage = Messages.Comp.CustomFieldManage.gb tz
+    , bookmarkManage = Messages.Comp.BookmarkManage.gb
+    , addonArchiveManage = Messages.Comp.AddonArchiveManage.gb
+    , addonRunConfigManage = Messages.Comp.AddonRunConfigManage.gb tz
+    , manageData = "Správa údajov"
+    , bookmarks = "Záložky"
+    , addonArchives = "Addons"
+    , addonRunConfigs = "Konfigurácie spustenia doplnku"
     }
 
 

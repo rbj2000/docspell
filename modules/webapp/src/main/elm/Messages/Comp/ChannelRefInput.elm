@@ -10,6 +10,7 @@ module Messages.Comp.ChannelRefInput exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -30,6 +31,16 @@ gb =
     , channelType = Messages.Data.ChannelType.gb
     , placeholder = "Choose…"
     , noCategory = "No channel"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , channelType = Messages.Data.ChannelType.gb
+    , placeholder = "Vyberte si…"
+    , noCategory = "Žiadny kanál"
     }
 
 

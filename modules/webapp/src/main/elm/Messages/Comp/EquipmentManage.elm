@@ -10,6 +10,7 @@ module Messages.Comp.EquipmentManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -43,6 +44,21 @@ gb =
     , reallyDeleteEquipment = "Really delete this equipment?"
     , deleteThisEquipment = "Delete this equipment"
     , correctFormErrors = "Please correct the errors in the form."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , equipmentTable = Messages.Comp.EquipmentTable.gb
+    , equipmentForm = Messages.Comp.EquipmentForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , createNewEquipment = "Vytvorte nové zariadenie"
+    , newEquipment = "Nové vybavenie"
+    , reallyDeleteEquipment = "Naozaj odstrániť toto zariadenie?"
+    , deleteThisEquipment = "Odstráňte toto zariadenie"
+    , correctFormErrors = "Opravte chyby vo formulári."
     }
 
 

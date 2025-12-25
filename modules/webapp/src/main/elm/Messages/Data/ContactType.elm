@@ -9,6 +9,7 @@ module Messages.Data.ContactType exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.ContactType exposing (ContactType(..))
@@ -19,6 +20,26 @@ gb ct =
     case ct of
         Phone ->
             "Phone"
+
+        Mobile ->
+            "Mobile"
+
+        Fax ->
+            "Fax"
+
+        Email ->
+            "Email"
+
+        Website ->
+            "Website"
+
+
+
+sk : ContactType -> String
+sk ct =
+    case ct of
+        Phone ->
+            "Telefón"
 
         Mobile ->
             "Mobile"

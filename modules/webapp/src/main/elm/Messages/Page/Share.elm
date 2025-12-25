@@ -60,6 +60,29 @@ gb tz =
     }
 
 
+
+sk : TimeZone -> Texts
+sk tz =
+    { searchMenu = Messages.Comp.SearchMenu.sk
+    , basics = Messages.Basics.sk
+    , itemCardList = Messages.Comp.ItemCardList.sk tz
+    , passwordForm = Messages.Comp.SharePasswordForm.sk
+    , downloadAll = Messages.Comp.DownloadAll.sk
+    , authFailed = "Tento podiel neexistuje."
+    , httpError = Messages.Comp.HttpError.sk
+    , fulltextPlaceholder = "Fulltextové vyhľadávanie…"
+    , powerSearchPlaceholder = "Rozšírené vyhľadávanie…"
+    , extendedSearch = "Rozšírený vyhľadávací dopyt"
+    , normalSearchPlaceholder = "Hľadať…"
+    , showItemGroups = "Skupina podľa mesiaca"
+    , listView = "Zobrazenie zoznamu"
+    , tileView = "Pohľad na dlaždice"
+    , downloadAllLabel = "Stiahnuť všetko"
+    , loadMore = "Načítať viac…"
+    , thatsAll = "To je všetko"
+    }
+
+
 de : TimeZone -> Texts
 de tz =
     { searchMenu = Messages.Comp.SearchMenu.de

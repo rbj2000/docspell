@@ -10,6 +10,7 @@ module Messages.Comp.FolderTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -32,6 +33,16 @@ gb tz =
     , memberCount = "#Member"
     , formatDateShort = DF.formatDateShort Messages.UiLanguage.English tz
     , owner = "Owner"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , memberCount = "#Člen"
+    , formatDateShort = DF.formatDateShort Messages.UiLanguage.English tz
+    , owner = "Vlastník"
     }
 
 

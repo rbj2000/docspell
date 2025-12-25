@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Page.DefaultDashboard exposing (Texts, de, fr, gb)
+module Messages.Page.DefaultDashboard exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Basics
 
@@ -32,6 +33,21 @@ gb =
     , summaryName = "Summary"
     , dueInDays = \n -> "Due in " ++ String.fromInt n ++ " days"
     , newDocsName = "New Documents"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , default = "Predvolené"
+    , welcomeName = "Uvítacia správa"
+    , welcomeTitle = "# Vitajte v Docspell"
+    , welcomeBody = "Docspell udržiava vaše dokumenty organizované."
+    , summaryName = "Zhrnutie"
+    , dueInDays = \n ->
+            "Splatné v" ++ String.fromInt n ++ " days"
+    , newDocsName = "Nové dokumenty"
     }
 
 

@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.ItemDetail.RunAddonForm exposing (Texts, de, fr, gb)
+module Messages.Comp.ItemDetail.RunAddonForm exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Basics
 
@@ -24,6 +25,16 @@ gb =
     , runAddon = "Run an addon"
     , addonRunConfig = "Addon run configuration"
     , runAddonTitle = "Run the selected addon on this item."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , runAddon = "Spustite doplnok"
+    , addonRunConfig = "Konfigurácia spustenia doplnku"
+    , runAddonTitle = "Spustite vybraný doplnok na tejto položke."
     }
 
 

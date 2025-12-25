@@ -10,6 +10,7 @@ module Messages.Comp.ItemMail exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -51,6 +52,26 @@ gb =
     , sendLabel = "Send"
     , moreRecipients = "More…"
     , lessRecipients = "Less…"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , selectConnection = "Vybrať pripojenie..."
+    , sendVia = "Odoslať cez"
+    , recipients = "príjemca(i)"
+    , ccRecipients = "CC"
+    , bccRecipients = "BCC"
+    , subject = "Predmet"
+    , body = "Telo"
+    , includeAllAttachments = "Zahrňte všetky prílohy položiek"
+    , connectionMissing = "Nie sú nakonfigurované žiadne e-mailové pripojenia. Ak ho chcete pridať, prejdite do používateľských nastavení."
+    , sendLabel = "Odoslať"
+    , moreRecipients = "Viac…"
+    , lessRecipients = "Menej…"
     }
 
 

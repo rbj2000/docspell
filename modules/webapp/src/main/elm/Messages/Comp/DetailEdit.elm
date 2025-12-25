@@ -10,6 +10,7 @@ module Messages.Comp.DetailEdit exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -56,6 +57,26 @@ gb =
     , addOrgHeader = "Add Organization"
     , addEquipmentHeader = "Add Equipment"
     , addCustomFieldHeader = "Add Custom Field"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , tagForm = Messages.Comp.TagForm.gb
+    , personForm = Messages.Comp.PersonForm.gb
+    , orgForm = Messages.Comp.OrgForm.gb
+    , equipmentForm = Messages.Comp.EquipmentForm.gb
+    , customFieldForm = Messages.Comp.CustomFieldForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , submitSuccessful = "Úspešne uložené."
+    , missingRequiredFields = "Vyplňte prosím povinné polia."
+    , addTagHeader = "Pridať značku"
+    , addPersonHeader = "Pridať osobu"
+    , addOrgHeader = "Pridať organizáciu"
+    , addEquipmentHeader = "Pridať vybavenie"
+    , addCustomFieldHeader = "Pridať vlastné pole"
     }
 
 

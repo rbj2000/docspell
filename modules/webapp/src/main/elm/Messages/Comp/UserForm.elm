@@ -10,6 +10,7 @@ module Messages.Comp.UserForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -31,6 +32,17 @@ gb =
     , state = "State"
     , email = "E-Mail"
     , password = "Password"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , login = "Prihláste sa"
+    , state = "štátu"
+    , email = "E-mail"
+    , password = "heslo"
     }
 
 

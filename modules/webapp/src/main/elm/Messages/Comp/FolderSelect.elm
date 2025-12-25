@@ -10,6 +10,7 @@ module Messages.Comp.FolderSelect exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Comp.ExpandCollapse
@@ -22,6 +23,13 @@ type alias Texts =
 
 gb : Texts
 gb =
+    { expandCollapse = Messages.Comp.ExpandCollapse.gb
+    }
+
+
+
+sk : Texts
+sk =
     { expandCollapse = Messages.Comp.ExpandCollapse.gb
     }
 

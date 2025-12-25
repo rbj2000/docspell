@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Data.ChannelType exposing (Texts, de, fr, gb)
+module Messages.Data.ChannelType exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.ChannelType exposing (ChannelType)
 
@@ -16,6 +17,23 @@ type alias Texts =
 
 gb : Texts
 gb ct =
+    case ct of
+        Data.ChannelType.Matrix ->
+            "Matrix"
+
+        Data.ChannelType.Gotify ->
+            "Gotify"
+
+        Data.ChannelType.Mail ->
+            "E-Mail"
+
+        Data.ChannelType.Http ->
+            "JSON"
+
+
+
+sk : Texts
+sk ct =
     case ct of
         Data.ChannelType.Matrix ->
             "Matrix"

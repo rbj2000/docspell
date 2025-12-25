@@ -10,6 +10,7 @@ module Messages.Comp.BookmarkQueryManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -34,6 +35,17 @@ gb =
     , httpError = Messages.Comp.HttpError.gb
     , formInvalid = "Please correct errors in the form"
     , saved = "Bookmark saved"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , form = Messages.Comp.BookmarkQueryForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , formInvalid = "Opravte chyby vo formulári"
+    , saved = "Záložka bola uložená"
     }
 
 

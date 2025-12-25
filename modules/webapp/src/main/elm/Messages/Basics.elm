@@ -10,6 +10,7 @@ module Messages.Basics exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 
@@ -96,6 +97,50 @@ item visible. This message will disappear then.
     , sources = "Sources"
     , periodicQueries = "Periodic Queries"
     , notificationHooks = "Webhooks"
+    }
+
+
+
+sk : Texts
+sk =
+    { incoming = "Prichádzajúce"
+    , outgoing = "O nedávno"
+    , deleted = "Odstránené"
+    , tags = "Tagy"
+    , items = "Položky"
+    , submit = "Odoslať"
+    , submitThisForm = "Odošlite tento formulár"
+    , cancel = "Zrušiť"
+    , delete = "Odstrániť"
+    , created = "Vytvorené"
+    , edit = "Upraviť"
+    , back = "Späť"
+    , backToList = "Späť na zoznam"
+    , searchPlaceholder = "Hľadať…"
+    , selectPlaceholder = "Vybrať…"
+    , id = "Id"
+    , ok = "Dobre"
+    , yes = "áno"
+    , no = "Nie"
+    , chooseTag = "Vyberte štítok…"
+    , loading = "Načítava sa…"
+    , name = "Meno"
+    , organization = "Organizácia"
+    , person = "Osoba"
+    , equipment = "Vybavenie"
+    , folder = "Priečinok"
+    , date = "Dátum"
+    , correspondent = "Korešpondent"
+    , concerning = "Čo sa týka"
+    , customFields = "Vlastné polia"
+    , direction = "Smer"
+    , folderNotOwnerWarning = """**nie ste členom** tohto priečinka. Táto položka bude **skrytá**
+z vyhľadávania teraz. Použite na to priečinok, ktorého ste členom
+položka je viditeľná. Táto správa potom zmizne."""
+    , shares = "akcie"
+    , sources = "Zdroje"
+    , periodicQueries = "Pravidelné otázky"
+    , notificationHooks = "Webhooky"
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.EquipmentForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.EquipmentUse exposing (EquipmentUse)
@@ -35,6 +36,18 @@ gb =
     , useNotSuggestions = "Do not use for suggestions."
     , equipmentUseLabel = Messages.Data.EquipmentUse.gb
     , notes = "Notes"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , use = "Použite"
+    , useAsConcerning = "Používajte podľa zariadenia"
+    , useNotSuggestions = "Nepoužívajte na návrhy."
+    , equipmentUseLabel = Messages.Data.EquipmentUse.gb
+    , notes = "Poznámky"
     }
 
 

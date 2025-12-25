@@ -10,6 +10,7 @@ module Messages.Comp.TagDropdown exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -27,6 +28,15 @@ gb =
     { basics = Messages.Basics.gb
     , placeholder = "Search…"
     , noCategory = "No category"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , placeholder = "Hľadať…"
+    , noCategory = "Žiadna kategória"
     }
 
 

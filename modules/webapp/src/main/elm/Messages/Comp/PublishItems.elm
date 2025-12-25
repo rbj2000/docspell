@@ -10,6 +10,7 @@ module Messages.Comp.PublishItems exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -65,6 +66,30 @@ gb tz =
     , correctFormErrors = "Please correct the errors in the form."
     , doneLabel = "Done"
     , sendViaMail = "Send via E-Mail"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , shareForm = Messages.Comp.ShareForm.gb
+    , shareView = Messages.Comp.ShareView.gb tz
+    , shareMail = Messages.Comp.ShareMail.gb
+    , title = "Publikovať položky"
+    , infoText = "Publikovaním položiek sa vytvorí tajomný odkaz, ktorý môže použiť každý na zobrazenie vybraných dokumentov. Tento odkaz sa nedá uhádnuť, ale je verejný! Existuje určitý čas a možno ho ďalej chrániť pomocou hesla."
+    , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz
+    , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
+    , submitPublish = "Publikovať"
+    , submitPublishTitle = "Zverejnite dokumenty teraz"
+    , cancelPublish = "Zrušiť"
+    , cancelPublishTitle = "Späť na výber zobrazenia"
+    , publishSuccessful = "Položky boli úspešne zverejnené"
+    , publishInProcess = "Položky sú zverejnené…"
+    , correctFormErrors = "Opravte chyby vo formulári."
+    , doneLabel = "Hotovo"
+    , sendViaMail = "Odoslať prostredníctvom e-mailu"
     }
 
 

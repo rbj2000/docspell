@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Data.AccountScope exposing (Texts, de, fr, gb)
+module Messages.Data.AccountScope exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.AccountScope exposing (AccountScope)
 
@@ -16,6 +17,12 @@ type alias Texts =
 
 gb : Texts
 gb =
+    Data.AccountScope.fold "Personal" "Collective"
+
+
+
+sk : Texts
+sk =
     Data.AccountScope.fold "Personal" "Collective"
 
 

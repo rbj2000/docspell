@@ -10,6 +10,7 @@ module Messages.Comp.ShareForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -33,6 +34,18 @@ gb =
     , password = "Password"
     , publishUntil = "Publish Until"
     , clearPassword = "Remove password"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , queryLabel = "Dopyt"
+    , enabled = "Povolené"
+    , password = "heslo"
+    , publishUntil = "Zverejniť do"
+    , clearPassword = "Odstráňte heslo"
     }
 
 

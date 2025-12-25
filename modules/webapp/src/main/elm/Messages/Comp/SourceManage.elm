@@ -10,6 +10,7 @@ module Messages.Comp.SourceManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -68,6 +69,36 @@ gb =
     , deleteThisSource = "Delete this source"
     , errorGeneratingQR = "Error generating QR Code"
     , correctFormErrors = "Please correct the errors in the form."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , sourceTable = Messages.Comp.SourceTable.gb
+    , sourceForm = Messages.Comp.SourceForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , addSourceUrl = "Pridajte zdrojovú webovú adresu"
+    , newSource = "Nový zdroj"
+    , publicUploads = "Verejné nahrávania"
+    , sourceInfoText = "Tento zdroj definuje adresy URL, ktoré môže ktokoľvek použiť na odosielanie súborov"
+            ++ "you. There is a web page that you can share or the API url can be used "
+            ++ "with other clients."
+    , itemsCreatedInfo =
+        \n ->
+            "Tam boli"
+                ++ String.fromInt n
+                ++ " items created through this source."
+    , publicUploadPage = "Verejná stránka nahrávania"
+    , copyToClipboard = "Kopírovať do schránky"
+    , openInNewTab = "Otvoriť na novej karte/okne"
+    , publicUploadUrl = "Verejná adresa URL nahrávania rozhrania API"
+    , reallyDeleteSource = "Naozaj odstrániť tento zdroj?"
+    , createNewSource = "Vytvorte nový zdroj"
+    , deleteThisSource = "Odstrániť tento zdroj"
+    , errorGeneratingQR = "Chyba pri generovaní QR kódu"
+    , correctFormErrors = "Opravte chyby vo formulári."
     }
 
 

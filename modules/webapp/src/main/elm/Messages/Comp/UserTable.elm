@@ -10,6 +10,7 @@ module Messages.Comp.UserTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -39,6 +40,20 @@ gb tz =
     , email = "E-Mail"
     , logins = "Logins"
     , lastLogin = "Last Login"
+    , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , login = "Prihláste sa"
+    , state = "štátu"
+    , source = "Typ"
+    , email = "E-mail"
+    , logins = "Prihlásenia"
+    , lastLogin = "Posledné prihlásenie"
     , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
     }
 
