@@ -17,7 +17,7 @@ val sharedSettings = Seq(
   organization := "com.github.eikek",
   scalaVersion := "2.13.16",
   organizationName := "Eike K. & Contributors",
-  Docker / dockerBaseImage := "openjdk:11-jre",
+  dockerBaseImage := "eclipse-temurin:17-jre",
   Docker / dockerRepository := None, // Overridden in CI
   licenses += (
     "AGPL-3.0-or-later",
@@ -829,7 +829,8 @@ val joex = project
       "-XX:+UseG1GC"
     ),
     Revolver.enableDebugging(port = 5051, suspend = false),
-// Docker / dockerPlatform := Some("linux/amd64")
+    dockerBaseImage := "eclipse-temurin:17-jre",
+    dockerExposedPorts := Seq(5051)
   )
   .dependsOn(
     config,
@@ -907,7 +908,8 @@ val restserver = project
         case (file, name) => !name.contains("_sjs1_")
       }
     },
-// Docker / dockerPlatform := Some("linux/amd64")
+    dockerBaseImage := "eclipse-temurin:17-jre",
+    dockerExposedPorts := Seq(7880)
   )
   .dependsOn(
     config,
