@@ -30,7 +30,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set current version and publish Docker images
-        env:
-          DOCKER_REPOSITORY: ghcr.io/${{ github.repository_owner }}
         run: |
-           nix develop .#ci --command sbt 'set Global/dockerRepository := Some("${{ env.DOCKER_REPOSITORY }}")' docker:publish
+           nix develop .#ci --command sbt 'set Docker/dockerRepository := Some("ghcr.io/${{ github.repository_owner }}")' docker:publish
