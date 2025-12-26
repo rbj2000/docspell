@@ -19,12 +19,13 @@ jobs:
         run: nix develop .#ci --command sbt ci
       - name: sbt make-pkg (${{ env.DOCSPELL_VERSION }})
         run: nix develop .#ci --command sbt make-pkg
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Upload nightly release
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "nightly"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: nightly
+          name: Docspell Nightly
           prerelease: true
-          title: "Docspell Nightly"
           files: |
             modules/restserver/target/docspell-restserver_${{ env.DOCSPELL_VERSION }}_all.deb
             modules/restserver/target/universal/docspell-restserver-${{ env.DOCSPELL_VERSION }}.zip
