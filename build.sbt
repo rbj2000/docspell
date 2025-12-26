@@ -137,7 +137,10 @@ def debianSettings(cfgFile: String) =
       conf -> s"conf/$cfgFile.conf"
     },
     daemonUser := "docspell",
-    bashScriptExtraDefines += s"""addJava "-Dconfig.file=$${app_home}/../conf/$cfgFile.conf""""
+    bashScriptExtraDefines += s"""# Only use config file if USE_CONFIG_FILE is not explicitly set to "false"
+if [ "$${USE_CONFIG_FILE:-true}" != "false" ]; then
+  addJava "-Dconfig.file=$${app_home}/../conf/$cfgFile.conf"
+fi"""
   )
 
 val buildInfoSettings = Seq(
