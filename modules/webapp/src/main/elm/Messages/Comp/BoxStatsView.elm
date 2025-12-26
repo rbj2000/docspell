@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxStatsView exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxStatsView exposing (Texts, de, fr, gb
+    , sk)
 
 import Http
 import Messages.Basics
@@ -27,6 +28,16 @@ gb =
     , errorOccurred = "Error retrieving data."
     , statsView = Messages.Comp.SearchStatsView.gb
     , basics = Messages.Basics.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { httpError = Messages.Comp.HttpError.gb
+    , errorOccurred = "Chyba pri načítavaní údajov."
+    , statsView = Messages.Comp.SearchStatsView.gb
+    , basics = Messages.Basics.sk
     }
 
 

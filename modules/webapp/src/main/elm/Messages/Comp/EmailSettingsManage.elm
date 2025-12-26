@@ -10,6 +10,7 @@ module Messages.Comp.EmailSettingsManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -43,6 +44,21 @@ gb =
     , reallyDeleteConnection = "Really delete these connection?"
     , deleteThisEntry = "Delete this connection"
     , fillRequiredFields = "Please fill required fields."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , settingsForm = Messages.Comp.EmailSettingsForm.gb
+    , settingsTable = Messages.Comp.EmailSettingsTable.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , newSettings = "Nové pripojenie"
+    , addNewSmtpSettings = "Pridajte nové nastavenia SMTP"
+    , reallyDeleteConnection = "Naozaj odstrániť tieto pripojenia?"
+    , deleteThisEntry = "Odstrániť toto pripojenie"
+    , fillRequiredFields = "Vyplňte prosím povinné polia."
     }
 
 

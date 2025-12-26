@@ -10,6 +10,7 @@ module Messages.Comp.CollectiveSettingsForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Language exposing (Language)
@@ -83,6 +84,39 @@ gb tz =
     , emptyTrash = "Empty Trash"
     , passwords = "Passwords"
     , passwordsInfo = "These passwords are used when encrypted PDFs are being processed. Please note, that they are stored in the database as **plain text**!"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , classifierSettingsForm = Messages.Comp.ClassifierSettingsForm.gb tz
+    , emptyTrashForm = Messages.Comp.EmptyTrashForm.gb tz
+    , httpError = Messages.Comp.HttpError.gb
+    , save = "Uložiť"
+    , saveSettings = "Uložiť nastavenia"
+    , documentLanguage = "Jazyk dokumentu"
+    , documentLanguageHelp = "Jazyk vašich dokumentov. To pomáha pri rozpoznávaní textu (OCR) a analýze textu."
+    , integrationEndpoint = "Koncový bod integrácie"
+    , integrationEndpointLabel = "Povoliť koncový bod integrácie"
+    , integrationEndpointHelp = "Koncový bod integrácie umožňuje (miestnym) aplikáciám odosielať súbory."
+            ++ "You can choose to disable it for your collective."
+    , fulltextSearch = "Fulltextové vyhľadávanie"
+    , reindexAllData = "Znova indexujte všetky údaje"
+    , reindexAllDataHelp = "Tým sa spustí úloha, ktorá vymaže fulltextový index a znova indexuje všetky vaše údaje."
+            ++ "You must type OK before clicking the button to avoid accidental re-indexing."
+    , autoTagging = "Automatické označovanie"
+    , startNow = "Začnite hneď"
+    , languageLabel = Messages.Data.Language.gb
+    , classifierTaskStarted = "Úloha klasifikátora bola spustená."
+    , emptyTrashTaskStarted = "Spustila sa úloha vyprázdnenia koša."
+    , emptyTrashStartInvalidForm = "Formulár prázdny kôš obsahuje chyby."
+    , fulltextReindexSubmitted = "Fulltext Re-Index spustený."
+    , fulltextReindexOkMissing = "Ak naozaj chcete začať s opätovným indexovaním údajov, zadajte do poľa OK."
+    , emptyTrash = "Vyprázdniť kôš"
+    , passwords = "Heslá"
+    , passwordsInfo = "Tieto heslá sa používajú pri spracovávaní šifrovaných súborov PDF. Upozorňujeme, že sú uložené v databáze ako **čistý text**!"
     }
 
 

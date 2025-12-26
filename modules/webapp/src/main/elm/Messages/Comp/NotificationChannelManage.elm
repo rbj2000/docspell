@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.NotificationChannelManage exposing (Texts, de, fr, gb)
+module Messages.Comp.NotificationChannelManage exposing (Texts, de, fr, gb
+    , sk)
 
 import Http
 import Messages.Basics
@@ -57,6 +58,30 @@ gb =
     , updateChannel = "Update channel"
     , deleteThisChannel = "Delete This Channel"
     , reallyDeleteChannel = "Really delete this channel?"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , notificationForm = Messages.Comp.ChannelForm.gb
+    , notificationTable = Messages.Comp.NotificationChannelTable.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , channelType = Messages.Data.ChannelType.gb
+    , newChannel = "Nový kanál"
+    , channelCreated = "Kanál bol vytvorený"
+    , channelUpdated = "Kanál bol aktualizovaný"
+    , channelDeleted = "Kanál bol odstránený"
+    , formInvalid = "Vyplňte všetky povinné polia"
+    , integrate = "Integrovať"
+    , intoDocspell = "do Docspell"
+    , postRequestInfo = "Docspell odošle požiadavky POST s užitočným zaťažením JSON."
+    , notifyEmailInfo = "Nechajte sa informovať prostredníctvom e-mailu."
+    , addChannel = "Pridať nový kanál"
+    , updateChannel = "Aktualizovať kanál"
+    , deleteThisChannel = "Odstrániť tento kanál"
+    , reallyDeleteChannel = "Naozaj chcete odstrániť tento kanál?"
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.NotificationGotifyForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -31,6 +32,17 @@ gb =
     , appKey = "App Key"
     , priority = "Priority"
     , priorityInfo = "A number denoting the importance of a message controlling notification behaviour. The higher the more important."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , gotifyUrl = "Gotify URL"
+    , appKey = "Kľúč aplikácie"
+    , priority = "Priorita"
+    , priorityInfo = "Číslo označujúce dôležitosť správy, ktorá riadi oznamovacie správanie. Čím vyššie, tým dôležitejšie."
     }
 
 

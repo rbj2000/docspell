@@ -10,6 +10,7 @@ module Messages.Comp.UiSettingsManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -51,6 +52,25 @@ gb =
     , collectiveHeader = "Collective settings"
     , collectiveInfo = "These settings apply to all users, unless overridden by personal ones. A reset loads the provided default values of the application."
     , expandCollapse = "Expand/collapse all"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , uiSettingsForm = Messages.Comp.UiSettingsForm.gb
+    , accountScope = Messages.Data.AccountScope.gb
+    , saveSettings = "Uložiť nastavenia"
+    , settingsUnchanged = "Nastavenia nezmenené alebo neplatné."
+    , settingsSaved = "Nastavenia boli uložené."
+    , unknownSaveError = "Neznáma chyba pri pokuse o uloženie nastavení."
+    , httpError = Messages.Comp.HttpError.gb
+    , userHeader = "Osobné nastavenia"
+    , userInfo = "Vaše osobné nastavenia majú prednosť pred nastaveniami kolektívu. Pri resetovaní sa nastavenia prevezmú zo spoločných nastavení."
+    , collectiveHeader = "Kolektívne nastavenia"
+    , collectiveInfo = "Tieto nastavenia platia pre všetkých používateľov, pokiaľ nie sú prepísané osobnými. Reset načíta poskytnuté predvolené hodnoty aplikácie."
+    , expandCollapse = "Rozbaliť/zbaliť všetko"
     }
 
 

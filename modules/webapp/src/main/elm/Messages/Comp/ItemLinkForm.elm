@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.ItemLinkForm exposing (Texts, de, fr, gb)
+module Messages.Comp.ItemLinkForm exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.Direction exposing (Direction)
 import Data.TimeZone exposing (TimeZone)
@@ -28,6 +29,17 @@ type alias Texts =
 
 gb : TimeZone -> Texts
 gb tz =
+    { dateFormatLong = DF.formatDateLong English tz
+    , dateFormatShort = DF.formatDateShort English tz
+    , directionLabel = Messages.Data.Direction.gb
+    , itemSearchInput = Messages.Comp.ItemSearchInput.gb
+    , httpError = Messages.Comp.HttpError.gb
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
     { dateFormatLong = DF.formatDateLong English tz
     , dateFormatShort = DF.formatDateShort English tz
     , directionLabel = Messages.Data.Direction.gb

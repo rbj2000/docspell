@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxView exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxView exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.TimeZone exposing (TimeZone)
 import Messages.Comp.BoxQueryView
@@ -22,6 +23,15 @@ type alias Texts =
 
 gb : TimeZone -> Texts
 gb tz =
+    { queryView = Messages.Comp.BoxQueryView.gb tz
+    , statsView = Messages.Comp.BoxStatsView.gb
+    , uploadView = Messages.Comp.BoxUploadView.gb
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
     { queryView = Messages.Comp.BoxQueryView.gb tz
     , statsView = Messages.Comp.BoxStatsView.gb
     , uploadView = Messages.Comp.BoxUploadView.gb

@@ -10,6 +10,7 @@ module Messages.Comp.UserManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -58,6 +59,28 @@ gb tz =
     , sentMails = "sent mails"
     , shares = "shares"
     , deleteFollowingData = "The following data will be deleted"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { userTable = Messages.Comp.UserTable.gb tz
+    , userForm = Messages.Comp.UserForm.gb
+    , basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , users = "Používatelia"
+    , newUser = "Nový používateľ"
+    , addNewUser = "Pridať nového používateľa"
+    , reallyDeleteUser = "Naozaj chcete odstrániť tohto používateľa?"
+    , createNewUser = "Vytvoriť nového používateľa"
+    , deleteThisUser = "Odstrániť tohto používateľa"
+    , pleaseCorrectErrors = "Opravte chyby vo formulári."
+    , notDeleteCurrentUser = "Používateľa, s ktorým ste práve prihlásený, nemôžete odstrániť."
+    , folders = "Priečinky"
+    , sentMails = "odoslaných mailov"
+    , shares = "akcií"
+    , deleteFollowingData = "Nasledujúce údaje budú vymazané"
     }
 
 

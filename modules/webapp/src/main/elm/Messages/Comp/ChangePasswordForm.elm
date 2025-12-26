@@ -10,6 +10,7 @@ module Messages.Comp.ChangePasswordForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -45,6 +46,23 @@ gb =
     , passwordMismatch = "The passwords do not match."
     , fillRequiredFields = "Please fill required fields."
     , passwordChangeSuccessful = "Password has been changed."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , currentPassword = "Aktuálne heslo"
+    , newPassword = "Nové heslo"
+    , repeatPassword = "Nové heslo (opakovať)"
+    , currentPasswordPlaceholder = "heslo"
+    , newPasswordPlaceholder = "heslo"
+    , repeatPasswordPlaceholder = "heslo"
+    , passwordMismatch = "Heslá sa nezhodujú."
+    , fillRequiredFields = "Vyplňte prosím povinné polia."
+    , passwordChangeSuccessful = "Heslo bolo zmenené."
     }
 
 

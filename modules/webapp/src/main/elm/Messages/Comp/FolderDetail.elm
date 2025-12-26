@@ -10,6 +10,7 @@ module Messages.Comp.FolderDetail exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -51,6 +52,26 @@ gb =
     , folderCreated = "Folder has been created."
     , nameChangeSuccessful = "Name has been changed."
     , deleteSuccessful = "Folder has been deleted."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , reallyDeleteThisFolder = "Naozaj chcete odstrániť tento priečinok?"
+    , autoOwnerInfo = "Automaticky ste nastavený ako vlastník tohto nového priečinka."
+    , modifyInfo = "Upravte tento priečinok zmenou názvu alebo pridaním/odstránením členov."
+    , notOwnerInfo = "Nie ste vlastníkom tohto priečinka, a preto ho nemôžete upravovať."
+    , members = "členov"
+    , addMember = "Pridať nového člena"
+    , add = "Pridať"
+    , removeMember = "Odstrániť tohto člena"
+    , deleteThisFolder = "Odstráňte tento priečinok"
+    , folderCreated = "Priečinok bol vytvorený."
+    , nameChangeSuccessful = "Meno bolo zmenené."
+    , deleteSuccessful = "Priečinok bol odstránený."
     }
 
 

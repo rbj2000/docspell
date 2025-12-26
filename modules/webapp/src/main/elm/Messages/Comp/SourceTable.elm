@@ -10,6 +10,7 @@ module Messages.Comp.SourceTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -35,6 +36,19 @@ gb =
     , priority = "Priority"
     , id = "Id"
     , show = "Show"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , abbrev = "Skratka"
+    , enabled = "Povolené"
+    , counter = "Počítadlo"
+    , priority = "Priorita"
+    , id = "Id"
+    , show = "Zobraziť"
     }
 
 

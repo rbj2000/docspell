@@ -10,6 +10,7 @@ module Messages.Data.EventType exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.EventType exposing (EventType(..))
@@ -27,6 +28,36 @@ gb et =
         TagsChanged ->
             { name = "Tags changed"
             , info = "Whenever a tag on an item is added or removed"
+            }
+
+        SetFieldValue ->
+            { name = "Set field value"
+            , info = "Whenever a custom field is set to a value"
+            }
+
+        DeleteFieldValue ->
+            { name = "Delete field value"
+            , info = "Whenever a custom field is removed"
+            }
+
+        JobSubmitted ->
+            { name = "Job submitted"
+            , info = "Whenever a new job is submitted"
+            }
+
+        JobDone ->
+            { name = "Job done"
+            , info = "Whenever a new job finished"
+            }
+
+
+
+sk : EventType -> Texts
+sk et =
+    case et of
+        TagsChanged ->
+            { name = "Značky zmenené"
+            , info = "Vždy, keď sa pridá alebo odstráni značka na položke"
             }
 
         SetFieldValue ->

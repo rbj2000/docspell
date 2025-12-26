@@ -10,6 +10,7 @@ module Messages.Comp.CustomFieldTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -33,6 +34,17 @@ gb tz =
     , nameLabel = "Name/Label"
     , format = "Format"
     , usageCount = "#Usage"
+    , formatDateShort = DF.formatDateShort Messages.UiLanguage.English tz
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , nameLabel = "Meno/Štítok"
+    , format = "Formátovať"
+    , usageCount = "#Používanie"
     , formatDateShort = DF.formatDateShort Messages.UiLanguage.English tz
     }
 

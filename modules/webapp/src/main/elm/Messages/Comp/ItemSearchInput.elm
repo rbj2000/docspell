@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.ItemSearchInput exposing (Texts, de, fr, gb)
+module Messages.Comp.ItemSearchInput exposing (Texts, de, fr, gb
+    , sk)
 
 import Http
 import Messages.Basics
@@ -23,6 +24,15 @@ gb : Texts
 gb =
     { noResults = "No results"
     , placeholder = Messages.Basics.gb.searchPlaceholder
+    , httpError = Messages.Comp.HttpError.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { noResults = "Žiadne výsledky"
+    , placeholder = Messages.Basics.sk.searchPlaceholder
     , httpError = Messages.Comp.HttpError.gb
     }
 

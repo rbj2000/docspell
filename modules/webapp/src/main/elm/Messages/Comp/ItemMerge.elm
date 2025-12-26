@@ -10,6 +10,7 @@ module Messages.Comp.ItemMerge exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -36,6 +37,17 @@ gb tz =
     , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz
     , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
     , cancelView = "Cancel"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz
+    , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
+    , cancelView = "Zrušiť"
     }
 
 

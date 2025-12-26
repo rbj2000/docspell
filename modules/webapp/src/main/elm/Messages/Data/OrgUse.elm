@@ -9,6 +9,7 @@ module Messages.Data.OrgUse exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.OrgUse exposing (OrgUse(..))
@@ -19,6 +20,17 @@ gb pu =
     case pu of
         Correspondent ->
             "Correspondent"
+
+        Disabled ->
+            "Disabled"
+
+
+
+sk : OrgUse -> String
+sk pu =
+    case pu of
+        Correspondent ->
+            "Korešpondent"
 
         Disabled ->
             "Disabled"

@@ -10,6 +10,7 @@ module Messages.Comp.AttachmentMeta exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -51,6 +52,25 @@ gb tz =
     , concerningEquipment = "Concerning Equipment"
     , itemDate = "Item Date"
     , itemDueDate = "Item Due Date"
+    , formatDateShort = DF.formatDateShort Messages.UiLanguage.English tz
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , httpError = Messages.Comp.HttpError.gb
+    , extractedMetadata = "Extrahované metaúdaje"
+    , content = "Obsah"
+    , labels = "Štítky"
+    , proposals = "Návrhy"
+    , correspondentOrg = "Korešpondenčná organizácia"
+    , correspondentPerson = "Osoba korešpondent"
+    , concerningPerson = "O osobe"
+    , concerningEquipment = "Čo sa týka vybavenia"
+    , itemDate = "Dátum položky"
+    , itemDueDate = "Dátum dátumu položky"
     , formatDateShort = DF.formatDateShort Messages.UiLanguage.English tz
     }
 

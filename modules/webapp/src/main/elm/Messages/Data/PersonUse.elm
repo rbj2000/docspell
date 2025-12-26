@@ -9,6 +9,7 @@ module Messages.Data.PersonUse exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.PersonUse exposing (PersonUse(..))
@@ -19,6 +20,23 @@ gb pu =
     case pu of
         Correspondent ->
             "Correspondent"
+
+        Concerning ->
+            "Concerning"
+
+        Both ->
+            "Both"
+
+        Disabled ->
+            "Disabled"
+
+
+
+sk : PersonUse -> String
+sk pu =
+    case pu of
+        Correspondent ->
+            "Korešpondent"
 
         Concerning ->
             "Concerning"

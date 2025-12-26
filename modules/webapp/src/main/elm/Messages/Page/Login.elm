@@ -10,6 +10,7 @@ module Messages.Page.Login exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -52,6 +53,27 @@ gb =
     , otpCode = "Authentication code"
     , or = "Or"
     , oidcLogoutPending = "You have been logged out from Docspell, but you may still be logged in at your authentication provider! Make sure to logout there as well, or login again by clicking the link below."
+    }
+
+
+
+sk : Texts
+sk =
+    { httpError = Messages.Comp.HttpError.gb
+    , loginToDocspell = "Prihláste sa do Docspell"
+    , username = "Používateľské meno"
+    , collectiveSlashLogin = "Kolektív / Prihlásenie"
+    , password = "heslo"
+    , rememberMe = "Pamätaj na mňa"
+    , loginPlaceholder = "Prihláste sa"
+    , passwordPlaceholder = "heslo"
+    , loginButton = "Prihláste sa"
+    , loginSuccessful = "Prihlásenie bolo úspešné"
+    , noAccount = "Žiadny účet?"
+    , signupLink = "Zaregistrujte sa!"
+    , otpCode = "Autentifikačný kód"
+    , or = "Alebo"
+    , oidcLogoutPending = "Boli ste odhlásení z Docspell, ale stále môžete byť prihlásení u svojho poskytovateľa overenia! Nezabudnite sa odhlásiť aj tam, alebo sa znova prihláste kliknutím na odkaz nižšie."
     }
 
 

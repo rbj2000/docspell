@@ -67,6 +67,9 @@ get lang tz =
         French ->
             fr tz
 
+        Slovak ->
+            sk tz
+
 
 {-| Get a ISO-3166-1 code of the given lanugage.
 -}
@@ -172,4 +175,28 @@ fr tz =
     , share = Messages.Page.Share.fr tz
     , shareDetail = Messages.Page.ShareDetail.fr tz
     , dashboard = Messages.Page.Dashboard.fr tz
+    }
+
+
+sk : TimeZone -> Messages
+sk tz =
+    { lang = Slovak
+    , timeZone = tz
+    , iso2 = "sk"
+    , label = "Slovak"
+    , flagIcon = "fi fi-sk"
+    , app = Messages.App.sk
+    , collectiveSettings = Messages.Page.CollectiveSettings.sk tz
+    , login = Messages.Page.Login.sk
+    , register = Messages.Page.Register.sk
+    , newInvite = Messages.Page.NewInvite.sk
+    , upload = Messages.Page.Upload.sk
+    , itemDetail = Messages.Page.ItemDetail.sk tz
+    , queue = Messages.Page.Queue.sk tz
+    , userSettings = Messages.Page.UserSettings.sk tz
+    , manageData = Messages.Page.ManageData.sk tz
+    , search = Messages.Page.Search.sk tz
+    , share = Messages.Page.Share.sk tz
+    , shareDetail = Messages.Page.ShareDetail.sk tz
+    , dashboard = Messages.Page.Dashboard.sk tz
     }

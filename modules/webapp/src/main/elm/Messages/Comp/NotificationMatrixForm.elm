@@ -10,6 +10,7 @@ module Messages.Comp.NotificationMatrixForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -29,6 +30,16 @@ gb =
     , homeServer = "Homeserver URL"
     , roomId = "Room ID"
     , accessKey = "Access Token"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , homeServer = "Adresa URL domáceho servera"
+    , roomId = "ID miestnosti"
+    , accessKey = "Prístupový token"
     }
 
 

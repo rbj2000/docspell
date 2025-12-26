@@ -10,6 +10,7 @@ module Messages.Page.UserSettings exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -99,6 +100,65 @@ gb tz =
             again."""
     , otpMenu = "Two Factor Authentication"
     , dueItems = "Due Items Query"
+    , notificationInfoText = """
+
+Docspell can send notification messages on various events. You can
+choose from these channels to send messages:
+[Matrix](https://matrix.org), [Gotify](https://gotify.net) or E-Mail.
+At last you can send a plain http request with the event details in
+its payload.
+
+Additionally, you can setup queries that are executed periodically.
+The results are send as a notification message.
+
+A notification setting needs at least one communication channel, which
+must be created before.
+
+"""
+    , webhookInfoText = """Webhooks execute http request upon certain events in docspell.
+"""
+    , dueItemsInfoText = """Docspell can notify you once the due dates of your items come closer.  """
+    , periodicQueryInfoText = "You can define a custom query that gets executed periodically."
+    , channels = "Notification Channels"
+    , channelInfoText = "Channels are used to send notification messages."
+    }
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , changePasswordForm = Messages.Comp.ChangePasswordForm.sk
+    , uiSettingsManage = Messages.Comp.UiSettingsManage.sk
+    , emailSettingsManage = Messages.Comp.EmailSettingsManage.sk
+    , imapSettingsManage = Messages.Comp.ImapSettingsManage.sk
+    , notificationManage = Messages.Comp.DueItemsTaskManage.sk tz
+    , scanMailboxManage = Messages.Comp.ScanMailboxManage.sk tz
+    , notificationHookManage = Messages.Comp.NotificationHookManage.sk
+    , periodicQueryTask = Messages.Comp.PeriodicQueryTaskManage.sk tz
+    , channelManage = Messages.Comp.NotificationChannelManage.sk
+    , otpSetup = Messages.Comp.OtpSetup.sk tz
+    , userSettings = "Používateľské nastavenia"
+    , uiSettings = "Nastavenia používateľského rozhrania"
+    , notifications = "Upozornenia"
+    , scanMailbox = "Skenovať poštovú schránku"
+    , emailSettingSmtp = "Nastavenia e-mailu (SMTP)"
+    , emailSettingImap = "Nastavenia e-mailu (IMAP)"
+    , changePassword = "Zmeniť heslo"
+    , channelSettings = "Oznamovacie kanály"
+    , uiSettingsInfo = "Tieto nastavenia ovplyvňujú iba webové používateľské rozhranie. Nastavenia je možné uložiť do kolektívu alebo do vášho osobného používateľa. Osobné nastavenia sú preferované, ak existujú obe hodnoty."
+    , scanMailboxInfo1 = "Docspell dokáže skenovať priečinky vašej poštovej schránky a importovať vaše e-maily."
+            ++ "You need to provide a connection in "
+            ++ "your e-mail (imap) settings."
+    , scanMailboxInfo2 = """Docspell prechádza všetkými nakonfigurovanými priečinkami a importmi
+            e-maily zodpovedajúce kritériám vyhľadávania. E-maily sa preskočia, ak
+            boli importované v predchádzajúcom spustení a zodpovedajúce
+            položky stále existujú. Po odoslaní e-mailu do docspell
+            môžete ho presunúť do iného priečinka a odstrániť ho
+            alebo to tam nechať. V druhom prípade by ste mali
+            upravte rozvrh, aby ste sa vyhli čítaniu tých istých e-mailov
+            znova."""
+    , otpMenu = "Dvojfaktorová autentifikácia"
+    , dueItems = "Dopyt na splatné položky"
     , notificationInfoText = """
 
 Docspell can send notification messages on various events. You can

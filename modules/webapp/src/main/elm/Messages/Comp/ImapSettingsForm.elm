@@ -10,6 +10,7 @@ module Messages.Comp.ImapSettingsForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.SSLType exposing (SSLType)
@@ -53,6 +54,27 @@ gb =
     , ignoreCertCheck = "Ignore certificate check"
     , enableOAuth2 = "Enable OAuth2 authentication"
     , oauth2Info = "Enabling this, allows to connect via XOAuth using the password as access token."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , sslTypeLabel = Messages.Data.SSLType.gb
+    , connectionNamePlaceholder = "Názov spojenia, napr. 'gmail.com'"
+    , connectionNameInfo = "Názov pripojenia nesmie obsahovať medzery ani špeciálne znaky."
+    , imapHost = "Hostiteľ IMAP"
+    , imapHostPlaceholder = "Názov hostiteľa IMAP, napr. 'mail.gmail.com'"
+    , imapPort = "Port IMAP"
+    , imapUser = "Používateľ IMAP"
+    , imapUserPlaceholder = "Používateľské meno IMAP, napr. 'vase.meno@gmail.com'"
+    , imapPassword = "Heslo IMAP"
+    , imapPasswordPlaceholder = "heslo"
+    , ssl = "SSL"
+    , ignoreCertCheck = "Ignorovať kontrolu certifikátu"
+    , enableOAuth2 = "Povoliť overenie OAuth2"
+    , oauth2Info = "Ak to povolíte, budete sa môcť pripojiť cez XOAuth pomocou hesla ako prístupového tokenu."
     }
 
 

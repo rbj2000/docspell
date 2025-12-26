@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxQueryEdit exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxQueryEdit exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Comp.BoxSearchQueryInput
 import Messages.Comp.ItemColumnDropdown
@@ -23,6 +24,15 @@ gb =
     { columnDropdown = Messages.Comp.ItemColumnDropdown.gb
     , searchQuery = Messages.Comp.BoxSearchQueryInput.gb
     , showColumnHeaders = "Show column headers"
+    }
+
+
+
+sk : Texts
+sk =
+    { columnDropdown = Messages.Comp.ItemColumnDropdown.gb
+    , searchQuery = Messages.Comp.BoxSearchQueryInput.gb
+    , showColumnHeaders = "Zobraziť hlavičky stĺpcov"
     }
 
 

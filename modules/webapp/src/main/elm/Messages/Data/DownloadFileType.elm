@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Data.DownloadFileType exposing (Texts, de, fr, gb)
+module Messages.Data.DownloadFileType exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.DownloadFileType exposing (DownloadFileType(..))
 
@@ -19,6 +20,17 @@ gb ft =
     case ft of
         Converted ->
             "Converted PDF files"
+
+        Originals ->
+            "Original files"
+
+
+
+sk : Texts
+sk ft =
+    case ft of
+        Converted ->
+            "Konvertované súbory PDF"
 
         Originals ->
             "Original files"

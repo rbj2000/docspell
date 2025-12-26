@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxUploadView exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxUploadView exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Comp.UploadForm
 
@@ -20,6 +21,14 @@ gb : Texts
 gb =
     { uploadForm = Messages.Comp.UploadForm.gb
     , moreOptions = "More options…"
+    }
+
+
+
+sk : Texts
+sk =
+    { uploadForm = Messages.Comp.UploadForm.gb
+    , moreOptions = "Viac možností…"
     }
 
 

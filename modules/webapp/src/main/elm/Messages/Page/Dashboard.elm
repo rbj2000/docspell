@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Page.Dashboard exposing (Texts, de, fr, gb)
+module Messages.Page.Dashboard exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.TimeZone exposing (TimeZone)
 import Messages.Basics
@@ -84,6 +85,38 @@ gb tz =
     , editDashboard = "Edit Dashboard"
     , dashboards = "Dashboards"
     , predefinedMessage = "This dashboard is predefined one that cannot be deleted. It is replaced with the first one you save."
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , bookmarkChooser = Messages.Comp.BookmarkChooser.gb
+    , notificationHookManage = Messages.Comp.NotificationHookManage.gb
+    , periodicQueryManage = Messages.Comp.PeriodicQueryTaskManage.gb tz
+    , sourceManage = Messages.Comp.SourceManage.gb
+    , shareManage = Messages.Comp.ShareManage.gb tz
+    , organizationManage = Messages.Comp.OrgManage.gb
+    , personManage = Messages.Comp.PersonManage.gb
+    , equipManage = Messages.Comp.EquipmentManage.gb
+    , tagManage = Messages.Comp.TagManage.gb
+    , folderManage = Messages.Comp.FolderManage.gb tz
+    , uploadForm = Messages.Comp.UploadForm.gb
+    , dashboard = Messages.Comp.DashboardView.gb tz
+    , dashboardManage = Messages.Comp.DashboardManage.gb
+    , defaultDashboard = Messages.Page.DefaultDashboard.gb
+    , accountScope = Messages.Data.AccountScope.gb
+    , manage = "Spravovať"
+    , dashboardLink = "Dashboard"
+    , bookmarks = "Záložky"
+    , misc = "Misc"
+    , settings = "Nastavenia"
+    , documentation = "Dokumentácia"
+    , uploadFiles = "Nahrajte dokumenty"
+    , editDashboard = "Upraviť informačný panel"
+    , dashboards = "Dashboards"
+    , predefinedMessage = "Tento informačný panel je preddefinovaný a nemožno ho odstrániť. Nahradí sa prvým, ktorý uložíte."
     }
 
 

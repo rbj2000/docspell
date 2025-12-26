@@ -10,6 +10,7 @@ module Messages.Page.ItemDetail exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -31,6 +32,16 @@ gb tz =
     , editForm = Messages.Comp.ItemDetail.EditForm.gb tz
     , editMetadata = "Edit Metadata"
     , collapseExpand = "Collapse/Expand"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { itemDetail = Messages.Comp.ItemDetail.gb tz
+    , editForm = Messages.Comp.ItemDetail.EditForm.gb tz
+    , editMetadata = "Upraviť metadáta"
+    , collapseExpand = "Zbaliť/rozbaliť"
     }
 
 

@@ -9,6 +9,7 @@ module Messages.Data.EquipmentUse exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.EquipmentUse exposing (EquipmentUse(..))
@@ -19,6 +20,17 @@ gb pu =
     case pu of
         Concerning ->
             "Concerning"
+
+        Disabled ->
+            "Disabled"
+
+
+
+sk : EquipmentUse -> String
+sk pu =
+    case pu of
+        Concerning ->
+            "Čo sa týka"
 
         Disabled ->
             "Disabled"

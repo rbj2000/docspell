@@ -10,6 +10,7 @@ module Messages.Comp.ScanMailboxManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -46,6 +47,22 @@ gb tb =
     , taskUpdated = "Task updated."
     , taskStarted = "Task started."
     , taskDeleted = "Task deleted."
+    }
+
+
+
+
+sk tb =
+    { basics = Messages.Basics.sk
+    , form = Messages.Comp.ScanMailboxForm.sk tb
+    , table = Messages.Comp.ScanMailboxTable.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , newTask = "Nová úloha"
+    , createNewTask = "Vytvorte novú úlohu skenovania poštovej schránky"
+    , taskCreated = "Úloha vytvorená."
+    , taskUpdated = "Úloha bola aktualizovaná."
+    , taskStarted = "Úloha začala."
+    , taskDeleted = "Úloha bola odstránená."
     }
 
 

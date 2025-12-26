@@ -10,6 +10,7 @@ module Messages.Comp.OrgForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.ContactType exposing (ContactType)
@@ -48,6 +49,23 @@ gb =
     , contacts = "Contacts"
     , contactTypeLabel = Messages.Data.ContactType.gb
     , notes = "Notes"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , addressForm = Messages.Comp.AddressForm.gb
+    , orgUseLabel = Messages.Data.OrgUse.gb
+    , shortName = "Krátky názov"
+    , use = "Použite"
+    , useAsCorrespondent = "Použiť ako korešpondent"
+    , dontUseForSuggestions = "Nepoužívajte na návrhy."
+    , address = "Adresa"
+    , contacts = "Kontakty"
+    , contactTypeLabel = Messages.Data.ContactType.gb
+    , notes = "Poznámky"
     }
 
 

@@ -9,6 +9,7 @@ module Messages.Data.PdfMode exposing
     ( de
     , fr
     , gb
+    , sk
     )
 
 import Data.Pdf exposing (PdfMode(..))
@@ -19,6 +20,20 @@ gb st =
     case st of
         Detect ->
             "Detect automatically"
+
+        Native ->
+            "Use the browser's native PDF view"
+
+        Server ->
+            "Use cross-browser fallback"
+
+
+
+sk : PdfMode -> String
+sk st =
+    case st of
+        Detect ->
+            "Zistiť automaticky"
 
         Native ->
             "Use the browser's native PDF view"

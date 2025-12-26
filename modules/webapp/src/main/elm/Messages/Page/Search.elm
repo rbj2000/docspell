@@ -10,6 +10,7 @@ module Messages.Page.Search exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -141,6 +142,75 @@ gb tz =
     , linkItemsHeader = "Link Items"
     , downloadAll = "Download all"
     , downloadAllQueryNeeded = "Apply a criteria to reduce what to download."
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , itemCardList = Messages.Comp.ItemCardList.gb tz
+    , searchStatsView = Messages.Comp.SearchStatsView.gb
+    , sideMenu = Messages.Page.SearchSideMenu.gb
+    , itemMerge = Messages.Comp.ItemMerge.gb tz
+    , publishItems = Messages.Comp.PublishItems.gb tz
+    , bookmarkManage = Messages.Comp.BookmarkQueryManage.gb
+    , downloadAllComp = Messages.Comp.DownloadAll.gb
+    , contentSearch = "Vyhľadávanie obsahu…"
+    , searchInNames = "Hľadaj v menách…"
+    , selectModeTitle = "Vyberte položku Režim"
+    , fullHeightPreviewTitle = "Náhľad v plnej výške"
+    , fullWidthPreviewTitle = "Ukážka na celú šírku"
+    , powerSearchPlaceholder = "Vyhľadávací dopyt…"
+    , reallyReprocessQuestion = "Naozaj chcete znova spracovať všetky vybraté položky? Metadáta nepotvrdených položiek sa môžu zmeniť."
+    , reallyDeleteQuestion = "Naozaj odstrániť všetky vybraté položky?"
+    , reallyRestoreQuestion = "Naozaj obnoviť všetky vybraté položky?"
+    , editSelectedItems = \n ->
+            "Upraviť" ++ String.fromInt n ++ " selected items"
+    , reprocessSelectedItems = \n ->
+            "Znovu spracovať" ++ String.fromInt n ++ " selected items"
+    , deleteSelectedItems = \n ->
+            "Odstrániť" ++ String.fromInt n ++ " selected items"
+    , undeleteSelectedItems = \n ->
+            "Obnoviť" ++ String.fromInt n ++ " selected items"
+    , selectAllVisible = "Vyberte všetky viditeľné"
+    , selectNone = "Vyberte žiadne"
+    , resetSearchForm = "Obnoviť vyhľadávací formulár"
+    , exitSelectMode = "Ukončite režim výberu"
+    , mergeItemsTitle = \n ->
+            "Zlúčiť" ++ String.fromInt n ++ " selected items"
+    , publishItemsTitle = \n ->
+            "Publikovať" ++ String.fromInt n ++ " selected items"
+    , publishCurrentQueryTitle = "Zverejnite aktuálne výsledky"
+    , shareResults = "Zdieľať výsledky"
+    , nothingSelectedToShare = "Zdieľanie všetkého nefunguje. Musíte použiť určité kritériá."
+    , loadMore = "Načítať viac…"
+    , thatsAll = "To je všetko"
+    , showItemGroups = "Skupina podľa mesiaca"
+    , listView = "Zobrazenie zoznamu"
+    , tileView = "Pohľad na dlaždice"
+    , expandCollapseRows = "Rozbaliť/zbaliť všetko"
+    , bookmarkQuery = "Dotaz na záložku"
+    , nothingToBookmark = "Nie je vybraté nič na uloženie medzi záložky"
+    , submitMerge = "Zlúčiť"
+    , mergeInfoText = "Pri zlučovaní položiek funguje prvá položka v zozname ako cieľ. Metadáta všetkých ostatných položiek sa skopírujú do cieľovej položky. Ak je vlastnosťou jedna hodnota (ako korešpondent), nastaví sa len vtedy, ak ešte nie je prítomná. Pridajú sa značky, vlastné polia a prílohy. Položky je možné zmeniť pomocou drag&drop."
+    , mergeDeleteWarn = "Upozorňujeme, že všetky položky okrem prvej sa po úspešnom zlúčení odstránia!"
+    , submitMergeTitle = "Teraz zlúčte dokumenty"
+    , cancelMergeTitle = "Späť na výber zobrazenia"
+    , mergeSuccessful = "Položky boli úspešne zlúčené"
+    , mergeInProcess = "Položky sú zlúčené…"
+    , linkItemsTitle = \n ->
+            "Odkaz" ++ String.fromInt n ++ " items"
+    , linkItemsMessage = "V zozname musia byť aspoň 2 položky. Prvá je cieľová položka a všetky ostatné sa pridajú do jej zoznamu súvisiacich položiek."
+    , submitLinkItems = "Link"
+    , submitLinkItemsTitle = ""
+    , cancelLinkItemsTitle = ""
+    , linkItemsSuccessful = "Prepojenie položiek bolo úspešné"
+    , linkItemsInProcess = "Prepojenie položiek..."
+    , mergeHeader = "Zlúčiť položky"
+    , linkItemsHeader = "Prepojiť položky"
+    , downloadAll = "Stiahnuť všetko"
+    , downloadAllQueryNeeded = "Použite kritériá na zníženie počtu sťahovaných súborov."
     }
 
 

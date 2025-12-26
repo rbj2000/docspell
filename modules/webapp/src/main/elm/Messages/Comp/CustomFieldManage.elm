@@ -10,6 +10,7 @@ module Messages.Comp.CustomFieldManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -34,6 +35,17 @@ gb tz =
     , fieldTable = Messages.Comp.CustomFieldTable.gb tz
     , addCustomField = "Add a new custom field"
     , newCustomField = "New custom field"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , fieldForm = Messages.Comp.CustomFieldForm.gb
+    , fieldTable = Messages.Comp.CustomFieldTable.gb tz
+    , addCustomField = "Pridajte nové vlastné pole"
+    , newCustomField = "Nové vlastné pole"
     }
 
 

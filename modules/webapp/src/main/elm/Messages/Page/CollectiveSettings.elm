@@ -10,6 +10,7 @@ module Messages.Page.CollectiveSettings exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -58,6 +59,27 @@ gb tz =
     , size = "Size"
     , items = "Items"
     , submitSuccessful = "Settings saved."
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , userManage = Messages.Comp.UserManage.gb tz
+    , collectiveSettingsForm = Messages.Comp.CollectiveSettingsForm.gb tz
+    , sourceManage = Messages.Comp.SourceManage.gb
+    , shareManage = Messages.Comp.ShareManage.gb tz
+    , httpError = Messages.Comp.HttpError.gb
+    , collectiveSettings = "Kolektívne nastavenia"
+    , insights = "Insights"
+    , settings = "Nastavenia"
+    , users = "Používatelia"
+    , user = "Používateľ"
+    , collective = "kolektívne"
+    , size = "Veľkosť"
+    , items = "Položky"
+    , submitSuccessful = "Nastavenia boli uložené."
     }
 
 

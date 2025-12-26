@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Data.BoxContent exposing (Texts, de, fr, gb)
+module Messages.Data.BoxContent exposing (Texts, de, fr, gb
+    , sk)
 
 import Data.BoxContent exposing (BoxContent(..))
 
@@ -27,6 +28,18 @@ gb =
         , statsBox = "Statistics box"
         , messageBox = "Message box"
         , uploadBox = "Upload box"
+        }
+
+
+
+sk : Texts
+sk =
+    updateForContent
+        { forContent = \_ -> ""
+        , queryBox = "Dopytové pole"
+        , statsBox = "Štatistika"
+        , messageBox = "Schránka správ"
+        , uploadBox = "Pole na odovzdanie"
         }
 
 

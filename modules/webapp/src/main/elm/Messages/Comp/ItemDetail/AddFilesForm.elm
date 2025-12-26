@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail.AddFilesForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -36,6 +37,19 @@ gb =
         "All files have been uploaded. They are being processed, some data "
             ++ "may not be available immediately. "
     , refreshNow = "Refresh now"
+    }
+
+
+
+sk : Texts
+sk =
+    { dropzone = Messages.Comp.Dropzone.gb
+    , basics = Messages.Basics.sk
+    , addMoreFilesToItem = "Pridajte k tejto položke ďalšie súbory"
+    , reset = "Resetovať"
+    , filesSubmittedInfo = "Všetky súbory boli odovzdané. Spracúvajú sa, nejaké údaje"
+            ++ "may not be available immediately. "
+    , refreshNow = "Obnovte teraz"
     }
 
 

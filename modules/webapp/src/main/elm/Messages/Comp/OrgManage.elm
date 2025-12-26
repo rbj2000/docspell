@@ -10,6 +10,7 @@ module Messages.Comp.OrgManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -43,6 +44,21 @@ gb =
     , reallyDeleteOrg = "Really delete this organization?"
     , deleteThisOrg = "Delete this organization"
     , correctFormErrors = "Please correct the errors in the form."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , orgForm = Messages.Comp.OrgForm.gb
+    , orgTable = Messages.Comp.OrgTable.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , newOrganization = "Nová organizácia"
+    , createNewOrganization = "Vytvorte novú organizáciu"
+    , reallyDeleteOrg = "Naozaj chcete odstrániť túto organizáciu?"
+    , deleteThisOrg = "Odstrániť túto organizáciu"
+    , correctFormErrors = "Opravte chyby vo formulári."
     }
 
 

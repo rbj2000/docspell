@@ -10,6 +10,7 @@ module Messages.Comp.PersonManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -43,6 +44,21 @@ gb =
     , reallyDeletePerson = "Really delete this person?"
     , deleteThisPerson = "Delete this person"
     , correctFormErrors = "Please correct the errors in the form."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , personForm = Messages.Comp.PersonForm.gb
+    , personTable = Messages.Comp.PersonTable.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , newPerson = "Nová osoba"
+    , createNewPerson = "Vytvorte nového človeka"
+    , reallyDeletePerson = "Naozaj odstrániť túto osobu?"
+    , deleteThisPerson = "Odstrániť túto osobu"
+    , correctFormErrors = "Opravte chyby vo formulári."
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.NotificationHookTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.EventType exposing (EventType)
@@ -38,6 +39,19 @@ gb =
     , channel = "Channel"
     , events = "Events"
     , allEvents = "All"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , eventType = Messages.Data.EventType.gb
+    , channelType = Messages.Data.ChannelType.gb
+    , enabled = "Povolené"
+    , channel = "kanál"
+    , events = "Udalosti"
+    , allEvents = "Všetky"
     }
 
 

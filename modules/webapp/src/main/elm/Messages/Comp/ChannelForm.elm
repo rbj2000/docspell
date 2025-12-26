@@ -10,6 +10,7 @@ module Messages.Comp.ChannelForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -31,6 +32,17 @@ type alias Texts =
 gb : Texts
 gb =
     { basics = Messages.Basics.gb
+    , matrixForm = Messages.Comp.NotificationMatrixForm.gb
+    , gotifyForm = Messages.Comp.NotificationGotifyForm.gb
+    , mailForm = Messages.Comp.NotificationMailForm.gb
+    , httpForm = Messages.Comp.NotificationHttpForm.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
     , matrixForm = Messages.Comp.NotificationMatrixForm.gb
     , gotifyForm = Messages.Comp.NotificationGotifyForm.gb
     , mailForm = Messages.Comp.NotificationMailForm.gb

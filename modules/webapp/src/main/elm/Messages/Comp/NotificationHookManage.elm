@@ -10,6 +10,7 @@ module Messages.Comp.NotificationHookManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -60,6 +61,30 @@ gb =
     , invalidJsonFilter = \m -> "Event filter invalid: " ++ m
     , updateWebhook = "Update webhook"
     , addWebhook = "Add new webhook"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , notificationForm = Messages.Comp.NotificationHookForm.gb
+    , notificationTable = Messages.Comp.NotificationHookTable.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , channelType = Messages.Data.ChannelType.gb
+    , newHook = "Nový webhook"
+    , httpRequest = "HTTP požiadavka"
+    , hookCreated = "Webhook bol vytvorený"
+    , hookUpdated = "Webhook bol aktualizovaný"
+    , hookStarted = "Webhook bol spustený"
+    , hookDeleted = "Webhook bol odstránený"
+    , deleteThisHook = "Odstrániť tento webhook"
+    , reallyDeleteHook = "Naozaj chcete odstrániť tento webhook?"
+    , formInvalid = "Vyplňte všetky povinné polia"
+    , invalidJsonFilter = \m ->
+            "Neplatný filter udalostí:" ++ m
+    , updateWebhook = "Aktualizujte webhook"
+    , addWebhook = "Pridať nový webhook"
     }
 
 

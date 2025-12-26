@@ -10,6 +10,7 @@ module Messages.Comp.AddressForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 
@@ -29,6 +30,17 @@ gb =
     , zipCode = "Zip Code"
     , city = "City"
     , country = "Country"
+    }
+
+
+
+sk : Texts
+sk =
+    { selectCountry = "Vyberte Krajina"
+    , street = "Ulica"
+    , zipCode = "PSČ"
+    , city = "Mesto"
+    , country = "Krajina"
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.TagManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Http
@@ -43,6 +44,21 @@ gb =
     , reallyDeleteTag = "Really delete this tag?"
     , deleteThisTag = "Delete this tag"
     , correctFormErrors = "Please correct the errors in the form."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , tagTable = Messages.Comp.TagTable.gb
+    , tagForm = Messages.Comp.TagForm.gb
+    , httpError = Messages.Comp.HttpError.gb
+    , createNewTag = "Vytvorte novú značku"
+    , newTag = "Nová značka"
+    , reallyDeleteTag = "Naozaj odstrániť túto značku?"
+    , deleteThisTag = "Odstrániť túto značku"
+    , correctFormErrors = "Opravte chyby vo formulári."
     }
 
 

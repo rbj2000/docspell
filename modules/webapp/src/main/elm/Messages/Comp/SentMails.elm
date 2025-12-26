@@ -10,6 +10,7 @@ module Messages.Comp.SentMails exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -36,6 +37,19 @@ gb tz =
     , subject = "Subject"
     , sent = "Sent"
     , sender = "Sender"
+    , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { from = "Od"
+    , date = "Dátum"
+    , recipients = "Príjemcovia"
+    , subject = "Predmet"
+    , sent = "Odoslané"
+    , sender = "odosielateľ"
     , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
     }
 

@@ -10,6 +10,7 @@ module Messages.Comp.ShareTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -34,6 +35,17 @@ gb tz =
     , active = "Active"
     , publishUntil = "Publish Until"
     , user = "User"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
+    , active = "Aktívne"
+    , publishUntil = "Zverejniť do"
+    , user = "Používateľ"
     }
 
 

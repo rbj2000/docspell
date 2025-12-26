@@ -10,6 +10,7 @@ module Messages.Comp.ShareView exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -48,6 +49,24 @@ gb tz =
     , passwordProtected = "Password protected"
     , views = "Views"
     , lastAccess = "Last Access"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , date = DF.formatDateLong Messages.UiLanguage.English tz
+    , qrCodeError = "Chyba pri generovaní QR kódu."
+    , expiredInfo = "Platnosť tohto zdieľania vypršala."
+    , disabledInfo = "Toto zdieľanie je zakázané."
+    , noName = "Bez mena"
+    , copyToClipboard = "Kopírovať do schránky"
+    , openInNewTab = "Otvoriť na novej karte/okne"
+    , publishUntil = "Zverejnené do"
+    , passwordProtected = "Chránené heslom"
+    , views = "Zobrazenia"
+    , lastAccess = "Posledný prístup"
     }
 
 

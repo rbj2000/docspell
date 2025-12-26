@@ -10,6 +10,7 @@ module Messages.Comp.FolderManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -36,6 +37,18 @@ gb tz =
     , showOwningFoldersOnly = "Show owning folders only"
     , createNewFolder = "Create a new folder"
     , newFolder = "New Folder"
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , folderDetail = Messages.Comp.FolderDetail.gb
+    , folderTable = Messages.Comp.FolderTable.gb tz
+    , showOwningFoldersOnly = "Zobraziť iba priečinky, ktoré vlastníte"
+    , createNewFolder = "Vytvorte nový priečinok"
+    , newFolder = "Nový priečinok"
     }
 
 

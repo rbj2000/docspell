@@ -10,6 +10,7 @@ module Messages.Comp.NotificationMailForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -35,6 +36,19 @@ gb =
     , recipients = "Recipient(s)"
     , recipientsInfo = "One or more mail addresses, confirm each by pressing 'Return'."
     , recipientsRequired = "At least one recipient is required."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , selectConnection = "Vybrať pripojenie..."
+    , sendVia = "Odoslať cez"
+    , sendViaInfo = "Pripojenie SMTP, ktoré sa má použiť pri odosielaní e-mailov s upozornením."
+    , recipients = "príjemca(i)"
+    , recipientsInfo = "Jedna alebo viac e-mailových adries, každú potvrďte stlačením tlačidla „Späť“."
+    , recipientsRequired = "Vyžaduje sa aspoň jeden príjemca."
     }
 
 

@@ -17,6 +17,8 @@ val sharedSettings = Seq(
   organization := "com.github.eikek",
   scalaVersion := "2.13.16",
   organizationName := "Eike K. & Contributors",
+  dockerBaseImage := "eclipse-temurin:17-jre",
+  Docker / dockerRepository := None, // Overridden in CI
   licenses += (
     "AGPL-3.0-or-later",
     url(
@@ -826,7 +828,19 @@ val joex = project
       "-Xmx1596M",
       "-XX:+UseG1GC"
     ),
-    Revolver.enableDebugging(port = 5051, suspend = false)
+    Revolver.enableDebugging(port = 5051, suspend = false),
+    dockerBaseImage := "eclipse-temurin:17-jre",
+    dockerExposedPorts := Seq(5051),
+    Docker / dockerRepository := sys.env
+      .get("DOCKER_REPOSITORY")
+      .orElse((Docker / dockerRepository).value),
+    Docker / dockerUpdateLatest := sys.env
+      .get("IMAGE_TAG")
+      .contains("latest"),
+    Docker / dockerAlias := {
+      val tag = sys.env.getOrElse("IMAGE_TAG", version.value)
+      dockerAlias.value.withTag(Some(tag))
+    }
   )
   .dependsOn(
     config,
@@ -903,6 +917,18 @@ val restserver = project
         // scalajs artifacts are not needed at runtime
         case (file, name) => !name.contains("_sjs1_")
       }
+    },
+    dockerBaseImage := "eclipse-temurin:17-jre",
+    dockerExposedPorts := Seq(7880),
+    Docker / dockerRepository := sys.env
+      .get("DOCKER_REPOSITORY")
+      .orElse((Docker / dockerRepository).value),
+    Docker / dockerUpdateLatest := sys.env
+      .get("IMAGE_TAG")
+      .contains("latest"),
+    Docker / dockerAlias := {
+      val tag = sys.env.getOrElse("IMAGE_TAG", version.value)
+      dockerAlias.value.withTag(Some(tag))
     }
   )
   .dependsOn(

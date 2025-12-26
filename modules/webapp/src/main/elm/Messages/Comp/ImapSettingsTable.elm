@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.ImapSettingsTable exposing (Texts, de, fr, gb)
+module Messages.Comp.ImapSettingsTable exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Basics
 
@@ -20,6 +21,14 @@ gb : Texts
 gb =
     { basics = Messages.Basics.gb
     , hostPort = "Host/Port"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , hostPort = "Hostiteľ/Port"
     }
 
 

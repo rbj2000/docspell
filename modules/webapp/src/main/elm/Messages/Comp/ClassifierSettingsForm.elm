@@ -10,6 +10,7 @@ module Messages.Comp.ClassifierSettingsForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -33,6 +34,31 @@ type alias Texts =
 gb : TimeZone -> Texts
 gb tz =
     { basics = Messages.Basics.gb
+    , calEventInput = Messages.Comp.CalEventInput.gb tz
+    , autoTaggingText =
+        """
+
+Auto-tagging works by learning from existing documents. The more
+documents you have correctly tagged, the better. Learning is done
+periodically based on a schedule. You can specify tag-groups that
+should either be used (whitelist) or not used (blacklist) for
+learning.
+
+Use an empty whitelist to disable auto tagging.
+
+            """
+    , blacklistOrWhitelist = "Is the following a blacklist or whitelist?"
+    , whitelistLabel = "Include tag categories for learning"
+    , blacklistLabel = "Exclude tag categories from learning"
+    , itemCount = "Item Count"
+    , schedule = "Schedule"
+    , itemCountHelp = "The maximum number of items to learn from, order by date newest first. Use 0 to mean all."
+    }
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
     , calEventInput = Messages.Comp.CalEventInput.gb tz
     , autoTaggingText =
         """

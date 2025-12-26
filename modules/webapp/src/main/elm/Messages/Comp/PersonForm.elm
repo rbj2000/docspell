@@ -10,6 +10,7 @@ module Messages.Comp.PersonForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.ContactType exposing (ContactType)
@@ -52,6 +53,25 @@ gb =
     , contacts = "Contacts"
     , contactTypeLabel = Messages.Data.ContactType.gb
     , notes = "Notes"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , addressForm = Messages.Comp.AddressForm.gb
+    , personUseLabel = Messages.Data.PersonUse.gb
+    , useOfPerson = "Použitie tejto osoby"
+    , useAsConcerningOnly = "Používajte len ako osobu týkajúcu sa"
+    , useAsCorrespondentOnly = "Používajte len ako korešpondent"
+    , useAsBoth = "Používajte ako dotknutú osobu alebo ako korešpondenčnú osobu"
+    , dontUseForSuggestions = "Nepoužívajte na návrhy."
+    , chooseAnOrg = "Vyberte si organizáciu"
+    , address = "Adresa"
+    , contacts = "Kontakty"
+    , contactTypeLabel = Messages.Data.ContactType.gb
+    , notes = "Poznámky"
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.OrgTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.OrgUse exposing (OrgUse)
@@ -32,6 +33,17 @@ gb =
     , address = "Address"
     , contact = "Contact"
     , use = "Use"
+    , orgUseLabel = Messages.Data.OrgUse.gb
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , address = "Adresa"
+    , contact = "Kontaktovať"
+    , use = "Použite"
     , orgUseLabel = Messages.Data.OrgUse.gb
     }
 

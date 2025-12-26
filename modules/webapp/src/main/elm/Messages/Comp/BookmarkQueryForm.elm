@@ -10,6 +10,7 @@ module Messages.Comp.BookmarkQueryForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -35,6 +36,19 @@ gb =
     , collectiveLocation = "Collective scope"
     , collectiveLocationText = "The bookmarked query can be used and edited by all users"
     , nameExistsWarning = "A bookmark with this name exists! Choose another name."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , queryLabel = "Dopyt"
+    , userLocation = "Rozsah používateľa"
+    , userLocationText = "Záložka dotaz je len pre vás"
+    , collectiveLocation = "Kolektívna pôsobnosť"
+    , collectiveLocationText = "Dotaz označený záložkou môžete používať a upravovať všetkých všetkých"
+    , nameExistsWarning = "Záložka s týmto názvom existuje! Vyberte iné meno."
     }
 
 

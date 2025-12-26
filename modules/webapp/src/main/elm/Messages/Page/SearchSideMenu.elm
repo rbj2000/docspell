@@ -10,6 +10,7 @@ module Messages.Page.SearchSideMenu exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Comp.ItemDetail.MultiEditMenu
@@ -36,6 +37,19 @@ gb =
     , multiEditHeader = "Multi-Edit"
     , multiEditInfo = "Note that a change here immediatly affects all selected items on the right!"
     , close = "Close"
+    }
+
+
+
+sk : Texts
+sk =
+    { searchMenu = Messages.Comp.SearchMenu.gb
+    , multiEdit = Messages.Comp.ItemDetail.MultiEditMenu.gb
+    , editMode = "Režim úprav"
+    , resetSearchForm = "Obnoviť vyhľadávací formulár"
+    , multiEditHeader = "Viacnásobná úprava"
+    , multiEditInfo = "Upozorňujeme, že zmena tu okamžite ovplyvní všetky vybrané položky vpravo!"
+    , close = "Zavrieť"
     }
 
 

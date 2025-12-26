@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.SharePasswordForm exposing (Texts, de, fr, gb)
+module Messages.Comp.SharePasswordForm exposing (Texts, de, fr, gb
+    , sk)
 
 import Http
 import Messages.Comp.HttpError
@@ -27,6 +28,17 @@ gb =
     , password = "Password"
     , passwordSubmitButton = "Submit"
     , passwordFailed = "Password is wrong"
+    }
+
+
+
+sk : Texts
+sk =
+    { httpError = Messages.Comp.HttpError.gb
+    , passwordRequired = "Vyžaduje sa heslo"
+    , password = "heslo"
+    , passwordSubmitButton = "Odoslať"
+    , passwordFailed = "Heslo je nesprávne"
     }
 
 

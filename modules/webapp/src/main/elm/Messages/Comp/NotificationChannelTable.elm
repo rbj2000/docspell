@@ -27,6 +27,15 @@ gb =
     }
 
 
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , eventType = Messages.Data.EventType.gb
+    , channelType = "Typ kanála"
+    }
+
+
 de : Texts
 de =
     { basics = Messages.Basics.de

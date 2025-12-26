@@ -47,6 +47,9 @@ get lang =
         French ->
             fr
 
+        Slovak ->
+            sk
+
 
 format : UiLanguage -> TimeZone -> (DateTimeMsg -> List Token) -> Int -> String
 format lang zone pattern millis =
@@ -109,6 +112,53 @@ formatIsoDateTimeUtc millis =
 
 gb : DateTimeMsg
 gb =
+    { dateLong =
+        [ DateFormat.dayOfWeekNameAbbreviated
+        , DateFormat.text ", "
+        , DateFormat.monthNameFull
+        , DateFormat.text " "
+        , DateFormat.dayOfMonthSuffix
+        , DateFormat.text ", "
+        , DateFormat.yearNumber
+        ]
+    , dateShort =
+        [ DateFormat.yearNumber
+        , DateFormat.text "/"
+        , DateFormat.monthFixed
+        , DateFormat.text "/"
+        , DateFormat.dayOfMonthFixed
+        ]
+    , dateTimeLong =
+        [ DateFormat.dayOfWeekNameAbbreviated
+        , DateFormat.text ", "
+        , DateFormat.monthNameFull
+        , DateFormat.text " "
+        , DateFormat.dayOfMonthSuffix
+        , DateFormat.text ", "
+        , DateFormat.yearNumber
+        , DateFormat.text ", "
+        , DateFormat.hourMilitaryNumber
+        , DateFormat.text ":"
+        , DateFormat.minuteFixed
+        ]
+    , dateTimeShort =
+        [ DateFormat.yearNumber
+        , DateFormat.text "/"
+        , DateFormat.monthFixed
+        , DateFormat.text "/"
+        , DateFormat.dayOfMonthFixed
+        , DateFormat.text " "
+        , DateFormat.hourMilitaryNumber
+        , DateFormat.text ":"
+        , DateFormat.minuteFixed
+        ]
+    , lang = DL.english
+    }
+
+
+
+sk : DateTimeMsg
+sk =
     { dateLong =
         [ DateFormat.dayOfWeekNameAbbreviated
         , DateFormat.text ", "

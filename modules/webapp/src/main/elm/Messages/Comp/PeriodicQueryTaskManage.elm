@@ -10,6 +10,7 @@ module Messages.Comp.PeriodicQueryTaskManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -57,6 +58,28 @@ gb tz =
     , gotify = "Gotify"
     , email = "E-Mail"
     , httpRequest = "HTTP Request"
+    }
+
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , notificationForm = Messages.Comp.PeriodicQueryTaskForm.sk tz
+    , notificationTable = Messages.Comp.PeriodicQueryTaskList.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , channelType = Messages.Data.ChannelType.sk
+    , newTask = "Nová úloha"
+    , createNewTask = "Vytvorte novú oznamovaciu úlohu"
+    , taskCreated = "Úloha vytvorená."
+    , taskUpdated = "Úloha bola aktualizovaná."
+    , taskStarted = "Úloha začala."
+    , taskDeleted = "Úloha bola odstránená."
+    , matrix = "Matrix"
+    , gotify = "Gotify"
+    , email = "E-mail"
+    , httpRequest = "HTTP požiadavka"
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.DueItemsTaskForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -97,6 +98,48 @@ gb tz =
     , queryLabel = "Query"
     , channelRequired = "A valid channel must be given."
     , channelHeader = "Channels"
+    }
+
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , calEventInput = Messages.Comp.CalEventInput.sk tz
+    , httpError = Messages.Comp.HttpError.sk
+    , channelForm = Messages.Comp.ChannelForm.sk
+    , tagDropdown = Messages.Comp.TagDropdown.sk
+    , channelType = Messages.Data.ChannelType.sk
+    , channelRef = Messages.Comp.ChannelRefInput.sk
+    , reallyDeleteTask = "Naozaj chcete odstrániť túto úlohu upozornení?"
+    , startOnce = "Začnite raz"
+    , startTaskNow = "Začnite túto úlohu teraz"
+    , deleteThisTask = "Odstrániť túto úlohu"
+    , enableDisable = "Povoliť alebo zakázať túto úlohu."
+    , summary = "Zhrnutie"
+    , summaryInfo = "Nejaký ľudsky čitateľný názov, len na zobrazenie"
+    , tagsInclude = "Značky zahŕňajú (a)"
+    , tagsIncludeInfo = "Položky musia mať všetky tu uvedené štítky."
+    , tagsExclude = "Značky vylúčiť (alebo)"
+    , tagsExcludeInfo = "Položky tu nesmú mať zadaný žiadny štítok."
+    , remindDaysLabel = "Pripomenúť dni"
+    , remindDaysInfo = "Vyberte položky s dátumom splatnosti *nižším ako* `dnes+pripomenúťDni`"
+    , capOverdue = "Uzáver položiek po splatnosti"
+    , capOverdueInfo = "Ak je začiarknuté, berú sa do úvahy iba položky s dátumom splatnosti *väčším ako* `dnes - pripomenúťDni`."
+    , schedule = "Rozvrh"
+    , scheduleClickForHelp = "Kliknutím sem získate pomoc"
+    , scheduleInfo = "Zadajte, ako často a kedy sa má táto úloha spúšťať."
+            ++ "Use English 3-letter weekdays. Either a single value, "
+            ++ "a list (ex. 1,2,3), a range (ex. 1..3) or a '*' (meaning all) "
+            ++ "is allowed for each part."
+    , connectionMissing = "Nie sú nakonfigurované žiadne e-mailové pripojenia. Prejdite do Nastavenia e-mailu a pridajte ho."
+    , invalidCalEvent = "Udalosť v kalendári nie je platná."
+    , remindDaysRequired = "Vyžaduje sa pripomenutie dní."
+    , recipientsRequired = "Vyžaduje sa aspoň jeden príjemca."
+    , queryLabel = "Dopyt"
+    , channelRequired = "Musíte zadať platný kanál."
+    , channelHeader = "Kanály"
     }
 
 

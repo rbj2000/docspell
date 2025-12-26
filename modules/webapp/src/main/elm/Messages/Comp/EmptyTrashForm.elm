@@ -10,6 +10,7 @@ module Messages.Comp.EmptyTrashForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -33,6 +34,17 @@ gb tz =
     , schedule = "Schedule"
     , minAge = "Minimum Age (Days)"
     , minAgeInfo = "The minimum age in days of an items to be removed. The last-update time is used."
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , calEventInput = Messages.Comp.CalEventInput.gb tz
+    , schedule = "Rozvrh"
+    , minAge = "Minimálny vek (dni)"
+    , minAgeInfo = "Minimálny vek v dňoch položiek, ktoré sa majú odstrániť. Použije sa čas poslednej aktualizácie."
     }
 
 

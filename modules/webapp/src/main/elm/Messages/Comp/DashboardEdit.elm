@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.DashboardEdit exposing (Texts, de, fr, gb)
+module Messages.Comp.DashboardEdit exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Basics
 import Messages.Comp.BoxEdit
@@ -39,6 +40,22 @@ gb =
     , newBox = "New box"
     , defaultDashboard = "Default Dashboard"
     , gap = "Gap"
+    }
+
+
+
+sk : Texts
+sk =
+    { boxView = Messages.Comp.BoxEdit.gb
+    , boxContent = Messages.Data.BoxContent.gb
+    , basics = Messages.Basics.sk
+    , accountScope = Messages.Data.AccountScope.gb
+    , namePlaceholder = "Názov informačného panela"
+    , columns = "Stĺpce"
+    , dashboardBoxes = "Schránky na palubnú dosku"
+    , newBox = "Nová krabica"
+    , defaultDashboard = "Predvolený informačný panel"
+    , gap = "Medzera"
     }
 
 

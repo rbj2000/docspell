@@ -10,6 +10,7 @@ module Messages.Comp.AddonArchiveForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -29,6 +30,16 @@ gb =
     , addonUrl = "Addon URL"
     , addonUrlPlaceholder = "e.g. https://github.com/some-user/project/refs/tags/1.0.zip"
     , installInfoText = "Only urls to remote addon zip files are supported."
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , addonUrl = "Adresa URL doplnku"
+    , addonUrlPlaceholder = "napr. https://github.com/some-user/project/refs/tags/1.0.zip"
+    , installInfoText = "Podporované sú iba adresy URL vzdialených súborov zip doplnku."
     }
 
 

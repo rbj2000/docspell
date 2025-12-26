@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxMessageEdit exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxMessageEdit exposing (Texts, de, fr, gb
+    , sk)
 
 
 type alias Texts =
@@ -24,6 +25,17 @@ gb =
     , bodyLabel = "Body"
     , bodyPlaceholder = "Message body…"
     , infoText = "Markdown can be used in both fields for simple formatting."
+    }
+
+
+
+sk : Texts
+sk =
+    { titleLabel = "Názov"
+    , titlePlaceholder = "Názov správy…"
+    , bodyLabel = "Telo"
+    , bodyPlaceholder = "Telo správy…"
+    , infoText = "Markdown je možné použiť v oboch poliach na jednoduché formátovanie."
     }
 
 

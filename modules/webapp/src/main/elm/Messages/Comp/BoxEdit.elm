@@ -5,7 +5,8 @@
 -}
 
 
-module Messages.Comp.BoxEdit exposing (Texts, de, fr, gb)
+module Messages.Comp.BoxEdit exposing (Texts, de, fr, gb
+    , sk)
 
 import Messages.Basics
 import Messages.Comp.BoxMessageEdit
@@ -51,6 +52,27 @@ gb =
     , moveToLeft = "Move to left"
     , moveToRight = "Move to right"
     , deleteBox = "Delete box"
+    }
+
+
+
+sk : Texts
+sk =
+    { messageEdit = Messages.Comp.BoxMessageEdit.gb
+    , uploadEdit = Messages.Comp.BoxUploadEdit.gb
+    , queryEdit = Messages.Comp.BoxQueryEdit.gb
+    , statsEdit = Messages.Comp.BoxStatsEdit.gb
+    , boxContent = Messages.Data.BoxContent.gb
+    , basics = Messages.Basics.sk
+    , namePlaceholder = "Názov krabice"
+    , visible = "Viditeľné"
+    , decorations = "Dekorácie škatúľ"
+    , colspan = "Rozpätie stĺpca"
+    , contentProperties = "Obsah"
+    , reallyDeleteBox = "Naozaj chcete odstrániť toto pole?"
+    , moveToLeft = "Presuňte sa doľava"
+    , moveToRight = "Presuňte sa doprava"
+    , deleteBox = "Odstrániť tyč"
     }
 
 

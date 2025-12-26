@@ -10,6 +10,7 @@ module Messages.Comp.AddonArchiveTable exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -25,6 +26,14 @@ gb : Texts
 gb =
     { basics = Messages.Basics.gb
     , version = "Version"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , version = "Verzia"
     }
 
 

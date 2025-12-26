@@ -10,6 +10,7 @@ module Messages.Comp.DueItemsTaskManage exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.TimeZone exposing (TimeZone)
@@ -49,6 +50,22 @@ gb tz =
     , taskUpdated = "Task updated."
     , taskStarted = "Task started."
     , taskDeleted = "Task deleted."
+    }
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , notificationForm = Messages.Comp.DueItemsTaskForm.sk tz
+    , notificationTable = Messages.Comp.DueItemsTaskList.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , channelType = Messages.Data.ChannelType.sk
+    , newTask = "Nová úloha"
+    , createNewTask = "Vytvorte novú oznamovaciu úlohu"
+    , taskCreated = "Úloha vytvorená."
+    , taskUpdated = "Úloha bola aktualizovaná."
+    , taskStarted = "Úloha začala."
+    , taskDeleted = "Úloha bola odstránená."
     }
 
 

@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail.EditForm exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Data.Direction exposing (Direction)
@@ -64,6 +65,31 @@ gb tz =
     , editEquipment = "Edit equipment"
     , suggestions = "Suggestions"
     , noSuggestions = "No suggestions"
+    , formatDate = DF.formatDateLong Messages.UiLanguage.English tz
+    , direction = Messages.Data.Direction.gb
+    }
+
+
+
+sk : TimeZone -> Texts
+sk tz =
+    { basics = Messages.Basics.sk
+    , customFieldInput = Messages.Comp.CustomFieldMultiInput.gb
+    , tagDropdown = Messages.Comp.TagDropdown.gb
+    , createNewCustomField = "Vytvorte nové vlastné pole"
+    , chooseDirection = "Vyberte si smer…"
+    , dueDateTab = "Dátum splatnosti"
+    , addNewOrg = "Pridať novú organizáciu"
+    , editOrg = "Upraviť organizáciu"
+    , chooseOrg = "Vyberte si organizáciu"
+    , addNewCorrespondentPerson = "Pridať nového korešpondenta"
+    , editPerson = "Upraviť osobu"
+    , personOrgInfo = "Vybraná osoba nepatrí do vybratej organizácie."
+    , addNewConcerningPerson = "Pridajte novú dotknutú osobu"
+    , addNewEquipment = "Pridajte nové vybavenie"
+    , editEquipment = "Upravte vybavenie"
+    , suggestions = "Návrhy"
+    , noSuggestions = "Žiadne návrhy"
     , formatDate = DF.formatDateLong Messages.UiLanguage.English tz
     , direction = Messages.Data.Direction.gb
     }

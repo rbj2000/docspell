@@ -10,6 +10,7 @@ module Messages.Comp.ItemDetail.Notes exposing
     , de
     , fr
     , gb
+    , sk
     )
 
 import Messages.Basics
@@ -29,6 +30,16 @@ gb =
     , notes = "Notes"
     , preview = "Preview"
     , supportsMarkdown = "Supports Markdown"
+    }
+
+
+
+sk : Texts
+sk =
+    { basics = Messages.Basics.sk
+    , notes = "Poznámky"
+    , preview = "Ukážka"
+    , supportsMarkdown = "Podporuje Markdown"
     }
 
 
