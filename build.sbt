@@ -831,7 +831,12 @@ val joex = project
     Revolver.enableDebugging(port = 5051, suspend = false),
     dockerBaseImage := "eclipse-temurin:17-jre",
     dockerExposedPorts := Seq(5051),
-    Docker / dockerRepository := sys.env.get("DOCKER_REPOSITORY").orElse((Docker / dockerRepository).value)
+    Docker / dockerRepository := sys.env.get("DOCKER_REPOSITORY").orElse((Docker / dockerRepository).value),
+    Docker / dockerUpdateLatest := sys.env.get("IMAGE_TAG").contains("latest"),
+    Docker / dockerAlias := {
+      val tag = sys.env.getOrElse("IMAGE_TAG", version.value)
+      dockerAlias.value.withTag(Some(tag))
+    }
   )
   .dependsOn(
     config,
@@ -911,7 +916,12 @@ val restserver = project
     },
     dockerBaseImage := "eclipse-temurin:17-jre",
     dockerExposedPorts := Seq(7880),
-    Docker / dockerRepository := sys.env.get("DOCKER_REPOSITORY").orElse((Docker / dockerRepository).value)
+    Docker / dockerRepository := sys.env.get("DOCKER_REPOSITORY").orElse((Docker / dockerRepository).value),
+    Docker / dockerUpdateLatest := sys.env.get("IMAGE_TAG").contains("latest"),
+    Docker / dockerAlias := {
+      val tag = sys.env.getOrElse("IMAGE_TAG", version.value)
+      dockerAlias.value.withTag(Some(tag))
+    }
   )
   .dependsOn(
     config,
