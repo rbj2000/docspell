@@ -32,4 +32,4 @@ jobs:
         env:
           DOCKER_REPOSITORY: ${{ secrets.DOCKER_USERNAME }}
         run: |
-           nix develop .#ci --command sbt docker:publish
+           nix develop .#ci --command sbt "joex/docker:publish" "restserver/docker:publish"
