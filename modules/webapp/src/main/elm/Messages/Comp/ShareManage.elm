@@ -76,11 +76,11 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
-    , shareTable = Messages.Comp.ShareTable.gb tz
-    , shareForm = Messages.Comp.ShareForm.gb
-    , shareView = Messages.Comp.ShareView.gb tz
-    , shareMail = Messages.Comp.ShareMail.gb
+    , httpError = Messages.Comp.HttpError.sk
+    , shareTable = Messages.Comp.ShareTable.sk tz
+    , shareForm = Messages.Comp.ShareForm.sk
+    , shareView = Messages.Comp.ShareView.sk tz
+    , shareMail = Messages.Comp.ShareMail.sk
     , newShare = "Nové zdieľanie"
     , copyToClipboard = "Kopírovať do schránky"
     , openInNewTab = "Otvoriť na novej karte/okne"

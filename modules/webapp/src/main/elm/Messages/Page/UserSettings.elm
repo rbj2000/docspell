@@ -71,9 +71,9 @@ gb tz =
     , notificationManage = Messages.Comp.DueItemsTaskManage.gb tz
     , scanMailboxManage = Messages.Comp.ScanMailboxManage.gb tz
     , notificationHookManage = Messages.Comp.NotificationHookManage.gb
-    , periodicQueryTask = Messages.Comp.PeriodicQueryTaskManage.gb tz
-    , channelManage = Messages.Comp.NotificationChannelManage.gb
-    , otpSetup = Messages.Comp.OtpSetup.gb tz
+    , periodicQueryTask = Messages.Comp.PeriodicQueryTaskManage.sk tz
+    , channelManage = Messages.Comp.NotificationChannelManage.sk
+    , otpSetup = Messages.Comp.OtpSetup.sk tz
     , userSettings = "User Settings"
     , uiSettings = "UI Settings"
     , notifications = "Notifications"
@@ -147,8 +147,8 @@ sk tz =
     , channelSettings = "Oznamovacie kanály"
     , uiSettingsInfo = "Tieto nastavenia ovplyvňujú iba webové používateľské rozhranie. Nastavenia je možné uložiť do kolektívu alebo do vášho osobného používateľa. Osobné nastavenia sú preferované, ak existujú obe hodnoty."
     , scanMailboxInfo1 = "Docspell dokáže skenovať priečinky vašej poštovej schránky a importovať vaše e-maily."
-            ++ "You need to provide a connection in "
-            ++ "your e-mail (imap) settings."
+            ++ "Musíte poskytnúť pripojenie v "
+            ++ "nastaveniach e-mailu (IMAP)."
     , scanMailboxInfo2 = """Docspell prechádza všetkými nakonfigurovanými priečinkami a importmi
             e-maily zodpovedajúce kritériám vyhľadávania. E-maily sa preskočia, ak
             boli importované v predchádzajúcom spustení a zodpovedajúce
@@ -161,25 +161,25 @@ sk tz =
     , dueItems = "Dopyt na splatné položky"
     , notificationInfoText = """
 
-Docspell can send notification messages on various events. You can
-choose from these channels to send messages:
-[Matrix](https://matrix.org), [Gotify](https://gotify.net) or E-Mail.
-At last you can send a plain http request with the event details in
-its payload.
+Docspell môže posielať notifikačné správy pri rôznych udalostiach. Môžete si
+vybrať z týchto kanálov na odosielanie správ:
+[Matrix](https://matrix.org), [Gotify](https://gotify.net) alebo E-Mail.
+Nakoniec môžete odoslať jednoduchú http požiadavku s podrobnosťami udalosti v
+jej obsahu.
 
-Additionally, you can setup queries that are executed periodically.
-The results are send as a notification message.
+Okrem toho môžete nastaviť dopytovanie, ktoré sa vykonáva pravidelne.
+Výsledky sa posielajú ako notifikačná správa.
 
-A notification setting needs at least one communication channel, which
-must be created before.
+Nastavenie notifikácie vyžaduje aspoň jeden komunikačný kanál, ktorý
+musí byť vytvorený vopred.
 
 """
-    , webhookInfoText = """Webhooks execute http request upon certain events in docspell.
+    , webhookInfoText = """Webhooky vykonávajú http požiadavky pri určitých udalostiach v docspell.
 """
-    , dueItemsInfoText = """Docspell can notify you once the due dates of your items come closer.  """
-    , periodicQueryInfoText = "You can define a custom query that gets executed periodically."
-    , channels = "Notification Channels"
-    , channelInfoText = "Channels are used to send notification messages."
+    , dueItemsInfoText = """Docspell vás môže upozorniť, keď sa termíny splatnosti vašich položiek priblížia.  """
+    , periodicQueryInfoText = "Môžete definovať vlastný dopyt, ktorý sa vykonáva pravidelne."
+    , channels = "Oznamovacie kanály"
+    , channelInfoText = "Kanály sa používajú na odosielanie notifikačných správ."
     }
 
 

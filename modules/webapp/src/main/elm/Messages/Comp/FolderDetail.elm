@@ -59,7 +59,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , reallyDeleteThisFolder = "Naozaj chcete odstrániť tento priečinok?"
     , autoOwnerInfo = "Automaticky ste nastavený ako vlastník tohto nového priečinka."
     , modifyInfo = "Upravte tento priečinok zmenou názvu alebo pridaním/odstránením členov."

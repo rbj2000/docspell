@@ -42,7 +42,7 @@ sk =
     , dropFilesHere = "Sem presuňte súbory"
     , or = "Alebo"
     , selectInfo = "Vyberte súbory dokumentov (pdf, docx, txt, html, ...)."
-            ++ "Archives (zip and eml) are extracted."
+            ++ "Archívy (zip a eml) sú extrahované."
     }
 
 

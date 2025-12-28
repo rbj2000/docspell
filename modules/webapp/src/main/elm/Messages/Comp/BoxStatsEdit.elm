@@ -33,7 +33,7 @@ gb =
 
 sk : Texts
 sk =
-    { searchQuery = Messages.Comp.BoxSearchQueryInput.gb
+    { searchQuery = Messages.Comp.BoxSearchQueryInput.sk
     , fieldStatistics = "Štatistika v teréne"
     , basicNumbers = "Základné čísla"
     , showLabel = "Displej"

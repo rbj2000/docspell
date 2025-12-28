@@ -68,10 +68,10 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , notificationForm = Messages.Comp.NotificationHookForm.gb
-    , notificationTable = Messages.Comp.NotificationHookTable.gb
-    , httpError = Messages.Comp.HttpError.gb
-    , channelType = Messages.Data.ChannelType.gb
+    , notificationForm = Messages.Comp.NotificationHookForm.sk
+    , notificationTable = Messages.Comp.NotificationHookTable.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , channelType = Messages.Data.ChannelType.sk
     , newHook = "Nový webhook"
     , httpRequest = "HTTP požiadavka"
     , hookCreated = "Webhook bol vytvorený"

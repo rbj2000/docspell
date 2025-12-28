@@ -30,7 +30,7 @@ gb =
 
 sk : Texts
 sk =
-    { expandCollapse = Messages.Comp.ExpandCollapse.gb
+    { expandCollapse = Messages.Comp.ExpandCollapse.sk
     }
 
 

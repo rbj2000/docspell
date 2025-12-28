@@ -61,23 +61,23 @@ sk et =
             }
 
         SetFieldValue ->
-            { name = "Set field value"
-            , info = "Whenever a custom field is set to a value"
+            { name = "Nastaviť hodnotu poľa"
+            , info = "Vždy, keď sa vlastné pole nastaví na hodnotu"
             }
 
         DeleteFieldValue ->
-            { name = "Delete field value"
-            , info = "Whenever a custom field is removed"
+            { name = "Odstrániť hodnotu poľa"
+            , info = "Vždy, keď sa vlastné pole odstráni"
             }
 
         JobSubmitted ->
-            { name = "Job submitted"
-            , info = "Whenever a new job is submitted"
+            { name = "Úloha odoslaná"
+            , info = "Vždy, keď sa odošle nová úloha"
             }
 
         JobDone ->
-            { name = "Job done"
-            , info = "Whenever a new job finished"
+            { name = "Úloha dokončená"
+            , info = "Vždy, keď sa dokončí nová úloha"
             }
 
 

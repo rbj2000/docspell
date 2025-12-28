@@ -51,9 +51,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , settingsForm = Messages.Comp.EmailSettingsForm.gb
-    , settingsTable = Messages.Comp.EmailSettingsTable.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , settingsForm = Messages.Comp.EmailSettingsForm.sk
+    , settingsTable = Messages.Comp.EmailSettingsTable.sk
+    , httpError = Messages.Comp.HttpError.sk
     , newSettings = "Nové pripojenie"
     , addNewSmtpSettings = "Pridajte nové nastavenia SMTP"
     , reallyDeleteConnection = "Naozaj odstrániť tieto pripojenia?"

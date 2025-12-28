@@ -42,8 +42,8 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , fieldForm = Messages.Comp.CustomFieldForm.gb
-    , fieldTable = Messages.Comp.CustomFieldTable.gb tz
+    , fieldForm = Messages.Comp.CustomFieldForm.sk
+    , fieldTable = Messages.Comp.CustomFieldTable.sk tz
     , addCustomField = "Pridajte nové vlastné pole"
     , newCustomField = "Nové vlastné pole"
     }

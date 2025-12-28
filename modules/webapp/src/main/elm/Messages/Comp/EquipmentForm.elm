@@ -46,7 +46,7 @@ sk =
     , use = "Použite"
     , useAsConcerning = "Používajte podľa zariadenia"
     , useNotSuggestions = "Nepoužívajte na návrhy."
-    , equipmentUseLabel = Messages.Data.EquipmentUse.gb
+    , equipmentUseLabel = Messages.Data.EquipmentUse.sk
     , notes = "Poznámky"
     }
 

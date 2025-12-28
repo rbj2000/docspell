@@ -62,8 +62,8 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { attachmentMeta = Messages.Comp.AttachmentMeta.gb tz
-    , confirmModal = Messages.Comp.ItemDetail.ConfirmModal.gb
+    { attachmentMeta = Messages.Comp.AttachmentMeta.sk tz
+    , confirmModal = Messages.Comp.ItemDetail.ConfirmModal.sk
     , noName = "Bez mena"
     , openFileInNewTab = "Otvorte súbor na novej karte"
     , downloadFile = "Stiahnite si súbor"

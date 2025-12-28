@@ -55,9 +55,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , bookmarkTable = Messages.Comp.BookmarkTable.gb
-    , bookmarkForm = Messages.Comp.BookmarkQueryForm.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , bookmarkTable = Messages.Comp.BookmarkTable.sk
+    , bookmarkForm = Messages.Comp.BookmarkQueryForm.sk
+    , httpError = Messages.Comp.HttpError.sk
     , newBookmark = "Nová záložka"
     , reallyDeleteBookmark = "Naozaj odstrániť túto záložku?"
     , createNewBookmark = "Vytvorte si novú záložku"

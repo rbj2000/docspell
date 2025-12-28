@@ -39,7 +39,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , channelType = Messages.Data.ChannelType.gb
+    , channelType = Messages.Data.ChannelType.sk
     , summary = "Zhrnutie"
     , schedule = "Rozvrh"
     , connection = "kanál"

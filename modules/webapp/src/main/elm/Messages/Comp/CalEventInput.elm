@@ -64,7 +64,7 @@ sk tz =
     , schedule = "Rozvrh"
     , next = "Ďalej"
     , formatDateTime = DF.formatDateTimeLong Messages.UiLanguage.English tz
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     }
 
 

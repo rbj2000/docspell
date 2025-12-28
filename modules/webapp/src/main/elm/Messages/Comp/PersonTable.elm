@@ -44,7 +44,7 @@ sk =
     , address = "Adresa"
     , contact = "Kontaktovať"
     , use = "Použite"
-    , personUseLabel = Messages.Data.PersonUse.gb
+    , personUseLabel = Messages.Data.PersonUse.sk
     }
 
 

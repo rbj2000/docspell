@@ -34,9 +34,9 @@ gb =
 
 sk : Texts
 sk =
-    { httpError = Messages.Comp.HttpError.gb
+    { httpError = Messages.Comp.HttpError.sk
     , errorOccurred = "Chyba pri načítavaní údajov."
-    , statsView = Messages.Comp.SearchStatsView.gb
+    , statsView = Messages.Comp.SearchStatsView.sk
     , basics = Messages.Basics.sk
     }
 

@@ -39,8 +39,8 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , userLabel = Messages.Data.AccountScope.gb User
-    , collectiveLabel = Messages.Data.AccountScope.gb Collective
+    , userLabel = Messages.Data.AccountScope.sk User
+    , collectiveLabel = Messages.Data.AccountScope.sk Collective
     , shareLabel = "akcie"
     }
 

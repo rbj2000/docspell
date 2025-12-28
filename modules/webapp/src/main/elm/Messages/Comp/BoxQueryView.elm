@@ -47,16 +47,16 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { httpError = Messages.Comp.HttpError.gb
+    { httpError = Messages.Comp.HttpError.sk
     , errorOccurred = "Chyba pri načítavaní údajov."
     , basics = Messages.Basics.sk
     , noResults = "Nenašli sme žiadnu položku."
     , templateCtx =
-        { dateFormatLong = DF.formatDateLong Messages.UiLanguage.English tz
-        , dateFormatShort = DF.formatDateShort Messages.UiLanguage.English tz
-        , directionLabel = Messages.Data.Direction.gb
+        { dateFormatLong = DF.formatDateLong Messages.UiLanguage.Slovak tz
+        , dateFormatShort = DF.formatDateShort Messages.UiLanguage.Slovak tz
+        , directionLabel = Messages.Data.Direction.sk
         }
-    , itemColumn = Messages.Data.ItemColumn.gb
+    , itemColumn = Messages.Data.ItemColumn.sk
     }
 
 

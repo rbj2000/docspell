@@ -43,7 +43,7 @@ gb =
 
 sk : Texts
 sk =
-    { dropzone = Messages.Comp.Dropzone.gb
+    { dropzone = Messages.Comp.Dropzone.sk
     , basics = Messages.Basics.sk
     , addMoreFilesToItem = "Pridajte k tejto položke ďalšie súbory"
     , reset = "Resetovať"

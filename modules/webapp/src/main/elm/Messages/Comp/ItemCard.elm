@@ -61,7 +61,7 @@ sk tz =
     , cycleAttachments = "Cyklistické prílohy"
     , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz
     , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
-    , directionLabel = Messages.Data.Direction.gb
+    , directionLabel = Messages.Data.Direction.sk
     , showRelatedItems = "Zobraziť prepojené položky"
     }
 

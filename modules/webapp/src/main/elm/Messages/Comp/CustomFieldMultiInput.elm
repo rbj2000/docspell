@@ -30,7 +30,7 @@ gb =
 
 sk : Texts
 sk =
-    { customFieldInput = Messages.Comp.CustomFieldInput.gb
+    { customFieldInput = Messages.Comp.CustomFieldInput.sk
     }
 
 

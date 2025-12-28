@@ -57,9 +57,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , addonArchiveTable = Messages.Comp.AddonArchiveTable.gb
-    , addonArchiveForm = Messages.Comp.AddonArchiveForm.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , addonArchiveTable = Messages.Comp.AddonArchiveTable.sk
+    , addonArchiveForm = Messages.Comp.AddonArchiveForm.sk
+    , httpError = Messages.Comp.HttpError.sk
     , newAddonArchive = "Nový doplnok"
     , reallyDeleteAddonArchive = "Naozaj chcete odstrániť tento doplnok?"
     , createNewAddonArchive = "Nainštalujte nový doplnok"
