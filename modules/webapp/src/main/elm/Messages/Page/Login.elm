@@ -59,7 +59,7 @@ gb =
 
 sk : Texts
 sk =
-    { httpError = Messages.Comp.HttpError.gb
+    { httpError = Messages.Comp.HttpError.sk
     , loginToDocspell = "Prihláste sa do Docspell"
     , username = "Používateľské meno"
     , collectiveSlashLogin = "Kolektív / Prihlásenie"

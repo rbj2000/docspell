@@ -31,7 +31,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , eventType = Messages.Data.EventType.gb
+    , eventType = Messages.Data.EventType.sk
     , channelType = "Typ kanála"
     }
 

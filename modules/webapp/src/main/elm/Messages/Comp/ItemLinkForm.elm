@@ -42,9 +42,9 @@ sk : TimeZone -> Texts
 sk tz =
     { dateFormatLong = DF.formatDateLong English tz
     , dateFormatShort = DF.formatDateShort English tz
-    , directionLabel = Messages.Data.Direction.gb
-    , itemSearchInput = Messages.Comp.ItemSearchInput.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , directionLabel = Messages.Data.Direction.sk
+    , itemSearchInput = Messages.Comp.ItemSearchInput.sk
+    , httpError = Messages.Comp.HttpError.sk
     }
 
 

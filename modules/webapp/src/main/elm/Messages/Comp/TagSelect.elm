@@ -36,7 +36,7 @@ gb =
 
 sk : Texts
 sk =
-    { expandCollapse = Messages.Comp.ExpandCollapse.gb
+    { expandCollapse = Messages.Comp.ExpandCollapse.sk
     , hideEmpty = "Skryť prázdne"
     , showEmpty = "Zobraziť prázdne"
     , filterPlaceholder = "Filtrovať…"

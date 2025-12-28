@@ -46,7 +46,7 @@ sk =
     , welcomeBody = "Docspell udržiava vaše dokumenty organizované."
     , summaryName = "Zhrnutie"
     , dueInDays = \n ->
-            "Splatné v" ++ String.fromInt n ++ " days"
+            "Splatné za " ++ String.fromInt n ++ " dní"
     , newDocsName = "Nové dokumenty"
     }
 

@@ -61,25 +61,25 @@ sk =
     , confirmReprocessItem =
         \state ->
             if state == "created" then
-                "Reprocessing this item may change its metadata, "
-                    ++ "since it is unconfirmed. Do you want to proceed?"
+                "Opätovné spracovanie tejto položky môže zmeniť jej metadáta, "
+                    ++ "pretože nie je potvrdená. Chcete pokračovať?"
 
             else
-                "Reprocessing this item will not change its metadata, "
-                    ++ "since it has been confirmed. Do you want to proceed?"
+                "Opätovné spracovanie tejto položky nezmení jej metadáta, "
+                    ++ "pretože bola potvrdená. Chcete pokračovať?"
     , confirmReprocessFile =
         \state ->
             if state == "created" then
-                "Reprocessing this file may change metadata of "
-                    ++ "this item, since it is unconfirmed. Do you want to proceed?"
+                "Opätovné spracovanie tohto súboru môže zmeniť metadáta "
+                    ++ "tejto položky, pretože nie je potvrdená. Chcete pokračovať?"
 
             else
-                "Reprocessing this file will not change metadata of "
-                    ++ "this item, since it has been confirmed. Do you want to proceed?"
+                "Opätovné spracovanie tohto súboru nezmení metadáta "
+                    ++ "tejto položky, pretože bola potvrdená. Chcete pokračovať?"
     , confirmDeleteItem =
-        "Really trash this item? It can be resurrected from trash for some time."
-    , confirmDeleteFile = "Really delete this file?"
-    , confirmDeleteAllFiles = "Really delete these files?"
+        "Naozaj zahodiť túto položku do koša? Môže byť obnovená z koša na určitý čas."
+    , confirmDeleteFile = "Naozaj odstrániť tento súbor?"
+    , confirmDeleteAllFiles = "Naozaj odstrániť tieto súbory?"
     }
 
 

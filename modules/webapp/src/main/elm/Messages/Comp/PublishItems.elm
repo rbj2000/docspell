@@ -73,10 +73,10 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
-    , shareForm = Messages.Comp.ShareForm.gb
-    , shareView = Messages.Comp.ShareView.gb tz
-    , shareMail = Messages.Comp.ShareMail.gb
+    , httpError = Messages.Comp.HttpError.sk
+    , shareForm = Messages.Comp.ShareForm.sk
+    , shareView = Messages.Comp.ShareView.sk tz
+    , shareMail = Messages.Comp.ShareMail.sk
     , title = "Publikovať položky"
     , infoText = "Publikovaním položiek sa vytvorí tajomný odkaz, ktorý môže použiť každý na zobrazenie vybraných dokumentov. Tento odkaz sa nedá uhádnuť, ale je verejný! Existuje určitý čas a možno ho ďalej chrániť pomocou hesla."
     , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz

@@ -75,7 +75,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , dropzone = Messages.Comp.Dropzone.gb
+    , dropzone = Messages.Comp.Dropzone.sk
     , reset = "Resetovať"
     , allFilesOneItem = "Všetky súbory sú jednou položkou"
     , skipExistingFiles = "Preskočiť súbory, ktoré sa už nachádzajú v docspell"
@@ -96,7 +96,7 @@ sk =
         , resetLine2 = "nahrať viac súborov."
         }
     , selectedFiles = "Vybrané súbory"
-    , languageLabel = Messages.Data.Language.gb
+    , languageLabel = Messages.Data.Language.sk
     , flattenArchives = "Extrahujte obsah súboru zip do samostatných položiek, na rozdiel od jedného dokumentu s viacerými prílohami."
     }
 

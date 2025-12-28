@@ -51,9 +51,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , personForm = Messages.Comp.PersonForm.gb
-    , personTable = Messages.Comp.PersonTable.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , personForm = Messages.Comp.PersonForm.sk
+    , personTable = Messages.Comp.PersonTable.sk
+    , httpError = Messages.Comp.HttpError.sk
     , newPerson = "Nová osoba"
     , createNewPerson = "Vytvorte nového človeka"
     , reallyDeletePerson = "Naozaj odstrániť túto osobu?"

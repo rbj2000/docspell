@@ -44,8 +44,8 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , folderDetail = Messages.Comp.FolderDetail.gb
-    , folderTable = Messages.Comp.FolderTable.gb tz
+    , folderDetail = Messages.Comp.FolderDetail.sk
+    , folderTable = Messages.Comp.FolderTable.sk tz
     , showOwningFoldersOnly = "Zobraziť iba priečinky, ktoré vlastníte"
     , createNewFolder = "Vytvorte nový priečinok"
     , newFolder = "Nový priečinok"

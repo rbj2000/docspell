@@ -51,9 +51,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , orgForm = Messages.Comp.OrgForm.gb
-    , orgTable = Messages.Comp.OrgTable.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , orgForm = Messages.Comp.OrgForm.sk
+    , orgTable = Messages.Comp.OrgTable.sk
+    , httpError = Messages.Comp.HttpError.sk
     , newOrganization = "Nová organizácia"
     , createNewOrganization = "Vytvorte novú organizáciu"
     , reallyDeleteOrg = "Naozaj chcete odstrániť túto organizáciu?"

@@ -44,7 +44,7 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , formatDateLong = Messages.DateFormat.formatDateLong Messages.UiLanguage.English tz
     , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
     , cancelView = "Zrušiť"

@@ -175,12 +175,12 @@ sk =
     , browserNativePdfView = "Ukážka PDF natívneho prehliadača"
     , keyboardShortcutLabel = "Na navigáciu použite klávesové skratky a potvrďte/zrušte potvrdenie s otvorenou ponukou úprav."
     , tagCategoryColors = "Farby kategórie štítkov"
-    , colorLabel = Messages.Data.Color.gb
+    , colorLabel = Messages.Data.Color.sk
     , chooseTagColorLabel = "Vyberte farbu pre kategórie značiek"
     , tagColorDescription = "Značky môžu byť reprezentované rôzne na základe ich kategórie."
     , fields = "Polia"
     , fieldsInfo = "Vyberte, ktoré polia sa majú zobraziť v ponukách vyhľadávania a úprav."
-    , fieldLabel = Messages.Data.Fields.gb
+    , fieldLabel = Messages.Data.Fields.sk
     , templateHelpMessage =
         """
 A pattern allows to customize the title and subtitle of each card.
@@ -209,7 +209,7 @@ for example `{{corrOrg|corrPerson|-}}` would render the organization
 and if that is not present the person. If both are absent a dash `-`
 is rendered.
 """
-    , pdfMode = Messages.Data.PdfMode.gb
+    , pdfMode = Messages.Data.PdfMode.sk
     , resetLabel = "Reset"
     }
 

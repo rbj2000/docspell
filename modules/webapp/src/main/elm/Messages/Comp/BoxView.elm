@@ -32,9 +32,9 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { queryView = Messages.Comp.BoxQueryView.gb tz
-    , statsView = Messages.Comp.BoxStatsView.gb
-    , uploadView = Messages.Comp.BoxUploadView.gb
+    { queryView = Messages.Comp.BoxQueryView.sk tz
+    , statsView = Messages.Comp.BoxStatsView.sk
+    , uploadView = Messages.Comp.BoxUploadView.sk
     }
 
 

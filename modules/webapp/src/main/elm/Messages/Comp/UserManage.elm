@@ -65,10 +65,10 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { userTable = Messages.Comp.UserTable.gb tz
-    , userForm = Messages.Comp.UserForm.gb
+    { userTable = Messages.Comp.UserTable.sk tz
+    , userForm = Messages.Comp.UserForm.sk
     , basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , users = "Používatelia"
     , newUser = "Nový používateľ"
     , addNewUser = "Pridať nového používateľa"

@@ -78,7 +78,7 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , currentlyRunning = "Momentálne spustený"
     , queue = "Práca"
     , waiting = "Čakanie"

@@ -43,8 +43,8 @@ gb =
 
 sk : Texts
 sk =
-    { searchMenu = Messages.Comp.SearchMenu.gb
-    , multiEdit = Messages.Comp.ItemDetail.MultiEditMenu.gb
+    { searchMenu = Messages.Comp.SearchMenu.sk
+    , multiEdit = Messages.Comp.ItemDetail.MultiEditMenu.sk
     , editMode = "Režim úprav"
     , resetSearchForm = "Obnoviť vyhľadávací formulár"
     , multiEditHeader = "Viacnásobná úprava"

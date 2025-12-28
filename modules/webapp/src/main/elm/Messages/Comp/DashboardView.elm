@@ -26,7 +26,7 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { boxView = Messages.Comp.BoxView.gb tz
+    { boxView = Messages.Comp.BoxView.sk tz
     }
 
 

@@ -51,9 +51,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , tagTable = Messages.Comp.TagTable.gb
-    , tagForm = Messages.Comp.TagForm.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , tagTable = Messages.Comp.TagTable.sk
+    , tagForm = Messages.Comp.TagForm.sk
+    , httpError = Messages.Comp.HttpError.sk
     , createNewTag = "Vytvorte novú značku"
     , newTag = "Nová značka"
     , reallyDeleteTag = "Naozaj odstrániť túto značku?"

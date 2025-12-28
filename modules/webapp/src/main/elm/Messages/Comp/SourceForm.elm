@@ -74,31 +74,31 @@ Specify a file glob to filter files when uploading archives
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , tagDropdown = Messages.Comp.TagDropdown.gb
+    , tagDropdown = Messages.Comp.TagDropdown.sk
     , description = "Popis"
     , enabled = "Povolené"
     , priority = "Priorita"
     , priorityInfo = "Priorita, ktorú používa plánovač pri spracovaní nahratých súborov."
     , metadata = "Metadáta"
     , metadataInfoText = "Tu špecifikované metadáta sú automaticky pripojené ku každej nahranej položke"
-            ++ "through this source, unless it is overriden in the upload request meta data. "
-            ++ "Tags from the request are added to those defined here."
+            ++ "prostredníctvom tohto zdroja, pokiaľ nie sú prepísané v metadátach požiadavky na nahranie. "
+            ++ "Značky z požiadavky sa pridávajú k tým, ktoré sú definované tu."
     , folderInfo = "Vyberte priečinok, do ktorého sa majú položky automaticky vkladať."
     , tagsInfo = "Vyberte značky, ktoré sa majú použiť na položky."
     , fileFilter = "Filter súborov"
     , fileFilterInfo = """
 
-Specify a file glob to filter files when uploading archives
-(e.g. for email and zip). For example, to only extract pdf files:
-`*.pdf`. Globs can be combined via OR, like this: `*.pdf|mail.html`.
+Zadajte filter súborov (glob) na filtrovanie súborov pri nahrávaní archívov
+(napr. pre e-mail a zip). Napríklad, na extrahovanie iba pdf súborov:
+`*.pdf`. Globs možno kombinovať cez OR, takto: `*.pdf|mail.html`.
 
 """
-    , language = "Language"
+    , language = "Jazyk"
     , languageInfo =
-        "Used for text extraction and analysis. The collective's "
-            ++ "default language is used if not specified here."
-    , languageLabel = Messages.Data.Language.gb
-    , attachmentsOnly = "Only import attachments for e-mails"
+        "Používa sa na extrakciu textu a analýzu. Predvolený jazyk kolektívu "
+            ++ "sa použije, ak tu nie je špecifikovaný."
+    , languageLabel = Messages.Data.Language.sk
+    , attachmentsOnly = "Importovať iba prílohy pre e-maily"
     }
 
 

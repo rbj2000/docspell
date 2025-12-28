@@ -72,8 +72,8 @@ sk : Texts
 sk =
     { basics = Messages.Basics.sk
     , reallyDeleteField = "Naozaj chcete odstrániť toto vlastné pole?"
-    , fieldTypeLabel = Messages.Data.CustomFieldType.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , fieldTypeLabel = Messages.Data.CustomFieldType.sk
+    , httpError = Messages.Comp.HttpError.sk
     , createCustomField = "Vytvorte nové vlastné pole."
     , modifyTypeWarning = "Upozorňujeme, že môže dôjsť k zmene formátu"
             ++ "result in invisible values in the ui, if they don't comply to the new format!"

@@ -46,8 +46,8 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , eventType = Messages.Data.EventType.gb
-    , channelType = Messages.Data.ChannelType.gb
+    , eventType = Messages.Data.EventType.sk
+    , channelType = Messages.Data.ChannelType.sk
     , enabled = "Povolené"
     , channel = "kanál"
     , events = "Udalosti"

@@ -67,18 +67,18 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , tagManage = Messages.Comp.TagManage.gb
-    , equipmentManage = Messages.Comp.EquipmentManage.gb
-    , orgManage = Messages.Comp.OrgManage.gb
-    , personManage = Messages.Comp.PersonManage.gb
-    , folderManage = Messages.Comp.FolderManage.gb tz
-    , customFieldManage = Messages.Comp.CustomFieldManage.gb tz
-    , bookmarkManage = Messages.Comp.BookmarkManage.gb
-    , addonArchiveManage = Messages.Comp.AddonArchiveManage.gb
-    , addonRunConfigManage = Messages.Comp.AddonRunConfigManage.gb tz
+    , tagManage = Messages.Comp.TagManage.sk
+    , equipmentManage = Messages.Comp.EquipmentManage.sk
+    , orgManage = Messages.Comp.OrgManage.sk
+    , personManage = Messages.Comp.PersonManage.sk
+    , folderManage = Messages.Comp.FolderManage.sk tz
+    , customFieldManage = Messages.Comp.CustomFieldManage.sk tz
+    , bookmarkManage = Messages.Comp.BookmarkManage.sk
+    , addonArchiveManage = Messages.Comp.AddonArchiveManage.sk
+    , addonRunConfigManage = Messages.Comp.AddonRunConfigManage.sk tz
     , manageData = "Správa údajov"
     , bookmarks = "Záložky"
-    , addonArchives = "Addons"
+    , addonArchives = "Doplnky"
     , addonRunConfigs = "Konfigurácie spustenia doplnku"
     }
 

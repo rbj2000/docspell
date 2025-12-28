@@ -46,10 +46,10 @@ gb =
 
 sk : Texts
 sk =
-    { boxView = Messages.Comp.BoxEdit.gb
-    , boxContent = Messages.Data.BoxContent.gb
+    { boxView = Messages.Comp.BoxEdit.sk
+    , boxContent = Messages.Data.BoxContent.sk
     , basics = Messages.Basics.sk
-    , accountScope = Messages.Data.AccountScope.gb
+    , accountScope = Messages.Data.AccountScope.sk
     , namePlaceholder = "Názov informačného panela"
     , columns = "Stĺpce"
     , dashboardBoxes = "Schránky na palubnú dosku"

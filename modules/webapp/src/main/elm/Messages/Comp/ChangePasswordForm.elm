@@ -53,7 +53,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , currentPassword = "Aktuálne heslo"
     , newPassword = "Nové heslo"
     , repeatPassword = "Nové heslo (opakovať)"
