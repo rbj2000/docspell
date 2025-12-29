@@ -7,11 +7,11 @@
   version = "1.0.1";
   server = {
     url = "https://github.com/rbj2000/docspell/releases/download/v${version}/docspell-restserver-${version}.zip";
-    sha256 = "sha256-jzP+KNnUkmGHFqwyqpoOXCavSymc5k5w+pOLezj+vl4=";
+    sha256 = "sha256-j1euzcmtUI38gYlY0cDHCvhAOYMk9z8Vr2m06NLJgMY=";
   };
   joex = {
     url = "https://github.com/rbj2000/docspell/releases/download/v${version}/docspell-joex-${version}.zip";
-    sha256 = "sha256-cd2muIzb6yXNd1fGm0YB4igZIvdBnVnim+vvmevTLoI=";
+    sha256 = "sha256-et+xZJb4cj3zP45ET6SPbFdE4W1YiS7b296IgPcm1pQ=";
   };
 in {
   docspell-restserver = stdenv.mkDerivation {
