@@ -59,7 +59,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , selectConnection = "Vybrať pripojenie..."
     , sendVia = "Odoslať cez"
     , recipients = "príjemca(i)"

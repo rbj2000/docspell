@@ -30,8 +30,8 @@ gb =
 
 sk : Texts
 sk =
-    { columnDropdown = Messages.Comp.ItemColumnDropdown.gb
-    , searchQuery = Messages.Comp.BoxSearchQueryInput.gb
+    { columnDropdown = Messages.Comp.ItemColumnDropdown.sk
+    , searchQuery = Messages.Comp.BoxSearchQueryInput.sk
     , showColumnHeaders = "Zobraziť hlavičky stĺpcov"
     }
 

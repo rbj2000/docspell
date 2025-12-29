@@ -67,9 +67,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , channelRef = Messages.Comp.ChannelRefInput.gb
-    , eventType = Messages.Data.EventType.gb
-    , eventSample = Messages.Comp.EventSample.gb
+    , channelRef = Messages.Comp.ChannelRefInput.sk
+    , eventType = Messages.Data.EventType.sk
+    , eventSample = Messages.Comp.EventSample.sk
     , channelHeader = "Vyberte kanály"
     , enableDisable = "Povolené / Zakázané"
     , eventsInfo = "Vyberte udalosti, ktoré spúšťajú tento webhook"

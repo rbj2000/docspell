@@ -91,9 +91,9 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , classifierSettingsForm = Messages.Comp.ClassifierSettingsForm.gb tz
-    , emptyTrashForm = Messages.Comp.EmptyTrashForm.gb tz
-    , httpError = Messages.Comp.HttpError.gb
+    , classifierSettingsForm = Messages.Comp.ClassifierSettingsForm.sk tz
+    , emptyTrashForm = Messages.Comp.EmptyTrashForm.sk tz
+    , httpError = Messages.Comp.HttpError.sk
     , save = "Uložiť"
     , saveSettings = "Uložiť nastavenia"
     , documentLanguage = "Jazyk dokumentu"
@@ -108,7 +108,7 @@ sk tz =
             ++ "You must type OK before clicking the button to avoid accidental re-indexing."
     , autoTagging = "Automatické označovanie"
     , startNow = "Začnite hneď"
-    , languageLabel = Messages.Data.Language.gb
+    , languageLabel = Messages.Data.Language.sk
     , classifierTaskStarted = "Úloha klasifikátora bola spustená."
     , emptyTrashTaskStarted = "Spustila sa úloha vyprázdnenia koša."
     , emptyTrashStartInvalidForm = "Formulár prázdny kôš obsahuje chyby."

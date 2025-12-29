@@ -59,25 +59,25 @@ Use an empty whitelist to disable auto tagging.
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , calEventInput = Messages.Comp.CalEventInput.gb tz
+    , calEventInput = Messages.Comp.CalEventInput.sk tz
     , autoTaggingText =
         """
 
-Auto-tagging works by learning from existing documents. The more
-documents you have correctly tagged, the better. Learning is done
-periodically based on a schedule. You can specify tag-groups that
-should either be used (whitelist) or not used (blacklist) for
-learning.
+Automatické označovanie funguje učením z existujúcich dokumentov. Čím viac
+dokumentov máte správne označených, tým lepšie. Učenie sa vykonáva
+pravidelne podľa plánu. Môžete zadať skupiny značiek, ktoré sa
+majú použiť (whitelist) alebo nepoužiť (blacklist) pre
+učenie.
 
-Use an empty whitelist to disable auto tagging.
+Použite prázdny whitelist na zakázanie automatického označovania.
 
             """
-    , blacklistOrWhitelist = "Is the following a blacklist or whitelist?"
-    , whitelistLabel = "Include tag categories for learning"
-    , blacklistLabel = "Exclude tag categories from learning"
-    , itemCount = "Item Count"
-    , schedule = "Schedule"
-    , itemCountHelp = "The maximum number of items to learn from, order by date newest first. Use 0 to mean all."
+    , blacklistOrWhitelist = "Je nasledujúce blacklist alebo whitelist?"
+    , whitelistLabel = "Zahrnúť kategórie značiek na učenie"
+    , blacklistLabel = "Vylúčiť kategórie značiek z učenia"
+    , itemCount = "Počet položiek"
+    , schedule = "Plán"
+    , itemCountHelp = "Maximálny počet položiek, z ktorých sa má učiť, zoradených podľa dátumu od najnovších. Použite 0 pre všetky."
     }
 
 

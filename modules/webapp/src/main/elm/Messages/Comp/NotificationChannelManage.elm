@@ -65,10 +65,10 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , notificationForm = Messages.Comp.ChannelForm.gb
-    , notificationTable = Messages.Comp.NotificationChannelTable.gb
-    , httpError = Messages.Comp.HttpError.gb
-    , channelType = Messages.Data.ChannelType.gb
+    , notificationForm = Messages.Comp.ChannelForm.sk
+    , notificationTable = Messages.Comp.NotificationChannelTable.sk
+    , httpError = Messages.Comp.HttpError.sk
+    , channelType = Messages.Data.ChannelType.sk
     , newChannel = "Nový kanál"
     , channelCreated = "Kanál bol vytvorený"
     , channelUpdated = "Kanál bol aktualizovaný"

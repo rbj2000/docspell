@@ -76,7 +76,7 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { httpError = Messages.Comp.HttpError.gb
+    { httpError = Messages.Comp.HttpError.sk
     , formatDateShort = Messages.DateFormat.formatDateShort Messages.UiLanguage.English tz
     , errorTitle = "Chyba"
     , stateErrorInfoText = "Vyskytol sa problém pri určovaní aktuálneho stavu vašej schémy dvojfaktorovej autentifikácie:"

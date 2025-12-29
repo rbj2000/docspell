@@ -27,7 +27,7 @@ gb =
 
 sk : Texts
 sk =
-    { uploadForm = Messages.Comp.UploadForm.gb
+    { uploadForm = Messages.Comp.UploadForm.sk
     , moreOptions = "Viac možností…"
     }
 

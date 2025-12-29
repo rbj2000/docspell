@@ -33,7 +33,7 @@ sk : Texts
 sk =
     { noResults = "Žiadne výsledky"
     , placeholder = Messages.Basics.sk.searchPlaceholder
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     }
 
 

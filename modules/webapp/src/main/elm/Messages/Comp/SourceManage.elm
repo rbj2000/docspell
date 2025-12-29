@@ -76,9 +76,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , sourceTable = Messages.Comp.SourceTable.gb
-    , sourceForm = Messages.Comp.SourceForm.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , sourceTable = Messages.Comp.SourceTable.sk
+    , sourceForm = Messages.Comp.SourceForm.sk
+    , httpError = Messages.Comp.HttpError.sk
     , addSourceUrl = "Pridajte zdrojovú webovú adresu"
     , newSource = "Nový zdroj"
     , publicUploads = "Verejné nahrávania"

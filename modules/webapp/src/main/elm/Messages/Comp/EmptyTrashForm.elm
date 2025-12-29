@@ -41,7 +41,7 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , calEventInput = Messages.Comp.CalEventInput.gb tz
+    , calEventInput = Messages.Comp.CalEventInput.sk tz
     , schedule = "Rozvrh"
     , minAge = "Minimálny vek (dni)"
     , minAgeInfo = "Minimálny vek v dňoch položiek, ktoré sa majú odstrániť. Použije sa čas poslednej aktualizácie."

@@ -58,11 +58,11 @@ gb =
 
 sk : Texts
 sk =
-    { messageEdit = Messages.Comp.BoxMessageEdit.gb
-    , uploadEdit = Messages.Comp.BoxUploadEdit.gb
-    , queryEdit = Messages.Comp.BoxQueryEdit.gb
-    , statsEdit = Messages.Comp.BoxStatsEdit.gb
-    , boxContent = Messages.Data.BoxContent.gb
+    { messageEdit = Messages.Comp.BoxMessageEdit.sk
+    , uploadEdit = Messages.Comp.BoxUploadEdit.sk
+    , queryEdit = Messages.Comp.BoxQueryEdit.sk
+    , statsEdit = Messages.Comp.BoxStatsEdit.sk
+    , boxContent = Messages.Data.BoxContent.sk
     , basics = Messages.Basics.sk
     , namePlaceholder = "Názov krabice"
     , visible = "Viditeľné"

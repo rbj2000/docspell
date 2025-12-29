@@ -34,7 +34,7 @@ gb =
 
 sk : Texts
 sk =
-    { httpError = Messages.Comp.HttpError.gb
+    { httpError = Messages.Comp.HttpError.sk
     , passwordRequired = "Vyžaduje sa heslo"
     , password = "heslo"
     , passwordSubmitButton = "Odoslať"

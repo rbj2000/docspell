@@ -59,8 +59,8 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , customFieldMultiInput = Messages.Comp.CustomFieldMultiInput.gb
-    , tagDropdown = Messages.Comp.TagDropdown.gb
+    , customFieldMultiInput = Messages.Comp.CustomFieldMultiInput.sk
+    , tagDropdown = Messages.Comp.TagDropdown.sk
     , tagModeAddInfo = "Tu zvolené štítky sa *pridajú* ku všetkým vybraným položkám."
     , tagModeRemoveInfo = "Tu zvolené štítky sú *odstránené* zo všetkých vybratých položiek."
     , tagModeReplaceInfo = "Tu zvolené štítky *nahradia* štítky na vybraných položkách."
@@ -70,7 +70,7 @@ sk =
     , unconfirm = "Zrušte potvrdenie"
     , changeTagMode = "Zmeňte režim úpravy značky"
     , dueDateTab = "Dátum splatnosti"
-    , direction = Messages.Data.Direction.gb
+    , direction = Messages.Data.Direction.sk
     }
 
 

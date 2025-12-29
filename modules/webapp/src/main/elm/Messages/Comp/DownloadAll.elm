@@ -63,7 +63,7 @@ gb =
 
 sk : Texts
 sk =
-    { downloadFileType = Messages.Data.DownloadFileType.gb
+    { downloadFileType = Messages.Data.DownloadFileType.sk
     , downloadFileTypeLabel = "Aké súbory"
     , noResults = "Žiadne výsledky na stiahnutie."
     , summary = \files -> \size ->

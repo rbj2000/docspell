@@ -51,9 +51,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , equipmentTable = Messages.Comp.EquipmentTable.gb
-    , equipmentForm = Messages.Comp.EquipmentForm.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , equipmentTable = Messages.Comp.EquipmentTable.sk
+    , equipmentForm = Messages.Comp.EquipmentForm.sk
+    , httpError = Messages.Comp.HttpError.sk
     , createNewEquipment = "Vytvorte nové zariadenie"
     , newEquipment = "Nové vybavenie"
     , reallyDeleteEquipment = "Naozaj odstrániť toto zariadenie?"

@@ -74,8 +74,8 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , customFieldInput = Messages.Comp.CustomFieldMultiInput.gb
-    , tagDropdown = Messages.Comp.TagDropdown.gb
+    , customFieldInput = Messages.Comp.CustomFieldMultiInput.sk
+    , tagDropdown = Messages.Comp.TagDropdown.sk
     , createNewCustomField = "Vytvorte nové vlastné pole"
     , chooseDirection = "Vyberte si smer…"
     , dueDateTab = "Dátum splatnosti"
@@ -91,7 +91,7 @@ sk tz =
     , suggestions = "Návrhy"
     , noSuggestions = "Žiadne návrhy"
     , formatDate = DF.formatDateLong Messages.UiLanguage.English tz
-    , direction = Messages.Data.Direction.gb
+    , direction = Messages.Data.Direction.sk
     }
 
 

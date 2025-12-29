@@ -43,10 +43,10 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , matrixForm = Messages.Comp.NotificationMatrixForm.gb
-    , gotifyForm = Messages.Comp.NotificationGotifyForm.gb
-    , mailForm = Messages.Comp.NotificationMailForm.gb
-    , httpForm = Messages.Comp.NotificationHttpForm.gb
+    , matrixForm = Messages.Comp.NotificationMatrixForm.sk
+    , gotifyForm = Messages.Comp.NotificationGotifyForm.sk
+    , mailForm = Messages.Comp.NotificationMailForm.sk
+    , httpForm = Messages.Comp.NotificationHttpForm.sk
     }
 
 

@@ -31,7 +31,7 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { itemCard = Messages.Comp.ItemCard.gb tz
+    { itemCard = Messages.Comp.ItemCard.sk tz
     }
 
 

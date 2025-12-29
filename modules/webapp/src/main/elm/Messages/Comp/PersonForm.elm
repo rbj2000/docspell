@@ -60,8 +60,8 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , addressForm = Messages.Comp.AddressForm.gb
-    , personUseLabel = Messages.Data.PersonUse.gb
+    , addressForm = Messages.Comp.AddressForm.sk
+    , personUseLabel = Messages.Data.PersonUse.sk
     , useOfPerson = "Použitie tejto osoby"
     , useAsConcerningOnly = "Používajte len ako osobu týkajúcu sa"
     , useAsCorrespondentOnly = "Používajte len ako korešpondent"
@@ -70,7 +70,7 @@ sk =
     , chooseAnOrg = "Vyberte si organizáciu"
     , address = "Adresa"
     , contacts = "Kontakty"
-    , contactTypeLabel = Messages.Data.ContactType.gb
+    , contactTypeLabel = Messages.Data.ContactType.sk
     , notes = "Poznámky"
     }
 

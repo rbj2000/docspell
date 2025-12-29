@@ -38,7 +38,7 @@ sk : Texts
 sk =
     { basics = Messages.Basics.sk
     , use = "Použite"
-    , equipmentUseLabel = Messages.Data.EquipmentUse.gb
+    , equipmentUseLabel = Messages.Data.EquipmentUse.sk
     }
 
 

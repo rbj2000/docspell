@@ -65,7 +65,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , sslTypeLabel = Messages.Data.SSLType.gb
+    , sslTypeLabel = Messages.Data.SSLType.sk
     , connectionPlaceholder = "Názov spojenia, napr. 'gmail.com'"
     , connectionNameInfo = "Názov pripojenia nesmie obsahovať medzery ani špeciálne znaky."
     , smtpHost = "Hostiteľ SMTP"

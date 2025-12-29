@@ -37,8 +37,8 @@ gb =
 
 sk : Texts
 sk =
-    { eventType = Messages.Data.EventType.gb
-    , httpError = Messages.Comp.HttpError.gb
+    { eventType = Messages.Data.EventType.sk
+    , httpError = Messages.Comp.HttpError.sk
     , selectEvent = "Vybrať udalosť…"
     }
 

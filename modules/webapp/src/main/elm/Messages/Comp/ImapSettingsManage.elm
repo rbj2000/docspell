@@ -51,9 +51,9 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , imapForm = Messages.Comp.ImapSettingsForm.gb
-    , imapTable = Messages.Comp.ImapSettingsTable.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , imapForm = Messages.Comp.ImapSettingsForm.sk
+    , imapTable = Messages.Comp.ImapSettingsTable.sk
+    , httpError = Messages.Comp.HttpError.sk
     , addNewImapSettings = "Pridajte nové nastavenia IMAP"
     , newSettings = "Nové pripojenie"
     , reallyDeleteSettings = "Naozaj odstrániť toto spojenie s poštovou schránkou?"

@@ -43,8 +43,8 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , dashboardEdit = Messages.Comp.DashboardEdit.gb
-    , httpError = Messages.Comp.HttpError.gb
+    , dashboardEdit = Messages.Comp.DashboardEdit.sk
+    , httpError = Messages.Comp.HttpError.sk
     , reallyDeleteDashboard = "Naozaj chcete odstrániť tento informačný panel?"
     , nameEmpty = "Názov nesmie byť prázdny."
     , nameExists = "Názov sa už používa."

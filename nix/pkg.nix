@@ -4,14 +4,14 @@
   fetchzip,
   jdk17,
 }: let
-  version = "0.43.0";
+  version = "1.0.1";
   server = {
-    url = "https://github.com/eikek/docspell/releases/download/v${version}/docspell-restserver-${version}.zip";
-    sha256 = "sha256-9qK0WcCbHNc8Z36hc6DXQrWCv3+WuG7+/UIs0Uqv8DA=";
+    url = "https://github.com/rbj2000/docspell/releases/download/v${version}/docspell-restserver-${version}.zip";
+    sha256 = "sha256-j1euzcmtUI38gYlY0cDHCvhAOYMk9z8Vr2m06NLJgMY=";
   };
   joex = {
-    url = "https://github.com/eikek/docspell/releases/download/v${version}/docspell-joex-${version}.zip";
-    sha256 = "sha256-6BE+QgFkL7FimqwCw68/JAGg8PiERjNF4McV8FTWHMg=";
+    url = "https://github.com/rbj2000/docspell/releases/download/v${version}/docspell-joex-${version}.zip";
+    sha256 = "sha256-et+xZJb4cj3zP45ET6SPbFdE4W1YiS7b296IgPcm1pQ=";
   };
 in {
   docspell-restserver = stdenv.mkDerivation {

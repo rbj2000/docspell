@@ -31,7 +31,7 @@ gb =
 
 sk : Texts
 sk =
-    { bookmarkDropdown = Messages.Comp.BookmarkDropdown.gb
+    { bookmarkDropdown = Messages.Comp.BookmarkDropdown.sk
     , switchToBookmark = "Záložky"
     , switchToQuery = "Vyhľadávací dopyt"
     , searchPlaceholder = "Hľadať…"

@@ -56,15 +56,15 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , addressForm = Messages.Comp.AddressForm.gb
-    , orgUseLabel = Messages.Data.OrgUse.gb
+    , addressForm = Messages.Comp.AddressForm.sk
+    , orgUseLabel = Messages.Data.OrgUse.sk
     , shortName = "Krátky názov"
     , use = "Použite"
     , useAsCorrespondent = "Použiť ako korešpondent"
     , dontUseForSuggestions = "Nepoužívajte na návrhy."
     , address = "Adresa"
     , contacts = "Kontakty"
-    , contactTypeLabel = Messages.Data.ContactType.gb
+    , contactTypeLabel = Messages.Data.ContactType.sk
     , notes = "Poznámky"
     }
 

@@ -59,13 +59,13 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , uiSettingsForm = Messages.Comp.UiSettingsForm.gb
-    , accountScope = Messages.Data.AccountScope.gb
+    , uiSettingsForm = Messages.Comp.UiSettingsForm.sk
+    , accountScope = Messages.Data.AccountScope.sk
     , saveSettings = "Uložiť nastavenia"
     , settingsUnchanged = "Nastavenia nezmenené alebo neplatné."
     , settingsSaved = "Nastavenia boli uložené."
     , unknownSaveError = "Neznáma chyba pri pokuse o uloženie nastavení."
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , userHeader = "Osobné nastavenia"
     , userInfo = "Vaše osobné nastavenia majú prednosť pred nastaveniami kolektívu. Pri resetovaní sa nastavenia prevezmú zo spoločných nastavení."
     , collectiveHeader = "Kolektívne nastavenia"

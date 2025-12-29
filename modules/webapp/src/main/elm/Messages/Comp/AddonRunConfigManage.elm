@@ -52,9 +52,9 @@ gb tz =
 sk : TimeZone -> Texts
 sk tz =
     { basics = Messages.Basics.sk
-    , addonArchiveTable = Messages.Comp.AddonRunConfigTable.gb
-    , addonArchiveForm = Messages.Comp.AddonRunConfigForm.gb tz
-    , httpError = Messages.Comp.HttpError.gb
+    , addonArchiveTable = Messages.Comp.AddonRunConfigTable.sk
+    , addonArchiveForm = Messages.Comp.AddonRunConfigForm.sk tz
+    , httpError = Messages.Comp.HttpError.sk
     , newAddonRunConfig = "Nové"
     , reallyDeleteAddonRunConfig = "Naozaj odstrániť túto konfiguráciu spustenia?"
     , createNewAddonRunConfig = "Vytvorte novú konfiguráciu behu"

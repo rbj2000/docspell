@@ -38,8 +38,8 @@ gb tz =
 
 sk : TimeZone -> Texts
 sk tz =
-    { itemDetail = Messages.Comp.ItemDetail.gb tz
-    , editForm = Messages.Comp.ItemDetail.EditForm.gb tz
+    { itemDetail = Messages.Comp.ItemDetail.sk tz
+    , editForm = Messages.Comp.ItemDetail.EditForm.sk tz
     , editMetadata = "Upraviť metadáta"
     , collapseExpand = "Zbaliť/rozbaliť"
     }

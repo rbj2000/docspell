@@ -61,7 +61,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , httpError = Messages.Comp.HttpError.gb
+    , httpError = Messages.Comp.HttpError.sk
     , signupToDocspell = "Zaregistrujte sa do Docspell"
     , collectiveId = "Kolektívne ID"
     , collective = "kolektívne"

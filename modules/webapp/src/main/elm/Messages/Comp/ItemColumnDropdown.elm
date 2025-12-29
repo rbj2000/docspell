@@ -36,7 +36,7 @@ gb =
 sk : Texts
 sk =
     { basics = Messages.Basics.sk
-    , column = Messages.Data.ItemColumn.gb
+    , column = Messages.Data.ItemColumn.sk
     , placeholder = "Vyberte si…"
     }
 
