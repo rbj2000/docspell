@@ -7,16 +7,22 @@
 
 module Comp.BoxQueryEdit exposing (..)
 
+import Api
+import Api.Model.CustomField exposing (CustomField)
+import Api.Model.CustomFieldList exposing (CustomFieldList)
 import Comp.BoxSearchQueryInput
 import Comp.IntField
 import Comp.ItemColumnDropdown
 import Comp.MenuBar as MB
 import Data.Bookmarks
 import Data.BoxContent exposing (QueryData, SearchQuery(..))
+import Data.CustomFieldOrder
 import Data.Flags exposing (Flags)
+import Data.ItemColumn exposing (ItemColumn)
 import Data.UiSettings exposing (UiSettings)
 import Html exposing (Html, div, label, text)
 import Html.Attributes exposing (class)
+import Http
 import Messages.Comp.BoxQueryEdit exposing (Texts)
 import Styles as S
 
@@ -35,6 +41,7 @@ type Msg
     | LimitMsg Comp.IntField.Msg
     | ColumnMsg Comp.ItemColumnDropdown.Msg
     | ToggleColumnHeaders
+    | CustomFieldsResp (Result Http.Error CustomFieldList)
 
 
 init : Flags -> QueryData -> ( Model, Cmd Msg, Sub Msg )
@@ -48,10 +55,16 @@ init flags data =
             , searchQueryModel = qm
             , limitModel = Comp.IntField.init (Just 1) Nothing False
             , limitValue = Just data.limit
-            , columnModel = Comp.ItemColumnDropdown.init data.columns
+            , columnModel = Comp.ItemColumnDropdown.init Data.ItemColumn.all data.columns
             }
+
+        fetchCustomFieldsCmd =
+            Api.getCustomFields flags "" Data.CustomFieldOrder.LabelAsc CustomFieldsResp
     in
-    ( emptyModel, Cmd.map SearchQueryMsg qc, Sub.map SearchQueryMsg qs )
+    ( emptyModel
+    , Cmd.batch [ Cmd.map SearchQueryMsg qc, fetchCustomFieldsCmd ]
+    , Sub.map SearchQueryMsg qs
+    )
 
 
 
@@ -142,6 +155,37 @@ update flags msg model =
             , data = data_
             }
 
+        CustomFieldsResp (Ok list) ->
+            let
+                allOptions =
+                    allColumnsWithCustomFields list.items
+
+                -- Filter out any saved columns that no longer exist in options
+                -- (handles deleted custom fields gracefully)
+                validColumns =
+                    List.filter (\col -> List.member col allOptions) model.data.columns
+
+                newColumnModel =
+                    Comp.ItemColumnDropdown.init allOptions validColumns
+
+                data =
+                    model.data
+
+                data_ =
+                    { data | columns = validColumns }
+            in
+            { model = { model | columnModel = newColumnModel }
+            , cmd = Cmd.none
+            , sub = Sub.none
+            , data = data_
+            }
+
+        CustomFieldsResp (Err _) ->
+            -- Graceful degradation: on API error, dropdown keeps standard columns
+            -- (already initialized in init). Custom fields simply won't appear.
+            -- This is intentional - users can still work with standard columns.
+            unit model
+
 
 unit : Model -> UpdateResult
 unit model =
@@ -155,6 +199,21 @@ unit model =
 withData : (QueryData -> QueryData) -> Model -> Model
 withData modify model =
     { model | data = modify model.data }
+
+
+customFieldToColumn : CustomField -> ItemColumn
+customFieldToColumn cf =
+    Data.ItemColumn.CustomField cf.name
+
+
+customFieldsToColumns : List CustomField -> List ItemColumn
+customFieldsToColumns fields =
+    List.map customFieldToColumn fields
+
+
+allColumnsWithCustomFields : List CustomField -> List ItemColumn
+allColumnsWithCustomFields customFields =
+    Data.ItemColumn.all ++ customFieldsToColumns customFields
 
 
 
