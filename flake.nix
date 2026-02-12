@@ -35,11 +35,11 @@
           netcat
           wget
           which
-          inotifyTools
           ocrmypdf
           devshell-tools.packages.${system}.postgres-fg
           python3Packages.weasyprint
-        ]);
+        ])
+        ++ pkgs.lib.optionals pkgs.stdenv.isLinux [pkgs.inotifyTools];
       docspellPkgs = pkgs.callPackage (import ./nix/pkg.nix) {};
       dockerAmd64 = pkgs.pkgsCross.gnu64.callPackage (import ./nix/docker.nix) {
         inherit (docspellPkgs) docspell-restserver docspell-joex;
