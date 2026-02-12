@@ -115,11 +115,11 @@ viewItems texts settings meta list =
             Data.Items.flatten list
     in
     table [ class "w-full divide-y divide-y-2 dark:divide-slate-500" ]
-        (viewItemHead texts meta ++ [ tbody [ class "divide-y divide-dotted dark:divide-slate-500" ] <| List.map (viewItemRow texts settings meta) items ])
+        (viewItemHead texts meta items ++ [ tbody [ class "divide-y divide-dotted dark:divide-slate-500" ] <| List.map (viewItemRow texts settings meta) items ])
 
 
-viewItemHead : Texts -> QueryData -> List (Html Msg)
-viewItemHead texts meta =
+viewItemHead : Texts -> QueryData -> List ItemLight -> List (Html Msg)
+viewItemHead texts meta items =
     let
         ( col1, cols ) =
             getColumns meta
@@ -129,6 +129,15 @@ viewItemHead texts meta =
 
         isNotLast n =
             n > 1 && n < List.length cols
+
+        columnHeaderText col =
+            case col of
+                IC.CustomField fieldName ->
+                    lookupFieldLabel fieldName items
+                        |> Maybe.withDefault fieldName
+
+                _ ->
+                    texts.itemColumn.header col
     in
     if not meta.showHeaders then
         []
@@ -136,7 +145,7 @@ viewItemHead texts meta =
     else
         [ thead []
             [ tr []
-                (List.map texts.itemColumn.header (col1 :: cols)
+                (List.map columnHeaderText (col1 :: cols)
                     |> List.indexedMap
                         (\index ->
                             \n ->
@@ -152,6 +161,27 @@ viewItemHead texts meta =
                 )
             ]
         ]
+
+
+lookupFieldLabel : String -> List ItemLight -> Maybe String
+lookupFieldLabel fieldName items =
+    items
+        |> List.filterMap
+            (\item ->
+                item.customfields
+                    |> List.filter (\cf -> cf.name == fieldName)
+                    |> List.head
+                    |> Maybe.andThen .label
+                    |> Maybe.andThen
+                        (\l ->
+                            if String.isEmpty l then
+                                Nothing
+
+                            else
+                                Just l
+                        )
+            )
+        |> List.head
 
 
 viewItemRow : Texts -> UiSettings -> QueryData -> ItemLight -> Html Msg
