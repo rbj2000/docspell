@@ -57,10 +57,13 @@ object Query {
   def apply(fix: Fix): Query =
     Query(fix, QueryExpr(None))
 
+  case class CustomFieldSort(fieldName: String, ascending: Boolean)
+
   case class Fix(
       account: AccountInfo,
       query: Option[ItemQuery.Expr],
-      order: Option[OrderSelect => OrderBy]
+      order: Option[OrderSelect => OrderBy],
+      customFieldSort: Option[CustomFieldSort] = None
   ) {
 
     def isEmpty: Boolean =
