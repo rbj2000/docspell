@@ -173,6 +173,7 @@ mkQuery query =
     , offset = Nothing
     , searchMode = Nothing
     , withDetails = Nothing
+    , orderBy = Nothing
     }
 
 

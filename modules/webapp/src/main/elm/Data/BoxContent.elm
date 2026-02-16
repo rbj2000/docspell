@@ -65,6 +65,8 @@ type alias QueryData =
     , details : Bool
     , columns : List ItemColumn
     , showHeaders : Bool
+    , sortColumn : Maybe ItemColumn
+    , sortDirection : Maybe String
     }
 
 
@@ -75,6 +77,8 @@ emptyQueryData =
     , details = True
     , columns = []
     , showHeaders = True
+    , sortColumn = Nothing
+    , sortDirection = Nothing
     }
 
 
@@ -228,12 +232,14 @@ uploadDataEncode data =
 
 queryDataDecoder : D.Decoder QueryData
 queryDataDecoder =
-    D.map5 QueryData
+    D.map7 QueryData
         (D.field "query" searchQueryDecoder)
         (D.field "limit" D.int)
         (D.field "details" D.bool)
         (D.field "columns" <| D.list Data.ItemColumn.decode)
         (D.field "showHeaders" D.bool)
+        (D.maybe (D.field "sortColumn" Data.ItemColumn.decode))
+        (D.maybe (D.field "sortDirection" D.string))
 
 
 queryDataEncode : QueryData -> E.Value
@@ -244,6 +250,8 @@ queryDataEncode data =
         , ( "details", E.bool data.details )
         , ( "columns", E.list Data.ItemColumn.encode data.columns )
         , ( "showHeaders", E.bool data.showHeaders )
+        , ( "sortColumn", Maybe.map Data.ItemColumn.encode data.sortColumn |> Maybe.withDefault E.null )
+        , ( "sortDirection", Maybe.map E.string data.sortDirection |> Maybe.withDefault E.null )
         ]
 
 

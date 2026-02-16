@@ -77,6 +77,8 @@ newDocuments texts =
             , details = True
             , showHeaders = False
             , columns = []
+            , sortColumn = Nothing
+            , sortDirection = Nothing
             }
     }
 
@@ -98,6 +100,8 @@ dueDocuments texts =
                 , IC.Correspondent
                 , IC.DueDateShort
                 ]
+            , sortColumn = Nothing
+            , sortDirection = Nothing
             }
     }
 

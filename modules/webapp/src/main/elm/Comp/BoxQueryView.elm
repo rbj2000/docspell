@@ -10,6 +10,7 @@ module Comp.BoxQueryView exposing (Model, Msg, init, reloadData, update, view)
 import Api
 import Api.Model.ItemLight exposing (ItemLight)
 import Api.Model.ItemLightList exposing (ItemLightList)
+import Api.Model.ItemOrderBy exposing (ItemOrderBy)
 import Api.Model.ItemQuery exposing (ItemQuery)
 import Comp.Basic
 import Comp.ItemColumnView
@@ -20,7 +21,8 @@ import Data.Items
 import Data.SearchMode
 import Data.UiSettings exposing (UiSettings)
 import Html exposing (Html, a, div, i, table, tbody, td, text, th, thead, tr)
-import Html.Attributes exposing (class, classList)
+import Html.Attributes exposing (class, classList, href)
+import Html.Events exposing (onClick)
 import Http
 import Messages.Comp.BoxQueryView exposing (Texts)
 import Page exposing (Page(..))
@@ -42,6 +44,7 @@ type ViewResult
 type Msg
     = ItemsResp (Result Http.Error ItemLightList)
     | ReloadData
+    | SortClick ItemColumn
 
 
 init : Flags -> QueryData -> ( Model, Cmd Msg )
@@ -73,6 +76,13 @@ update flags msg model =
 
         ReloadData ->
             ( model, dataCmd flags model.meta, True )
+
+        SortClick col ->
+            let
+                newMeta =
+                    toggleSort col model.meta
+            in
+            ( { model | meta = newMeta }, dataCmd flags newMeta, True )
 
 
 
@@ -124,6 +134,9 @@ viewItemHead texts meta items =
         ( col1, cols ) =
             getColumns meta
 
+        allCols =
+            col1 :: cols
+
         isSecond n =
             n == 1
 
@@ -138,6 +151,44 @@ viewItemHead texts meta items =
 
                 _ ->
                     texts.itemColumn.header col
+
+        sortIcon col =
+            if meta.sortColumn == Just col then
+                if meta.sortDirection == Just "desc" then
+                    "fa fa-sort-alpha-down-alt"
+
+                else
+                    "fa fa-sort-alpha-up"
+
+            else
+                "invisible fa fa-sort-alpha-down"
+
+        renderHeader index col =
+            let
+                label =
+                    columnHeaderText col
+            in
+            th
+                [ class "text-left text-sm"
+                , classList
+                    [ ( "hidden sm:table-cell", isSecond index )
+                    , ( "hidden md:table-cell", isNotLast index )
+                    ]
+                ]
+                (if isSortable col then
+                    [ a
+                        [ href "#"
+                        , onClick (SortClick col)
+                        , class "hover:underline"
+                        ]
+                        [ i [ class (sortIcon col), class "mr-1" ] []
+                        , text label
+                        ]
+                    ]
+
+                 else
+                    [ text label ]
+                )
     in
     if not meta.showHeaders then
         []
@@ -145,20 +196,7 @@ viewItemHead texts meta items =
     else
         [ thead []
             [ tr []
-                (List.map columnHeaderText (col1 :: cols)
-                    |> List.indexedMap
-                        (\index ->
-                            \n ->
-                                th
-                                    [ class "text-left text-sm"
-                                    , classList
-                                        [ ( "hidden sm:table-cell", isSecond index )
-                                        , ( "hidden md:table-cell", isNotLast index )
-                                        ]
-                                    ]
-                                    [ text n ]
-                        )
-                )
+                (List.indexedMap renderHeader allCols)
             ]
         ]
 
@@ -253,6 +291,59 @@ getColumns meta =
             ( IC.Name, [ IC.Correspondent, IC.DateShort ] )
 
 
+isSortable : ItemColumn -> Bool
+isSortable col =
+    case col of
+        IC.Name ->
+            True
+
+        IC.DateShort ->
+            True
+
+        IC.DateLong ->
+            True
+
+        IC.DueDateShort ->
+            True
+
+        IC.DueDateLong ->
+            True
+
+        IC.CustomField _ ->
+            True
+
+        _ ->
+            False
+
+
+toggleSort : ItemColumn -> QueryData -> QueryData
+toggleSort col meta =
+    if meta.sortColumn == Just col then
+        let
+            newDir =
+                if meta.sortDirection == Just "asc" then
+                    Just "desc"
+
+                else
+                    Just "asc"
+        in
+        { meta | sortDirection = newDir }
+
+    else
+        { meta | sortColumn = Just col, sortDirection = Just "asc" }
+
+
+mkOrderBy : QueryData -> Maybe ItemOrderBy
+mkOrderBy meta =
+    meta.sortColumn
+        |> Maybe.map
+            (\col ->
+                { field = Just (IC.asString col)
+                , direction = meta.sortDirection
+                }
+            )
+
+
 mkQuery : String -> QueryData -> ItemQuery
 mkQuery q meta =
     { query = q
@@ -260,6 +351,7 @@ mkQuery q meta =
     , offset = Nothing
     , searchMode = Just <| Data.SearchMode.asString Data.SearchMode.Normal
     , withDetails = Just meta.details
+    , orderBy = mkOrderBy meta
     }
 
 
