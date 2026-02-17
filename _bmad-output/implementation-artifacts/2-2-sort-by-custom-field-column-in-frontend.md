@@ -1,6 +1,6 @@
 # Story 2.2: Sort by Custom Field Column in Frontend
 
-Status: review
+Status: done
 
 ## Story
 
@@ -51,7 +51,7 @@ So that **I can organize documents by custom metadata values**.
 - [x] **Task 1: Add Sort State to QueryData Model** (AC: #1, #6)
   - [x] 1.1 Add `sortColumn : Maybe ItemColumn` and `sortDirection : Maybe String` to `QueryData` in `Data/BoxContent.elm`
   - [x] 1.2 Update `emptyQueryData` with `sortColumn = Nothing, sortDirection = Nothing`
-  - [x] 1.3 Update `queryDataDecoder` — use `D.map7` with `D.maybe` for backward compat
+  - [x] 1.3 Update `queryDataDecoder` — use `Json.Decode.Pipeline` for extensibility (code review fix from Finding 3)
   - [x] 1.4 Update `queryDataEncode` — encode sort fields
   - [x] 1.5 Verify existing saved dashboards (without sort fields) still decode correctly — `D.maybe (D.field ...)` returns Nothing when field is missing
 
@@ -75,7 +75,7 @@ So that **I can organize documents by custom metadata values**.
   - [x] 4.2 Modify `viewItemHead` to render clickable `<a>` headers for sortable columns
   - [x] 4.3 FontAwesome sort icons: `fa-sort-alpha-up` (asc), `fa-sort-alpha-down-alt` (desc), `invisible fa-sort-alpha-down` when not sorted
   - [x] 4.4 Non-sortable columns render as plain text (no click handler, no icon)
-  - [x] 4.5 Uses `a [ href "#", onClick (SortClick col) ]` pattern consistent with TagTable.elm
+  - [x] 4.5 Uses `Util.Html.onClickk` with `preventDefaultOn` to prevent scroll-to-top (code review fix from Finding 1)
 
 - [x] **Task 5: Compilation and Verification** (AC: #1-#6)
   - [x] 5.1 `elm make src/main/elm/Main.elm` — zero Elm compilation errors (Success! Compiled 3 modules)
@@ -313,3 +313,23 @@ claude-opus-4-6
 | `modules/webapp/src/main/elm/Comp/ItemSearchInput.elm` | Added `orderBy = Nothing` to q record |
 | `modules/webapp/src/main/elm/Page/Share/Update.elm` | Added `orderBy = Nothing` to request function |
 | `modules/webapp/src/main/elm/Page/Dashboard/DefaultDashboard.elm` | Added `sortColumn = Nothing, sortDirection = Nothing` to 2 BoxQuery records |
+
+## Code Review Record
+
+### Review Date
+2026-02-17
+
+### Findings Summary
+
+| # | Severity | Description | Resolution |
+|---|----------|-------------|------------|
+| 1 | HIGH | `href "#"` on sort click causes page scroll-to-top | FIXED: Replaced with `Util.Html.onClickk` (preventDefaultOn) |
+| 2 | MEDIUM | Sort state not propagated to parent BoxView for persistence | ACCEPTED: Story 2.3 scope |
+| 3 | MEDIUM | `D.map7` at Elm's decoder limit, no room for new fields | FIXED: Refactored to `Json.Decode.Pipeline` |
+| 4 | LOW | `isSortable` catch-all silently covers future ItemColumn variants | ACCEPTED: Low risk, add new cases when adding sortable columns |
+| 5 | LOW | Encoder emits `null` for missing sort fields instead of omitting | ACCEPTED: Elm's `E.object` doesn't support field omission natively |
+| 6 | LOW | Tasks 5.4/5.5 runtime tests deferred (need Joex) | ACCEPTED: Deferred to integration testing |
+
+### Fixes Applied
+- **Finding 1 (HIGH)**: `Comp/BoxQueryView.elm` — replaced `a [ href "#", onClick ... ]` with `a [ Util.Html.onClickk ... ]` using `preventDefaultOn "click"`. Added `cursor-pointer` class. Removed unused `Html.Attributes.href` and `Html.Events.onClick` imports.
+- **Finding 3 (MEDIUM)**: `Data/BoxContent.elm` — replaced `D.map7 QueryData (...)` with `D.succeed QueryData |> P.required ... |> P.optional ...` pipeline decoder. Added `Json.Decode.Pipeline as P` import. Now extensible beyond 7 fields.

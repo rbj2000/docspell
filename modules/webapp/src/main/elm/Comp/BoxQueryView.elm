@@ -21,8 +21,8 @@ import Data.Items
 import Data.SearchMode
 import Data.UiSettings exposing (UiSettings)
 import Html exposing (Html, a, div, i, table, tbody, td, text, th, thead, tr)
-import Html.Attributes exposing (class, classList, href)
-import Html.Events exposing (onClick)
+import Html.Attributes exposing (class, classList)
+import Util.Html
 import Http
 import Messages.Comp.BoxQueryView exposing (Texts)
 import Page exposing (Page(..))
@@ -177,9 +177,8 @@ viewItemHead texts meta items =
                 ]
                 (if isSortable col then
                     [ a
-                        [ href "#"
-                        , onClick (SortClick col)
-                        , class "hover:underline"
+                        [ Util.Html.onClickk (SortClick col)
+                        , class "hover:underline cursor-pointer"
                         ]
                         [ i [ class (sortIcon col), class "mr-1" ] []
                         , text label

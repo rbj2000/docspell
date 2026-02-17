@@ -60,7 +60,7 @@ development_status:
   # FRs: FR9-FR11 | Stories: 3
   epic-2: in-progress
   2-1-backend-support-for-custom-field-sorting: done
-  2-2-sort-by-custom-field-column-in-frontend: review
+  2-2-sort-by-custom-field-column-in-frontend: done
   2-3-persist-custom-field-sort-order: backlog
   epic-2-retrospective: optional
 

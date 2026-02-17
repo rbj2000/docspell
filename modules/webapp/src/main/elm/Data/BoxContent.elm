@@ -25,6 +25,7 @@ module Data.BoxContent exposing
 import Data.ItemColumn exposing (ItemColumn)
 import Html exposing (datalist)
 import Json.Decode as D
+import Json.Decode.Pipeline as P
 import Json.Encode as E
 
 
@@ -232,14 +233,14 @@ uploadDataEncode data =
 
 queryDataDecoder : D.Decoder QueryData
 queryDataDecoder =
-    D.map7 QueryData
-        (D.field "query" searchQueryDecoder)
-        (D.field "limit" D.int)
-        (D.field "details" D.bool)
-        (D.field "columns" <| D.list Data.ItemColumn.decode)
-        (D.field "showHeaders" D.bool)
-        (D.maybe (D.field "sortColumn" Data.ItemColumn.decode))
-        (D.maybe (D.field "sortDirection" D.string))
+    D.succeed QueryData
+        |> P.required "query" searchQueryDecoder
+        |> P.required "limit" D.int
+        |> P.required "details" D.bool
+        |> P.required "columns" (D.list Data.ItemColumn.decode)
+        |> P.required "showHeaders" D.bool
+        |> P.optional "sortColumn" (D.map Just Data.ItemColumn.decode) Nothing
+        |> P.optional "sortDirection" (D.map Just D.string) Nothing
 
 
 queryDataEncode : QueryData -> E.Value
