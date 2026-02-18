@@ -21,6 +21,7 @@ module Page.Dashboard.Data exposing
     )
 
 import Api
+import Api.Model.BasicResult exposing (BasicResult)
 import Comp.BookmarkChooser
 import Comp.DashboardManage
 import Comp.DashboardView
@@ -87,6 +88,7 @@ type Msg
     | SetDashboard Dashboard
     | SetDashboardByName String
     | SetDefaultDashboard
+    | SaveSortResp (Result Http.Error BasicResult)
 
 
 init : Flags -> ( Model, Cmd Msg )

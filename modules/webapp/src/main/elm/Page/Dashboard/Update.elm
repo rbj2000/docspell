@@ -383,13 +383,40 @@ update texts settings navKey flags msg model =
             case model.content of
                 Home m ->
                     let
-                        ( dm, dc, ds ) =
+                        result =
                             Comp.DashboardView.update flags lm m
+
+                        saveCmd =
+                            if result.contentChanged && not model.isPredefined && result.model.dashboard.name /= "" then
+                                let
+                                    scope =
+                                        Data.Dashboards.getScope result.model.dashboard.name model.dashboards
+                                            |> Maybe.withDefault Data.AccountScope.User
+
+                                    isDefault =
+                                        Data.Dashboards.isDefaultAll result.model.dashboard.name model.dashboards
+                                in
+                                Api.replaceDashboard flags
+                                    result.model.dashboard.name
+                                    result.model.dashboard
+                                    scope
+                                    isDefault
+                                    SaveSortResp
+
+                            else
+                                Cmd.none
                     in
-                    ( { model | content = Home dm }, Cmd.map DashboardMsg dc, Sub.map DashboardMsg ds )
+                    ( { model | content = Home result.model }
+                    , Cmd.batch [ Cmd.map DashboardMsg result.cmd, saveCmd ]
+                    , Sub.map DashboardMsg result.sub
+                    )
 
                 _ ->
                     unit model
+
+        SaveSortResp _ ->
+            -- Auto-save response: silent success/failure, no UI feedback
+            unit model
 
         DashboardManageMsg lm ->
             case model.content of

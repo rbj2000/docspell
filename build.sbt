@@ -828,6 +828,7 @@ val joex = project
     buildInfoPackage := "docspell.joex",
     reStart / javaOptions ++= Seq(
       s"-Dconfig.file=${(LocalRootProject / baseDirectory).value / "local" / "dev.conf"}",
+      "-Djava.awt.headless=true",
       "-Xmx1596M",
       "-XX:+UseG1GC"
     ),

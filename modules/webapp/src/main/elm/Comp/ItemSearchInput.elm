@@ -254,6 +254,7 @@ makeSearchCmd flags model addQuery str =
             , withDetails = Just False
             , searchMode = Nothing
             , query = qstr
+            , orderBy = Nothing
             }
     in
     if str == Nothing then

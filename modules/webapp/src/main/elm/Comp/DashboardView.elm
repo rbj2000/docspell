@@ -5,7 +5,7 @@
 -}
 
 
-module Comp.DashboardView exposing (Model, Msg, init, reloadData, update, view, viewBox)
+module Comp.DashboardView exposing (Model, Msg, UpdateResult, init, reloadData, update, view, viewBox)
 
 import Comp.BoxView
 import Data.Dashboard exposing (Dashboard)
@@ -15,12 +15,19 @@ import Dict exposing (Dict)
 import Html exposing (Html, div)
 import Html.Attributes exposing (class)
 import Messages.Comp.DashboardView exposing (Texts)
-import Util.Update
 
 
 type alias Model =
     { dashboard : Dashboard
     , boxModels : Dict Int Comp.BoxView.Model
+    }
+
+
+type alias UpdateResult =
+    { model : Model
+    , cmd : Cmd Msg
+    , sub : Sub Msg
+    , contentChanged : Bool
     }
 
 
@@ -55,37 +62,81 @@ reloadData =
 --- Update
 
 
-update : Flags -> Msg -> Model -> ( Model, Cmd Msg, Sub Msg )
+update : Flags -> Msg -> Model -> UpdateResult
 update flags msg model =
     case msg of
         BoxMsg index lm ->
             case Dict.get index model.boxModels of
                 Just bm ->
                     let
-                        ( cm, cc, cs ) =
+                        result =
                             Comp.BoxView.update flags lm bm
+
+                        newBoxModels =
+                            Dict.insert index result.model model.boxModels
+
+                        updatedDashboard =
+                            if result.contentChanged then
+                                rebuildDashboard { model | boxModels = newBoxModels }
+
+                            else
+                                model.dashboard
                     in
-                    ( { model | boxModels = Dict.insert index cm model.boxModels }
-                    , Cmd.map (BoxMsg index) cc
-                    , Sub.map (BoxMsg index) cs
-                    )
+                    { model = { model | boxModels = newBoxModels, dashboard = updatedDashboard }
+                    , cmd = Cmd.map (BoxMsg index) result.cmd
+                    , sub = Sub.map (BoxMsg index) result.sub
+                    , contentChanged = result.contentChanged
+                    }
 
                 Nothing ->
                     unit model
 
         ReloadData ->
             let
-                updateAll =
-                    List.map (\index -> BoxMsg index Comp.BoxView.reloadData) (Dict.keys model.boxModels)
-                        |> List.map (\m -> update flags m)
-                        |> Util.Update.andThen2
+                pairs =
+                    Dict.keys model.boxModels
+
+                applyAll mdl =
+                    List.foldl
+                        (\index acc ->
+                            let
+                                r =
+                                    update flags (BoxMsg index Comp.BoxView.reloadData) acc.model
+                            in
+                            { model = r.model
+                            , cmds = r.cmd :: acc.cmds
+                            , subs = r.sub :: acc.subs
+                            }
+                        )
+                        { model = mdl, cmds = [], subs = [] }
+                        pairs
+
+                result =
+                    applyAll model
             in
-            updateAll model
+            { model = result.model
+            , cmd = Cmd.batch result.cmds
+            , sub = Sub.batch result.subs
+            , contentChanged = False
+            }
 
 
-unit : Model -> ( Model, Cmd Msg, Sub Msg )
+rebuildDashboard : Model -> Dashboard
+rebuildDashboard model =
+    let
+        db =
+            model.dashboard
+
+        boxes =
+            Dict.values model.boxModels
+                |> List.map .box
+    in
+    { db | boxes = boxes }
+
+
+unit : Model -> UpdateResult
 unit model =
-    ( model, Cmd.none, Sub.none )
+    { model = model, cmd = Cmd.none, sub = Sub.none, contentChanged = False }
 
 
 

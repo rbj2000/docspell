@@ -48,6 +48,9 @@ gb =
 
                 Tags ->
                     "Tags"
+
+                CustomField fieldName ->
+                    fieldName
     in
     { header = headerName
     , label =
@@ -102,6 +105,9 @@ sk =
 
                 Tags ->
                     "Tags"
+
+                CustomField fieldName ->
+                    fieldName
     in
     { header = headerName
     , label =
@@ -155,6 +161,9 @@ de =
 
                 Tags ->
                     "Tags"
+
+                CustomField fieldName ->
+                    fieldName
     in
     { header = headerName
     , label =
@@ -208,6 +217,9 @@ fr =
 
                 Tags ->
                     "Tags"
+
+                CustomField fieldName ->
+                    fieldName
     in
     { header = headerName
     , label =

@@ -7167,6 +7167,24 @@ components:
           type: string
           description: |
             A query searching the contents of documents.
+        orderBy:
+          $ref: "#/components/schemas/ItemOrderBy"
+    ItemOrderBy:
+      description: |
+        Specifies how to sort the search results. The field uses the
+        same format as column identifiers: standard column names like
+        "name" or "date", or "customfield:fieldName" for custom fields.
+      properties:
+        field:
+          type: string
+          description: |
+            Column identifier, e.g. "name", "date", "customfield:invoiceNumber".
+        direction:
+          type: string
+          enum:
+            - asc
+            - desc
+          default: asc
     MoveAttachment:
       description: |
         Data to move an attachment to another position.
