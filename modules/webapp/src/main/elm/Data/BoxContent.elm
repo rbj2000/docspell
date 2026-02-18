@@ -25,6 +25,7 @@ module Data.BoxContent exposing
 import Data.ItemColumn exposing (ItemColumn)
 import Html exposing (datalist)
 import Json.Decode as D
+import Json.Decode.Pipeline as P
 import Json.Encode as E
 
 
@@ -65,6 +66,8 @@ type alias QueryData =
     , details : Bool
     , columns : List ItemColumn
     , showHeaders : Bool
+    , sortColumn : Maybe ItemColumn
+    , sortDirection : Maybe String
     }
 
 
@@ -75,6 +78,8 @@ emptyQueryData =
     , details = True
     , columns = []
     , showHeaders = True
+    , sortColumn = Nothing
+    , sortDirection = Nothing
     }
 
 
@@ -228,12 +233,14 @@ uploadDataEncode data =
 
 queryDataDecoder : D.Decoder QueryData
 queryDataDecoder =
-    D.map5 QueryData
-        (D.field "query" searchQueryDecoder)
-        (D.field "limit" D.int)
-        (D.field "details" D.bool)
-        (D.field "columns" <| D.list Data.ItemColumn.decode)
-        (D.field "showHeaders" D.bool)
+    D.succeed QueryData
+        |> P.required "query" searchQueryDecoder
+        |> P.required "limit" D.int
+        |> P.required "details" D.bool
+        |> P.required "columns" (D.list Data.ItemColumn.decode)
+        |> P.required "showHeaders" D.bool
+        |> P.optional "sortColumn" (D.map Just Data.ItemColumn.decode) Nothing
+        |> P.optional "sortDirection" (D.map Just D.string) Nothing
 
 
 queryDataEncode : QueryData -> E.Value
@@ -244,6 +251,8 @@ queryDataEncode data =
         , ( "details", E.bool data.details )
         , ( "columns", E.list Data.ItemColumn.encode data.columns )
         , ( "showHeaders", E.bool data.showHeaders )
+        , ( "sortColumn", Maybe.map Data.ItemColumn.encode data.sortColumn |> Maybe.withDefault E.null )
+        , ( "sortDirection", Maybe.map E.string data.sortDirection |> Maybe.withDefault E.null )
         ]
 
 

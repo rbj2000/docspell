@@ -157,6 +157,9 @@ object QItem extends FtsSupport {
       cv.itemId === itemId
     ).build.query[ItemFieldValue].to[Vector]
 
+  private val cvSort = RCustomFieldValue.as("cv_sort")
+  private val cfSort = RCustomField.as("cf_sort")
+
   private def findItemsBase(
       q: Query.Fix,
       today: LocalDate,
@@ -165,7 +168,37 @@ object QItem extends FtsSupport {
   ): Select.Ordered = {
     val coll = q.account.collectiveId
 
-    Select(
+    val orderExpr: SelectExpr = q.customFieldSort match {
+      case Some(_) => cvSort.value.s
+      case None =>
+        q.order
+          .map(f => f(orderSelect(ftsTable)).expr)
+          .getOrElse(i.created.s)
+    }
+
+    val baseFrom = from(i)
+      .leftJoin(f, f.id === i.folder && f.collective === coll)
+      .leftJoin(pers0, pers0.pid === i.corrPerson && pers0.cid === coll)
+      .leftJoin(org, org.oid === i.corrOrg && org.cid === coll)
+      .leftJoin(pers1, pers1.pid === i.concPerson && pers1.cid === coll)
+      .leftJoin(equip, equip.eid === i.concEquipment && equip.cid === coll)
+
+    val fullFrom = q.customFieldSort match {
+      case Some(cfs) =>
+        baseFrom.leftJoin(
+          cvSort,
+          cvSort.itemId === i.id && cvSort.field.in(
+            Select(
+              select(cfSort.id),
+              from(cfSort),
+              cfSort.name ==== cfs.fieldName && cfSort.cid === coll
+            )
+          )
+        )
+      case None => baseFrom
+    }
+
+    val sel = Select(
       select(
         i.id.s,
         i.name.s,
@@ -187,16 +220,9 @@ object QItem extends FtsSupport {
         f.name.s,
         substring(i.notes.s, 1, noteMaxLen).s,
         ftsTable.map(_.context.s).getOrElse(emptyString),
-        q.order
-          .map(f => f(orderSelect(ftsTable)).expr)
-          .getOrElse(i.created.s)
+        orderExpr
       ),
-      from(i)
-        .leftJoin(f, f.id === i.folder && f.collective === coll)
-        .leftJoin(pers0, pers0.pid === i.corrPerson && pers0.cid === coll)
-        .leftJoin(org, org.oid === i.corrOrg && org.cid === coll)
-        .leftJoin(pers1, pers1.pid === i.concPerson && pers1.cid === coll)
-        .leftJoin(equip, equip.eid === i.concEquipment && equip.cid === coll),
+      fullFrom,
       where(
         i.cid === coll &&? q.query.map(qs => queryCondFromExpr(today, coll, qs))
           && or(
@@ -206,11 +232,22 @@ object QItem extends FtsSupport {
             )
           )
       )
-    ).orderBy(
-      q.order
-        .map(of => of(orderSelect(ftsTable)))
-        .getOrElse(OrderBy.desc(coalesce(i.itemDate.s, i.created.s).s))
     )
+
+    q.customFieldSort match {
+      case Some(cfs) =>
+        val nullsLast = OrderBy.asc(cvSort.value.isNull.s)
+        val valueOrder =
+          if (cfs.ascending) OrderBy.asc(cvSort.value.s)
+          else OrderBy.desc(cvSort.value.s)
+        sel.orderBy(nullsLast, valueOrder)
+      case None =>
+        sel.orderBy(
+          q.order
+            .map(of => of(orderSelect(ftsTable)))
+            .getOrElse(OrderBy.desc(coalesce(i.itemDate.s, i.created.s).s))
+        )
+    }
   }
 
   private def findFilesQuery(

@@ -23,6 +23,7 @@ type ItemColumn
     | Correspondent
     | Concerning
     | Tags
+    | CustomField String
 
 
 all : List ItemColumn
@@ -61,6 +62,13 @@ renderString ctx col item =
             List.map .name item.tags
                 |> String.join ", "
 
+        CustomField fieldName ->
+            item.customfields
+                |> List.filter (\cf -> cf.name == fieldName)
+                |> List.head
+                |> Maybe.map .value
+                |> Maybe.withDefault ""
+
 
 asString : ItemColumn -> String
 asString col =
@@ -91,6 +99,9 @@ asString col =
 
         Tags ->
             "tags"
+
+        CustomField fieldName ->
+            "customfield:" ++ fieldName
 
 
 fromString : String -> Maybe ItemColumn
@@ -124,7 +135,11 @@ fromString str =
             Just Tags
 
         _ ->
-            Nothing
+            if String.startsWith "customfield:" str then
+                Just (CustomField (String.dropLeft 12 str))
+
+            else
+                Nothing
 
 
 encode : ItemColumn -> E.Value

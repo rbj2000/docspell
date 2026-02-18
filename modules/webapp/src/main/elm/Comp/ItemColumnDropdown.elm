@@ -23,11 +23,11 @@ type Msg
     = DropdownMsg (Comp.Dropdown.Msg ItemColumn)
 
 
-init : List ItemColumn -> Model
-init selected =
+init : List ItemColumn -> List ItemColumn -> Model
+init options selected =
     Model <|
         Comp.Dropdown.makeMultipleList
-            { options = Data.ItemColumn.all, selected = selected }
+            { options = options, selected = selected }
 
 
 getSelected : Model -> List ItemColumn

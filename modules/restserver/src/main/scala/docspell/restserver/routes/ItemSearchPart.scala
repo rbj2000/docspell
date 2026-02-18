@@ -21,8 +21,10 @@ import docspell.restapi.model._
 import docspell.restserver.Config
 import docspell.restserver.conv.Conversions
 import docspell.restserver.http4s.{QueryParam => QP}
-import docspell.store.qb.Batch
-import docspell.store.queries.{ListItemWithTags, SearchSummary}
+import docspell.store.qb.DSL._
+import docspell.store.qb.{Batch, OrderBy}
+import docspell.store.queries.{ListItemWithTags, Query, SearchSummary}
+import docspell.store.records.RItem
 
 import org.http4s.circe.CirceEntityCodec._
 import org.http4s.dsl.Http4sDsl
@@ -45,7 +47,7 @@ final class ItemSearchPart[F[_]: Async](
           QP.Offset(offset) :? QP.WithDetails(detailFlag) :?
           QP.SearchKind(searchMode) =>
         val userQuery =
-          ItemQuery(offset, limit, detailFlag, searchMode, q.getOrElse(""))
+          ItemQuery(offset, limit, detailFlag, searchMode, q.getOrElse(""), None)
         for {
           today <- Timestamp.current[F].map(_.toUtcDate)
           resp <- search(userQuery, today)
@@ -63,7 +65,7 @@ final class ItemSearchPart[F[_]: Async](
 
       case GET -> Root / `searchStatsPath` :? QP.Query(q) :?
           QP.SearchKind(searchMode) =>
-        val userQuery = ItemQuery(None, None, None, searchMode, q.getOrElse(""))
+        val userQuery = ItemQuery(None, None, None, searchMode, q.getOrElse(""), None)
         for {
           today <- Timestamp.current[F].map(_.toUtcDate)
           resp <- searchStats(userQuery, today)
@@ -104,23 +106,64 @@ final class ItemSearchPart[F[_]: Async](
     parsedQuery(userQuery, mode)
       .fold(
         identity,
-        res =>
+        res => {
+          val q = applyOrderBy(res.q, userQuery.orderBy)
           for {
-            _ <- logger.debug(s"Searching with query: $res")
+            _ <- logger.debug(s"Searching with query: $q")
             items <- searchOps
               .searchSelect(details, cfg.maxNoteLength, today.some, batch)(
-                res.q,
+                q,
                 res.ftq
               )
 
             // order is always by date unless q is empty and ftq is not
-            // TODO this should be given explicitly by the result
-            ftsOrder = res.q.cond.isEmpty && res.ftq.isDefined
+            // and no explicit orderBy was given
+            ftsOrder =
+              userQuery.orderBy.isDefined || (q.cond.isEmpty && res.ftq.isDefined)
 
             resp <- Ok(convert(items, batch, limitCapped, ftsOrder))
           } yield resp
+        }
       )
   }
+
+  private def applyOrderBy(q: Query, orderBy: Option[ItemOrderBy]): Query =
+    orderBy match {
+      case Some(ob) =>
+        val field = ob.field.getOrElse("")
+        val isAsc = ob.direction.forall(_ == "asc")
+        if (field.startsWith("customfield:")) {
+          val fieldName = field.stripPrefix("customfield:")
+          q.withFix(
+            _.copy(customFieldSort = Some(Query.CustomFieldSort(fieldName, isAsc)))
+          )
+        } else {
+          mapStandardColumn(field) match {
+            case Some(colFn) =>
+              val orderFn: Query.OrderSelect => OrderBy =
+                if (isAsc) _.byItemColumnAsc(colFn)
+                else
+                  os =>
+                    OrderBy.desc(coalesce(colFn(os.item).s, os.item.created.s).s)
+              q.withFix(_.copy(order = Some(orderFn)))
+            case None => q
+          }
+        }
+      case None => q
+    }
+
+  private def mapStandardColumn(
+      field: String
+  ): Option[RItem.Table => docspell.store.qb.Column[_]] =
+    field match {
+      case "name"                         => Some(_.name)
+      case "date" | "dateshort"           => Some(_.itemDate)
+      case "duedatelong" | "duedateshort" => Some(_.dueDate)
+      case "created"                      => Some(_.created)
+      case "state"                        => Some(_.state)
+      case "source"                       => Some(_.source)
+      case _                              => None
+    }
 
   def parsedQuery(
       userQuery: ItemQuery,

@@ -1,0 +1,79 @@
+# generated: 2026-02-12
+# project: docspell
+# feature: Custom Field Columns in Dashboard Query Panels
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+#
+# MIGRATION NOTE (2026-02-12):
+# Stories renumbered after Party Mode refinement of epics.
+# Old 1-1 (spike) removed. Old 1-2 + 1-3 merged into new 1-1. Old 1-4 → new 1-2. Old 1-5 → new 1-3.
+# Status preserved from previous sprint where applicable.
+
+generated: 2026-02-12
+project: docspell
+feature: Custom Field Columns in Dashboard Query Panels
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  # Epic 1: Custom Field Column Display (MVP)
+  # FRs: FR1-FR8 | Stories: 3
+  # NOTE (2026-02-12): Story 1.3 deferred - DB enforces unique(item_id, field),
+  # custom fields are single-value per item. FR7/FR8 not applicable.
+  # Epic 1 complete with Stories 1.1 + 1.2.
+  epic-1: done
+  1-1-add-custom-field-column-type-with-dropdown-and-headers: done
+  1-2-display-custom-field-values-in-dashboard-rows: done
+  1-3-multi-value-field-display-with-ellipsis-indicator: done  # deferred: not applicable (single-value per item)
+  epic-1-retrospective: done
+
+  # Epic 2: Custom Field Sorting (MVP)
+  # FRs: FR9-FR11 | Stories: 3
+  epic-2: in-progress
+  2-1-backend-support-for-custom-field-sorting: done
+  2-2-sort-by-custom-field-column-in-frontend: done
+  2-3-persist-custom-field-sort-order: done
+  epic-2-retrospective: optional
+
+  # Epic 3: Custom Field Filtering (Phase 2)
+  # FRs: FR12 | Stories: 2
+  epic-3: backlog
+  3-1-backend-support-for-custom-field-filtering: backlog
+  3-2-filter-dashboard-by-custom-field-value: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Enhanced Column Experience (Phase 2)
+  # FRs: FR13-FR14 | Stories: 2
+  epic-4: backlog
+  4-1-grouped-column-selection-dropdown: backlog
+  4-2-enhanced-multi-value-indicator-with-count-and-accessibility: done  # deferred: not applicable (single-value per item)
+  epic-4-retrospective: optional

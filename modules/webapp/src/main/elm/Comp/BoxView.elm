@@ -28,6 +28,14 @@ type alias Model =
     }
 
 
+type alias UpdateResult =
+    { model : Model
+    , cmd : Cmd Msg
+    , sub : Sub Msg
+    , contentChanged : Bool
+    }
+
+
 type ContentModel
     = ContentMessage Data.BoxContent.MessageData
     | ContentUpload Comp.BoxUploadView.Model
@@ -93,7 +101,7 @@ contentInit flags content =
 --- Update
 
 
-update : Flags -> Msg -> Model -> ( Model, Cmd Msg, Sub Msg )
+update : Flags -> Msg -> Model -> UpdateResult
 update flags msg model =
     case msg of
         QueryMsg lm ->
@@ -102,11 +110,31 @@ update flags msg model =
                     let
                         ( cm, cc, reloading ) =
                             Comp.BoxQueryView.update flags lm qm
+
+                        oldSort =
+                            ( qm.meta.sortColumn, qm.meta.sortDirection )
+
+                        newSort =
+                            ( cm.meta.sortColumn, cm.meta.sortDirection )
+
+                        contentChanged =
+                            oldSort /= newSort
+
+                        box =
+                            model.box
+
+                        updatedBox =
+                            if contentChanged then
+                                { box | content = Data.BoxContent.BoxQuery cm.meta }
+
+                            else
+                                box
                     in
-                    ( { model | content = ContentQuery cm, reloading = reloading }
-                    , Cmd.map QueryMsg cc
-                    , Sub.none
-                    )
+                    { model = { model | content = ContentQuery cm, box = updatedBox, reloading = reloading }
+                    , cmd = Cmd.map QueryMsg cc
+                    , sub = Sub.none
+                    , contentChanged = contentChanged
+                    }
 
                 _ ->
                     unit model
@@ -118,10 +146,11 @@ update flags msg model =
                         ( cm, cc, reloading ) =
                             Comp.BoxStatsView.update flags lm qm
                     in
-                    ( { model | content = ContentStats cm, reloading = reloading }
-                    , Cmd.map StatsMsg cc
-                    , Sub.none
-                    )
+                    { model = { model | content = ContentStats cm, reloading = reloading }
+                    , cmd = Cmd.map StatsMsg cc
+                    , sub = Sub.none
+                    , contentChanged = False
+                    }
 
                 _ ->
                     unit model
@@ -133,10 +162,11 @@ update flags msg model =
                         ( cm, cc, cs ) =
                             Comp.BoxUploadView.update flags lm qm
                     in
-                    ( { model | content = ContentUpload cm }
-                    , Cmd.map UploadMsg cc
-                    , Sub.map UploadMsg cs
-                    )
+                    { model = { model | content = ContentUpload cm }
+                    , cmd = Cmd.map UploadMsg cc
+                    , sub = Sub.map UploadMsg cs
+                    , contentChanged = False
+                    }
 
                 _ ->
                     unit model
@@ -153,9 +183,9 @@ update flags msg model =
                     unit model
 
 
-unit : Model -> ( Model, Cmd Msg, Sub Msg )
+unit : Model -> UpdateResult
 unit model =
-    ( model, Cmd.none, Sub.none )
+    { model = model, cmd = Cmd.none, sub = Sub.none, contentChanged = False }
 
 
 
